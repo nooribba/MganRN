@@ -50,8 +50,9 @@ class NHListItemSelected extends Component {
           <FlatList
             data={this.state.datas}
             extraData={this.state}
-            keyExtractor={(item, index) => String(index)}
-            renderItem={({ item, index }) => {
+            //keyExtractor={(item, index) => String(index)}
+            keyExtractor={(item, index) => index.toString()}
+			renderItem={({ item, index }) => {
               return (
                 <ListItem
                   selected={this.state.selected === item}

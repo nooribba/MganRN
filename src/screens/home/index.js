@@ -38,7 +38,7 @@ class Home extends Component {
             <Text size={16} color='rgba(255,255,255,0.6)'>Noori  &  Family</Text>
             <View style={{ marginTop: 8 }} /> */}
           </View>
-          <View style={{ marginTop: height / 2 - 100, marginBottom: 5 }}>
+          <View style={{ marginTop: height / 2 - 70, marginBottom: 5 }}>
             <View style={{ marginTop: 4 }}>
               <Text style={{fontSize: 39, color: "white", paddingLeft: 24}}>Mikhail</Text>
             </View>
@@ -52,10 +52,10 @@ class Home extends Component {
               <Text style={{fontSize: 16, color: "#aba9a9", paddingLeft: 24}}>Noori  &  Family</Text>
             </View>
             {/* <Text size={16} color='rgba(255,255,255,0.6)'>Noori  &  Family</Text> */}
-            <View style={{ marginTop: 4 }}>
+            <View style={{ marginTop: 20 }}>
               <Text style={{fontSize: 25, color: "white", paddingLeft: 24}}>오늘도 사랑해요~</Text>
             </View>
-            <View style={{ marginTop: 15 }} />
+            <View style={{ marginTop: 35 }} />
             <Button
               style={{ backgroundColor: "#9C26B0", alignSelf: "center", width: width - 16 * 3, height: 16 * 2.8, justifyContent: 'center', alignItems: 'center' }} //#6FAF98
               onPress={() => this.props.navigation.openDrawer()}
