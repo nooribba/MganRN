@@ -19,14 +19,14 @@ import First from "../tab/tabOne"
 import Second from "../tab/tabTwo"
 //import { Block, Button, Text, theme } from 'galio-framework';
 
-class IconText extends Component {
+class MvLobby extends Component {
   constructor(props) {
     super(props);
     this.state = {
       tab1: false,
       tab2: false,
-      tab3: true,
-      tab4: false
+      tab3: false,
+      tab4: true
     };
   }
   toggleTab1() {
@@ -89,7 +89,7 @@ class IconText extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>Footer.</Title>
+            <Title>MvLobby</Title>
           </Body>
           <Right />
         </Header>
@@ -108,19 +108,19 @@ class IconText extends Component {
           <FooterTab>
             <Button active={this.state.tab1} onPress={() => this.toggleTab1()}>
               <Icon active={this.state.tab1} name="apps" />
-              <Text>Apps</Text>
+              <Text>사진첩</Text>
             </Button>
             <Button active={this.state.tab2} onPress={() => this.toggleTab2()}>
               <Icon active={this.state.tab2} name="camera" />
-              <Text>Camera</Text>
+              <Text>동영상</Text>
             </Button>
             <Button active={this.state.tab3} onPress={() => this.toggleTab3()}>
               <Icon active={this.state.tab3} name="compass" />
-              <Text>Compass</Text>
+              <Text>프로필</Text>
             </Button>
             <Button active={this.state.tab4} onPress={() => {
                                                               this.toggleTab4();
-                                                              this.props.navigation.navigate('MvLobby');
+                                                              //this.props.navigation.navigate('IconText');
                                                             }}>
               <Icon active={this.state.tab4} name="contact" />
               <Text>Contact</Text>
@@ -132,4 +132,4 @@ class IconText extends Component {
   }
 }
 
-export default IconText;
+export default MvLobby;

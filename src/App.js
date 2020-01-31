@@ -3,6 +3,10 @@ import { Root } from "native-base";
 // import { StackNavigator, DrawerNavigator } from "react-navigation";
 import { createDrawerNavigator, createStackNavigator, createAppContainer } from "react-navigation";
 
+
+import MvLobby from "./screens/footer/mvLobby";
+
+
 import Header from "./screens/Header/";
 import Header1 from "./screens/Header/1";
 import Header2 from "./screens/Header/2";
@@ -179,6 +183,9 @@ const Drawer = createDrawerNavigator(
 
 const AppNavigator = createStackNavigator(
   {
+    MvLobby: { screen: MvLobby},
+    
+    
     Drawer: { screen: Drawer },
 
     Header1: { screen: Header1 },

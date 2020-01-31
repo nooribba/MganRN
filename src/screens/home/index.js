@@ -58,7 +58,7 @@ class Home extends Component {
             <View style={{ marginTop: 15 }} />
             <Button
               style={{ backgroundColor: "#9C26B0", alignSelf: "center", width: width - 16 * 3, height: 16 * 2.8, justifyContent: 'center', alignItems: 'center' }} //#6FAF98
-              onPress={() => this.props.navigation.navigate('IconText')}
+              onPress={() => this.props.navigation.openDrawer()}
             >
               <Text style={{fontSize: 17, fontWeight: "bold", color: "white"}}>저도요♥</Text>
             </Button>
