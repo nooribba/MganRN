@@ -1,22 +1,8 @@
 import React, { Component } from "react";
-import {
-  Container,
-  Header,
-  Title,
-  Content,
-  Button,
-  Footer,
-  FooterTab,
-  Text,
-  Body,
-  Left,
-  Right,
-  Icon,
-  ListItem
-} from "native-base";
+import { Container, Header, Title, Content, Button, Footer, FooterTab, Text, Body, Left, Right, Icon, ListItem } from "native-base";
 import styles from "./styles";
-import First from "../tab/tabOne"
-import Second from "../tab/tabTwo"
+// import First from "../tab/tabOne"
+// import Second from "../tab/tabTwo"
 //import { Block, Button, Text, theme } from 'galio-framework';
 
 class MvLobby extends Component {
@@ -25,8 +11,8 @@ class MvLobby extends Component {
     this.state = {
       tab1: false,
       tab2: false,
-      tab3: false,
-      tab4: true
+      tab3: true,
+      tab4: false
     };
   }
   toggleTab1() {
@@ -84,12 +70,12 @@ class MvLobby extends Component {
       <Container style={styles.container}>
         <Header>
           <Left>
-            <Button transparent onPress={() => this.props.navigation.goBack()}>
-              <Icon name="arrow-back" />
+            <Button transparent onPress={() => this.props.navigation.openDrawer()}>
+              <Icon name="menu" />
             </Button>
           </Left>
           <Body>
-            <Title>MvLobby</Title>
+            <Title>동영상</Title>
           </Body>
           <Right />
         </Header>
@@ -107,22 +93,23 @@ class MvLobby extends Component {
         <Footer>
           <FooterTab>
             <Button active={this.state.tab1} onPress={() => this.toggleTab1()}>
-              <Icon active={this.state.tab1} name="apps" />
+              <Icon active={this.state.tab1} name="paw" />
+              <Text>메인</Text>
+            </Button>
+            <Button active={this.state.tab3} onPress={() => this.toggleTab3()}>
+              <Icon active={this.state.tab3} name="camera" />
               <Text>사진첩</Text>
             </Button>
             <Button active={this.state.tab2} onPress={() => this.toggleTab2()}>
-              <Icon active={this.state.tab2} name="camera" />
+              <Icon active={this.state.tab2} name="logo-youtube" />
               <Text>동영상</Text>
-            </Button>
-            <Button active={this.state.tab3} onPress={() => this.toggleTab3()}>
-              <Icon active={this.state.tab3} name="compass" />
-              <Text>프로필</Text>
             </Button>
             <Button active={this.state.tab4} onPress={() => {
                                                               this.toggleTab4();
                                                               //this.props.navigation.navigate('IconText');
                                                             }}>
-              <Icon active={this.state.tab4} name="contact" />
+              {/* paw contact */}
+              <Icon active={this.state.tab4} name="logo-github" /> 
               <Text>Contact</Text>
             </Button>
           </FooterTab>

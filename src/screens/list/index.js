@@ -20,10 +20,10 @@ const datas = [
     route: "NHBasicList",
     text: "Basic List"
   },
-  {
-    route: "NHListItemSelected",
-    text: "ListItem Selected"
-  },
+  // {
+  //   route: "NHListItemSelected",
+  //   text: "ListItem Selected"
+  // },
   {
     route: "NHListDivider",
     text: "List Divider"
@@ -48,10 +48,10 @@ const datas = [
     route: "NHListSeparator",
     text: "List Separator"
   },
-  {
-    route: "NHListItemNoIndent",
-    text: "List NoIndent"
-  }
+  // {
+  //   route: "NHListItemNoIndent",
+  //   text: "List NoIndent"
+  // }
 ];
 
 class NHList extends Component {
