@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Image } from "react-native";
+import { Image, View } from "react-native";
 import {
   Content,
   Text,
@@ -235,12 +235,12 @@ class SideBar extends Component {
           bounces={false}
           style={{ flex: 1, backgroundColor: "#cdc4ff", top: -1 }}//#fff
         >
-          {/* <View style={{ backgroundColor: "#9C26B0" }}> */}
+          <View style={{ backgroundColor: "#9C26B0", marginBottom: 15 }}>
           {/* <View style={{ flex: 1, alignItems: "center" }}> */}
             <Thumbnail large source={drawerCover} style={styles.drawerThumbnail} />
             {/* <Image source={drawerCover} style={styles.drawerCover} /> */}
             {/* <Image square style={styles.drawerImage} source={drawerImage} /> */}
-          {/* </View> */}
+          </View>
 
           <List
             dataArray={datas}

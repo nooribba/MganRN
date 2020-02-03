@@ -36,14 +36,14 @@ const datas = [
     route: "NHListIcon",
     text: "List Icon"
   },
-  {
-    route: "NHListAvatar",
-    text: "List Avatar"
-  },
-  {
-    route: "NHListThumbnail",
-    text: "List Thumbnail"
-  },
+  // {
+  //   route: "NHListAvatar",
+  //   text: "List Avatar"
+  // },
+  // {
+  //   route: "NHListThumbnail",
+  //   text: "List Thumbnail"
+  // },
   {
     route: "NHListSeparator",
     text: "List Separator"

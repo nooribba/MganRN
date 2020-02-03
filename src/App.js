@@ -77,8 +77,8 @@ import NHListDivider from "./screens/list/list-divider";
 import NHListSeparator from "./screens/list/list-separator";
 import NHListHeader from "./screens/list/list-headers";
 import NHListIcon from "./screens/list/list-icon";
-import NHListAvatar from "./screens/list/list-avatar";
-import NHListThumbnail from "./screens/list/list-thumbnail";
+//import NHListAvatar from "./screens/list/list-avatar";
+//import //NHListThumbnail from "./screens/list/list-thumbnail";
 //import NHListItemNoIndent from "./screens/list/listitem-noIndent";
 import RegularPicker from "./screens/picker/regularPicker";
 import PickerWithIcon from "./screens/picker/picker-with-icon";
@@ -276,8 +276,8 @@ const AppNavigator = createStackNavigator(
     NHListSeparator: { screen: NHListSeparator },
     NHListHeader: { screen: NHListHeader },
     NHListIcon: { screen: NHListIcon },
-    NHListAvatar: { screen: NHListAvatar },
-    NHListThumbnail: { screen: NHListThumbnail },
+    //NHListAvatar: { screen: NHListAvatar },
+    //NHListThumbnail: { screen: NHListThumbnail },
     //NHListItemNoIndent: { screen: NHListItemNoIndent },
 
     BasicListSwipe: { screen: BasicListSwipe },

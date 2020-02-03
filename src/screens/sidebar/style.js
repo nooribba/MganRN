@@ -13,16 +13,18 @@ export default {
     marginBottom: 10
   },
   drawerThumbnail: {
-    marginTop: 10,
-    marginBottom: 10,
+    marginTop: 25,
+    marginBottom: 25,
     marginLeft : 16
   },
   drawerFoot: {
     alignSelf: "stretch",
-    height: deviceHeight / 3.7,
+    height: deviceHeight / 4.35,
     width: null,
     position: "relative",
-    marginTop: 30
+    marginTop: 100,
+    //marginLeft: 1,
+    //marginRight: 1,
   },
   drawerImage: {
     position: "absolute",

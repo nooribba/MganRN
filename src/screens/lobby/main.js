@@ -161,9 +161,9 @@ class main extends Component {
           {this.state.tab3 && <Text>Tab3 Selected</Text>}
           {this.state.tab4 && <Text>Tab4 Selected</Text>} */}
           <H3 style={{alignSelf: "center", marginTop: 8, marginBottom: 7}}>MGAN FAMILY</H3>
-          <View style={{ flex: 1, width: width, height: height - 220, backgroundColor: 'black' }} >
+          <View style={{ flex: 1, width: width, backgroundColor: 'black' }} >
             <GallerySwiper
-                  style={{ flex: 1, backgroundColor: 'black' }}
+                  style={{ flex: 1, backgroundColor: 'black', height: height / 1.3684 }}
                   images={this.state.images}
                   onEndReached={() => {
                   // add more images when scroll reaches end
