@@ -12,6 +12,18 @@ export default {
     position: "relative",
     marginBottom: 10
   },
+  drawerThumbnail: {
+    marginTop: 10,
+    marginBottom: 10,
+    marginLeft : 16
+  },
+  drawerFoot: {
+    alignSelf: "stretch",
+    height: deviceHeight / 3.7,
+    width: null,
+    position: "relative",
+    marginTop: 30
+  },
   drawerImage: {
     position: "absolute",
     left: Platform.OS === "android" ? deviceWidth / 10 : deviceWidth / 9,

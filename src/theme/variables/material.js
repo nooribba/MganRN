@@ -136,7 +136,7 @@ export default {
 
   // Footer
   footerHeight: 55,
-  footerDefaultBg: "#3F51B5",
+  footerDefaultBg: '#6E5BAA',//#3F51B5
   footerPaddingBottom: 0,
 
   // FooterTab
@@ -145,18 +145,18 @@ export default {
   activeTab: "#fff",
   sTabBarActiveTextColor: "#007aff",
   tabBarActiveTextColor: "#fff",
-  tabActiveBgColor: "#3F51B5",
+  tabActiveBgColor: '#6E5BAA',//#3F51B5
 
   // Header
   toolbarBtnColor: "#fff",
-  toolbarDefaultBg: "#3F51B5",
+  toolbarDefaultBg: '#6E5BAA',//#3F51B5
   toolbarHeight: 56,
   toolbarSearchIconSize: 23,
   toolbarInputColor: "#fff",
   searchBarHeight: platform === "ios" ? 30 : 40,
   searchBarInputHeight: platform === "ios" ? 40 : 50,
   toolbarBtnTextColor: "#fff",
-  toolbarDefaultBorder: "#3F51B5",
+  toolbarDefaultBorder: '#6E5BAA',//#3F51B5
   iosStatusbar: "light-content",
   get statusBarColor() {
     return color(this.toolbarDefaultBg)

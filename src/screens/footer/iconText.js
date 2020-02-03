@@ -103,7 +103,6 @@ class IconText extends Component {
           {this.state.tab4 && <Text>Tab4 Selected</Text>}
         </Content>
 
-
         <Footer>
           <FooterTab>
             <Button active={this.state.tab1} onPress={() => this.toggleTab1()}>

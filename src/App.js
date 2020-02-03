@@ -183,7 +183,7 @@ const Drawer = createDrawerNavigator(
   {
     initialRouteName: "Home",
     contentOptions: {
-      activeTintColor: "#e91e63"
+      activeTintColor: "#9C26B0"//#e91e63
     },
     contentComponent: props => <SideBar {...props} />
   }
@@ -191,7 +191,10 @@ const Drawer = createDrawerNavigator(
 
 const AppNavigator = createStackNavigator(
   {
+    Main: { screen: Main},
+    GlLobby: { screen: GlLobby},
     MvLobby: { screen: MvLobby},
+
     
     
     Drawer: { screen: Drawer },

@@ -136,7 +136,7 @@ export default {
 
   // Footer
   footerHeight: 55,
-  footerDefaultBg: platform === "ios" ? "#F8F8F8" : "#3F51B5",
+  footerDefaultBg: platform === "ios" ? "#F8F8F8" : '#6E5BAA',//#3F51B5
   footerPaddingBottom: 0,
 
   // FooterTab
@@ -145,11 +145,11 @@ export default {
   activeTab: platform === "ios" ? "#007aff" : "#fff",
   sTabBarActiveTextColor: "#007aff",
   tabBarActiveTextColor: platform === "ios" ? "#2874F0" : "#fff",
-  tabActiveBgColor: platform === "ios" ? "#cde1f9" : "#3F51B5",
+  tabActiveBgColor: platform === "ios" ? "#cde1f9" : '#6E5BAA',//#3F51B5
 
   // Header
   toolbarBtnColor: platform === "ios" ? "#007aff" : "#fff",
-  toolbarDefaultBg: platform === "ios" ? "#F8F8F8" : "#3F51B5",
+  toolbarDefaultBg: platform === "ios" ? "#F8F8F8" : '#6E5BAA',//#3F51B5
   toolbarHeight: platform === "ios" ? 64 : 56,
   toolbarSearchIconSize: platform === "ios" ? 20 : 23,
   toolbarInputColor: platform === "ios" ? "#CECDD2" : "#fff",
@@ -157,7 +157,7 @@ export default {
   searchBarInputHeight: platform === "ios" ? 30 : 50,
   toolbarBtnTextColor: platform === "ios" ? "#007aff" : "#fff",
   iosStatusbar: "dark-content",
-  toolbarDefaultBorder: platform === "ios" ? "#a7a6ab" : "#3F51B5",
+  toolbarDefaultBorder: platform === "ios" ? "#a7a6ab" : '#6E5BAA',//#3F51B5
   get statusBarColor() {
     return color(this.toolbarDefaultBg)
       .darken(0.2)
