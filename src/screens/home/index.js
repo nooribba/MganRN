@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ImageBackground, View, StatusBar, StyleSheet, Dimensions, Text } from "react-native";
+import { ImageBackground, ScrollView, View, StatusBar, StyleSheet, Dimensions, Text } from "react-native";
 //import { Container, Button, H3, H2, H1, Text } from "native-base";
 import { Container, Button, H3, H2, H1 } from "native-base";
 
@@ -38,7 +38,7 @@ class Home extends Component {
             <Text size={16} color='rgba(255,255,255,0.6)'>Noori  &  Family</Text>
             <View style={{ marginTop: 8 }} /> */}
           </View>
-          <View style={{ marginTop: height / 2.45, marginBottom: 5 }}>
+          <ScrollView style={{ marginTop: height / 2.455, marginBottom: 3 }}>
             <View style={{ marginTop: 4 }}>
               <Text style={{fontSize: 39, color: "white", paddingLeft: 24}}>Mikhail</Text>
             </View>
@@ -71,7 +71,7 @@ class Home extends Component {
                 저도요2
             </Button> */}
             
-          </View>
+          </ScrollView>
         </ImageBackground>
       </Container>
     );

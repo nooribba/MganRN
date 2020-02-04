@@ -8,6 +8,7 @@ import {
   Icon,
   Container,
   Left,
+  Body,
   Right,
   Thumbnail,
   Badge
@@ -18,6 +19,7 @@ import styles from "./style";
 //const drawerImage = require("../../../assets/logo-kitchen-sink.png");
 const drawerCover = require("../../../assets/images/profile.jpg");
 const drawerFoot = require("../../../assets/images/mg_thumb.jpg");
+const drawerFoot2 = require("../../../assets/images/side_foot2.jpg");
 
 const datas = [
   {
@@ -29,7 +31,7 @@ const datas = [
   {
     name: "사진첩",
     route: "GlLobby",
-    icon: "camera",
+    icon: "images",
     bg: "#477EEA"
   },
   {
@@ -235,9 +237,34 @@ class SideBar extends Component {
           bounces={false}
           style={{ flex: 1, backgroundColor: "#cdc4ff", top: -1 }}//#fff
         >
-          <View style={{ backgroundColor: "#9C26B0", marginBottom: 15 }}>
+          <View style={{ backgroundColor: "#9C26B0", marginBottom: 4 }}>
           {/* <View style={{ flex: 1, alignItems: "center" }}> */}
-            <Thumbnail large source={drawerCover} style={styles.drawerThumbnail} />
+            
+            <ListItem thumbnail noBorder style={{ marginBottom: 1, borderBottomWidth: 0, borderColor: "#cdc4ff" }}>
+              <Left style={{ flex: 0 }}>
+                <Thumbnail large source={drawerCover} style={styles.drawerThumbnail} />
+              </Left>
+              <Right style={{ flex: 1 }}>
+                <Text style={styles.headerText}>우리가족 추억공유 앱</Text>
+              </Right>
+            </ListItem>
+            
+            <View style={{marginTop: -1, top: -1}}>
+              <Badge
+                style={{
+                  borderRadius: 3,
+                  height: 25,
+                  width: 200,
+                  backgroundColor: "#EFB406",//#FF9800 #ff1f4f
+                  alignSelf: "center",
+                  marginLeft: 16,
+                  marginBottom: 10
+                }}
+              >
+                <Text style={styles.badgeText}>MGAN Family<Text style={{color: "#ff492e"}}>   3000 ♡</Text></Text>
+              </Badge>
+            </View>
+            
             {/* <Image source={drawerCover} style={styles.drawerCover} /> */}
             {/* <Image square style={styles.drawerImage} source={drawerImage} /> */}
           </View>
@@ -251,7 +278,7 @@ class SideBar extends Component {
                 onPress={() => this.props.navigation.navigate(data.route)}
                 style={{ backgroundColor: focused ? "#9C26B0" : "#cdc4ff", marginRight: 16 }}
               >
-                <Left>
+                <Left style={{ marginTop: -8, marginBottom: -9 }}>
                   <Icon
                     active
                     name={data.icon}
@@ -279,6 +306,7 @@ class SideBar extends Component {
               </ListItem>}
           />
           <Image source={drawerFoot} style={styles.drawerFoot} />
+          <Image source={drawerFoot2} style={styles.drawerFoot2} />
         </Content>
       </Container>
     );

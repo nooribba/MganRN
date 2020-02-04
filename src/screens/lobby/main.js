@@ -106,7 +106,7 @@ class main extends Component {
   get caption () {
       const { images, index } = this.state;
       return (
-          <View style={{ bottom: 0, height: 65, backgroundColor: 'rgba(0, 0, 0, 0.5)', width: '100%', position: 'absolute', justifyContent: 'center' }}>
+          <View style={{ bottom: 0, height: 62, backgroundColor: 'rgba(0, 0, 0, 0.5)', width: '100%', position: 'absolute', justifyContent: 'center' }}>
               <Text style={{ textAlign: 'center', color: 'white', fontSize: 14, fontStyle: 'italic' }}>{ (images[index] && images[index].caption) || '' } </Text>
           </View>
       );
@@ -163,7 +163,7 @@ class main extends Component {
           <H3 style={{alignSelf: "center", marginTop: 8, marginBottom: 7}}>MGAN FAMILY</H3>
           <View style={{ flex: 1, width: width, backgroundColor: 'black' }} >
             <GallerySwiper
-                  style={{ flex: 1, backgroundColor: 'black', height: height / 1.3684 }}
+                  style={{ flex: 1, backgroundColor: 'black', height: height / 1.3986 }}//1.3686
                   images={this.state.images}
                   onEndReached={() => {
                   // add more images when scroll reaches end
@@ -181,15 +181,24 @@ class main extends Component {
 
         <Footer>
           <FooterTab>
-            <Button active={this.state.tab1} onPress={() => this.toggleTab1()}>
+            <Button active={this.state.tab1} onPress={() => {
+                                                              this.toggleTab1();
+                                                              this.props.navigation.navigate('Main');
+                                                            }}>
               <Icon active={this.state.tab1} name="paw" />
               <Text>메인</Text>
             </Button>
-            <Button active={this.state.tab3} onPress={() => this.toggleTab3()}>
-              <Icon active={this.state.tab3} name="camera" />
+            <Button active={this.state.tab3} onPress={() => {
+                                                              this.toggleTab2();
+                                                              this.props.navigation.navigate('GlLobby');
+                                                            }}>
+              <Icon active={this.state.tab3} name="images" />
               <Text>사진첩</Text>
             </Button>
-            <Button active={this.state.tab2} onPress={() => this.toggleTab2()}>
+            <Button active={this.state.tab2} onPress={() => {
+                                                              this.toggleTab3();
+                                                              this.props.navigation.navigate('MvLobby');
+                                                            }}>
               <Icon active={this.state.tab2} name="logo-youtube" />
               <Text>동영상</Text>
             </Button>
@@ -234,7 +243,7 @@ class main extends Component {
               <Text>메인</Text>
             </Button>
             <Button active={this.state.tab3} onPress={() => this.toggleTab3()}>
-              <Icon active={this.state.tab3} name="camera" />
+              <Icon active={this.state.tab3} name="images" />
               <Text>사진첩</Text>
             </Button>
             <Button active={this.state.tab2} onPress={() => this.toggleTab2()}>
@@ -244,6 +253,7 @@ class main extends Component {
             <Button active={this.state.tab4} onPress={() => {
                                                               this.toggleTab4();
                                                               //this.props.navigation.navigate('IconText');
+                                                              //건강하고 행복하게
                                                             }}>
               <Icon active={this.state.tab4} name="logo-github" /> 
               <Text>Contact</Text>

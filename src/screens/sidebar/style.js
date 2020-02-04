@@ -13,16 +13,25 @@ export default {
     marginBottom: 10
   },
   drawerThumbnail: {
-    marginTop: 25,
-    marginBottom: 25,
-    marginLeft : 16
+    marginTop: 20,
+    marginBottom: 12,
+    //marginLeft : 16
   },
   drawerFoot: {
     alignSelf: "stretch",
-    height: deviceHeight / 4.35,
+    height: deviceHeight / 3.9,
     width: null,
     position: "relative",
-    marginTop: 100,
+    marginTop: 10,
+    //marginLeft: 1,
+    //marginRight: 1,
+  },
+  drawerFoot2: {
+    alignSelf: "stretch",
+    height: deviceHeight / 3.63,
+    width: null,
+    position: "relative",
+    //marginTop: 35,
     //marginLeft: 1,
     //marginRight: 1,
   },
@@ -37,12 +46,26 @@ export default {
   text: {
     fontWeight: Platform.OS === "ios" ? "500" : "400",
     fontSize: 16,
-    marginLeft: 20
+    marginLeft: 19
+  },
+  headerText: {
+    //fontWeight: Platform.OS === "ios" ? "500" : "400",
+    fontWeight: "bold",
+    fontSize: 18,
+    marginLeft: 4,
+    marginRight: 1,
+    //marginBottom: 10,
+    color: "white"
   },
   badgeText: {
-    fontSize: Platform.OS === "ios" ? 13 : 11,
-    fontWeight: "400",
+    //fontSize: Platform.OS === "ios" ? 13 : 11,
+    //fontWeight: "400",
+    fontSize: 16,
+    fontWeight: "bold",
     textAlign: "center",
-    marginTop: Platform.OS === "android" ? -3 : undefined
+    //marginLeft: 16,
+    //marginTop: Platform.OS === "android" ? -3 : undefined,
+    //marginTop: -1,
+    color: "white"
   }
 };
