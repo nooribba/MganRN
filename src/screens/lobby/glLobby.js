@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container, Header, Title, Content, Button, Footer, FooterTab, Text, Body, Left, Right, Icon, ListItem, Card, CardItem, Thumbnail } from "native-base";
-import { ScrollView, Dimensions, Image } from 'react-native';
+import { ScrollView, Dimensions, Image, TouchableWithoutFeedback } from 'react-native';
 import styles from "./styles";
 // import First from "../tab/tabOne"
 // import Second from "../tab/tabTwo"
