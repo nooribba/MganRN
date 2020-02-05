@@ -111,7 +111,7 @@ class MvTm3d extends Component {
                   onLoadStart={this.onLoadStart}
                   onFullScreen={this.state.isFullScreen}
                   ref={videoPlayer => (this.videoPlayer = videoPlayer)}
-                  //source={{ uri: "https://drive.google.com/file/d/10f9vzAZ0cWcVOhZYGJxMFHfLGInF48FT/view?usp=sharing" }}
+                  //source={{ uri: "https://drive.google.com/uc?export=download&id=1096Ymke2ZO3IZZJBGPsyJJI57nzIEJZT" }}
                   source={require('../../../../assets/images/lights.mp4')}
                   width={this.state.width}
                   height={this.state.height}
