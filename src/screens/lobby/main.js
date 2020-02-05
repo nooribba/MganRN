@@ -160,7 +160,7 @@ class main extends Component {
           {this.state.tab2 && <Text>Tab2 Selected</Text>}
           {this.state.tab3 && <Text>Tab3 Selected</Text>}
           {this.state.tab4 && <Text>Tab4 Selected</Text>} */}
-          <H3 style={{alignSelf: "center", marginTop: 8, marginBottom: 7}}>MGAN FAMILY</H3>
+          <H3 style={{alignSelf: "center", marginTop: 8, marginBottom: 7}}>LEE.KIM.RYU FAMILY</H3>
           <View style={{ flex: 1, width: width, backgroundColor: 'black' }} >
             <GallerySwiper
                   style={{ flex: 1, backgroundColor: 'black', height: height / 1.3986 }}//1.3686
@@ -182,28 +182,28 @@ class main extends Component {
         <Footer>
           <FooterTab>
             <Button active={this.state.tab1} onPress={() => {
-                                                              this.toggleTab1();
+                                                              //this.toggleTab1();
                                                               this.props.navigation.navigate('Main');
                                                             }}>
               <Icon active={this.state.tab1} name="paw" />
               <Text>메인</Text>
             </Button>
             <Button active={this.state.tab3} onPress={() => {
-                                                              this.toggleTab2();
+                                                              //this.toggleTab2();
                                                               this.props.navigation.navigate('GlLobby');
                                                             }}>
               <Icon active={this.state.tab3} name="images" />
               <Text>사진첩</Text>
             </Button>
             <Button active={this.state.tab2} onPress={() => {
-                                                              this.toggleTab3();
+                                                              //this.toggleTab3();
                                                               this.props.navigation.navigate('MvLobby');
                                                             }}>
               <Icon active={this.state.tab2} name="logo-youtube" />
               <Text>동영상</Text>
             </Button>
             <Button active={this.state.tab4} onPress={() => {
-                                                              this.toggleTab4();
+                                                              //this.toggleTab4();
                                                               //this.props.navigation.navigate('IconText');
                                                             }}>
               {/* apps paw contact logo-github */}
@@ -228,7 +228,7 @@ class main extends Component {
         </Header>
         
         <Content>
-          <H3 style={{alignSelf: "center", marginTop: 8, marginBottom: 7}}>MGAN FAMILY</H3>
+          <H3 style={{alignSelf: "center", marginTop: 8, marginBottom: 7}}>LEE.KIM.RYU FAMILY</H3>
           <View style={{ flex: 1, width: width, height: height - 220, backgroundColor: 'black' }} >
             <Animated.Image
               source={require('../../../assets/images/loading.gif')}

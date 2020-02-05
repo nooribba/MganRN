@@ -49,7 +49,7 @@ class Home extends Component {
               <Text style={{fontSize: 39, color: "white", paddingLeft: 24}}>Anthony</Text>
             </View>
             <View style={{ marginTop: 1 }}>
-              <Text style={{fontSize: 16, color: "#aba9a9", paddingLeft: 24}}>Noori  &  Family</Text>
+              <Text style={{fontSize: 16, color: "#aba9a9", paddingLeft: 24}}>  &  Family</Text>
             </View>
             {/* <Text size={16} color='rgba(255,255,255,0.6)'>Noori  &  Family</Text> */}
             <View style={{ marginTop: 17 }}>

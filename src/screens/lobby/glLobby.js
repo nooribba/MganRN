@@ -90,10 +90,10 @@ class GlLobby extends Component {
 
         <Content padder>
           <ScrollView>
-            <TouchableWithoutFeedback onPress={() => navigation.navigate('Main')}>       
+            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Main')}>       
               <Card style={styles.mb}>
                 <CardItem>
-                  <Left style={{ marginTop: -4, marginBottom: -4 }}>
+                  <Left style={styles.cardTop}>
                     <Thumbnail source={logo} />
                     <Body>
                       <Text>이태민씨 기록</Text>
@@ -114,7 +114,7 @@ class GlLobby extends Component {
                 </CardItem>
                 <CardItem style={{ paddingVertical: 0 }}>
                   <Body>
-                    <Button transparent style={{ marginTop: -16, marginBottom: -16 }}>
+                    <Button transparent style={styles.cardBottom}>
                       <Icon active name="camera" />
                       <Text>2019.09.01 ~</Text>
                     </Button>
@@ -123,10 +123,10 @@ class GlLobby extends Component {
               </Card>
             </TouchableWithoutFeedback>
             
-            <TouchableWithoutFeedback onPress={() => navigation.navigate('Main')}>       
+            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Main')}>       
               <Card style={styles.mb}>
                 <CardItem>
-                  <Left style={{ marginTop: -4, marginBottom: -4 }}>
+                  <Left style={styles.cardTop}>
                     <Thumbnail source={logo} />
                     <Body>
                       <Text>이민혁 김수진 기록</Text>
@@ -147,7 +147,7 @@ class GlLobby extends Component {
                 </CardItem>
                 <CardItem style={{ paddingVertical: 0 }}>
                   <Body>
-                    <Button transparent style={{ marginTop: -16, marginBottom: -16 }}>
+                    <Button transparent style={styles.cardBottom}>
                       <Icon active name="camera" />
                       <Text>2017.12.24 / 2018.09.16 ~</Text>
                     </Button>
@@ -156,10 +156,10 @@ class GlLobby extends Component {
               </Card>
             </TouchableWithoutFeedback>
 
-            <TouchableWithoutFeedback onPress={() => navigation.navigate('Main')}>         
+            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Main')}>         
               <Card style={styles.mb}>
                 <CardItem>
-                  <Left style={{ marginTop: -4, marginBottom: -4 }}>
+                  <Left style={styles.cardTop}>
                     <Thumbnail source={logo} />
                     <Body>
                       <Text>대전댁/바드실 기록</Text>
@@ -180,7 +180,7 @@ class GlLobby extends Component {
                 </CardItem>
                 <CardItem style={{ paddingVertical: 0 }}>
                   <Body>
-                    <Button transparent style={{ marginTop: -16, marginBottom: -16 }}>
+                    <Button transparent style={styles.cardBottom}>
                       <Icon active name="camera" />
                       <Text>1985.08.09 ~</Text>
                     </Button>
@@ -189,10 +189,10 @@ class GlLobby extends Component {
               </Card>
             </TouchableWithoutFeedback>
 
-            <TouchableWithoutFeedback onPress={() => navigation.navigate('Main')}>       
+            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Main')}>       
               <Card style={styles.mb}>
                 <CardItem>
-                  <Left style={{ marginTop: -4, marginBottom: -4 }}>
+                  <Left style={styles.cardTop}>
                     <Thumbnail source={logo} />
                     <Body>
                       <Text>음성댁 기록</Text>
@@ -213,7 +213,7 @@ class GlLobby extends Component {
                 </CardItem>
                 <CardItem style={{ paddingVertical: 0 }}>
                   <Body>
-                    <Button transparent style={{ marginTop: -16, marginBottom: -16 }}>
+                    <Button transparent style={styles.cardBottom}>
                       <Icon active name="camera" />
                       <Text>1984.09.27 ~</Text>
                     </Button>
@@ -228,28 +228,28 @@ class GlLobby extends Component {
         <Footer>
           <FooterTab>
             <Button active={this.state.tab1} onPress={() => {
-                                                              this.toggleTab1();
+                                                              //this.toggleTab1();
                                                               this.props.navigation.navigate('Main');
                                                             }}>
               <Icon active={this.state.tab1} name="paw" />
               <Text>메인</Text>
             </Button>
             <Button active={this.state.tab2} onPress={() => {
-                                                              this.toggleTab2();
+                                                              //this.toggleTab2();
                                                               this.props.navigation.navigate('GlLobby');
                                                             }}>
               <Icon active={this.state.tab2} name="images" />
               <Text>사진첩</Text>
             </Button>
             <Button active={this.state.tab3} onPress={() => {
-                                                              this.toggleTab3();
+                                                              //this.toggleTab3();
                                                               this.props.navigation.navigate('MvLobby');
                                                             }}>
               <Icon active={this.state.tab3} name="logo-youtube" />
               <Text>동영상</Text>
             </Button>
             <Button active={this.state.tab4} onPress={() => {
-                                                              this.toggleTab4();
+                                                              //this.toggleTab4();
                                                               //this.props.navigation.navigate('IconText');
                                                             }}>
               <Icon active={this.state.tab4} name="logo-github" /> 

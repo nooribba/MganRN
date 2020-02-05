@@ -22,7 +22,7 @@ export default {
     height: deviceHeight / 3.9,
     width: null,
     position: "relative",
-    marginTop: 10,
+    marginTop: 8,
     //marginLeft: 1,
     //marginRight: 1,
   },
