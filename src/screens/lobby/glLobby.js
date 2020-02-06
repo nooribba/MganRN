@@ -90,7 +90,7 @@ class GlLobby extends Component {
 
         <Content padder>
           <ScrollView>
-            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Main')}>       
+            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('GlTmList')}>       
               <Card style={styles.mb}>
                 <CardItem>
                   <Left style={styles.cardTop}>

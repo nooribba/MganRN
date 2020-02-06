@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container, Header, Title, Content, Button, Footer, FooterTab, Text, Body, Left, Right, Icon, ListItem, Card, CardItem, Thumbnail } from "native-base";
-import { ScrollView, Dimensions, Image, TouchableWithoutFeedback } from 'react-native';
+import { ScrollView, Dimensions, Image, TouchableWithoutFeedback, TouchableOpacity } from 'react-native';
 import styles from "./styles";
 // import First from "../tab/tabOne"
 // import Second from "../tab/tabTwo"
@@ -90,7 +90,7 @@ class MvLobby extends Component {
 
         <Content padder>
           <ScrollView>
-            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvTmList')}>       
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('MvTmList')}>       
               <Card style={styles.mb}>
                 <CardItem>
                   <Left style={styles.cardTop}>
@@ -121,9 +121,9 @@ class MvLobby extends Component {
                   </Body>
                 </CardItem>
               </Card>
-            </TouchableWithoutFeedback>
+            </TouchableOpacity>
             
-            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Main')}>       
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Main')}>       
               <Card style={styles.mb}>
                 <CardItem>
                   <Left style={styles.cardTop}>
@@ -154,9 +154,9 @@ class MvLobby extends Component {
                   </Body>
                 </CardItem>
               </Card>
-            </TouchableWithoutFeedback>
+            </TouchableOpacity>
 
-            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Main')}>       
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Main')}>       
               <Card style={styles.mb}>
                 <CardItem>
                   <Left style={styles.cardTop}>
@@ -187,9 +187,9 @@ class MvLobby extends Component {
                   </Body>
                 </CardItem>
               </Card>
-            </TouchableWithoutFeedback>
+            </TouchableOpacity>
 
-            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Main')}>       
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Main')}>       
               <Card style={styles.mb}>
                 <CardItem>
                   <Left style={styles.cardTop}>
@@ -220,7 +220,7 @@ class MvLobby extends Component {
                   </Body>
                 </CardItem>
               </Card>
-            </TouchableWithoutFeedback>
+            </TouchableOpacity>
           </ScrollView>
         </Content>
 

@@ -22,8 +22,8 @@ class MvTm3d extends Component {
       isFullScreen: false,
       isLoading: true,
       paused: false,
-      //playerState: PLAYER_STATES.PLAYING,
-      playerState: 0,
+      playerState: PLAYER_STATES.PLAYING,
+      //playerState: 0,
       screenType: 'cover',//cover, content
       width: Dimensions.get('window').width, 
       height: Dimensions.get('window').width / (16 / 9.5),
@@ -42,24 +42,24 @@ class MvTm3d extends Component {
   };
 
   onReplay = () => {
-    //this.setState({ playerState: PLAYER_STATES.PLAYING });
-    this.setState({ playerState: 0 });
+    this.setState({ playerState: PLAYER_STATES.PLAYING });
+    //this.setState({ playerState: 0 });
     this.videoPlayer.seek(0);
   };
 
   onProgress = data => {
     const { isLoading, playerState } = this.state;
     
-    //if (!isLoading && playerState !== PLAYER_STATES.ENDED) {
-      if (!isLoading && playerState !== 2) {
+    if (!isLoading && playerState !== PLAYER_STATES.ENDED) {
+    //if (!isLoading && playerState !== 2) {
       this.setState({ currentTime: data.currentTime });
     }
   };
 
   onLoad = data => this.setState({ duration: data.duration, isLoading: false });
   onLoadStart = data => this.setState({ isLoading: true });
-  //onEnd = () => this.setState({ playerState: PLAYER_STATES.ENDED }); //PLAYING, PAUSED, ENDED,(0,1,2)
-  onEnd = () => this.setState({ playerState: 2 });
+  onEnd = () => this.setState({ playerState: PLAYER_STATES.ENDED }); //PLAYING, PAUSED, ENDED,(0,1,2)
+  //onEnd = () => this.setState({ playerState: 2 });
   onError = () => alert('!Error>', error);
   exitFullScreen = () => {};
   enterFullScreen = () => {};

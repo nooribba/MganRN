@@ -106,7 +106,8 @@ class main extends Component {
   get caption () {
       const { images, index } = this.state;
       return (
-          <View style={{ bottom: 0, height: 62, backgroundColor: 'rgba(0, 0, 0, 0.5)', width: '100%', position: 'absolute', justifyContent: 'center' }}>
+          //<View style={{ bottom: 0, height: 75, backgroundColor: 'rgba(0, 0, 0, 0.5)', width: '100%', position: 'absolute', justifyContent: 'center' }}>
+          <View style={{ bottom: 0, height: 70, backgroundColor: 'rgba(0, 0, 0, 0.5)', width: '100%', position: 'absolute', justifyContent: 'flex-start' }}>
               <Text style={{ textAlign: 'center', color: 'white', fontSize: 14, fontStyle: 'italic' }}>{ (images[index] && images[index].caption) || '' } </Text>
           </View>
       );
@@ -163,7 +164,7 @@ class main extends Component {
           <H3 style={{alignSelf: "center", marginTop: 8, marginBottom: 7}}>LEE.KIM.RYU FAMILY</H3>
           <View style={{ flex: 1, width: width, backgroundColor: 'black' }} >
             <GallerySwiper
-                  style={{ flex: 1, backgroundColor: 'black', height: height / 1.3986 }}//1.3686
+                  style={{ flex: 1, backgroundColor: 'black', height: height / 1.3686 }}//1.3686 1.3986
                   images={this.state.images}
                   onEndReached={() => {
                   // add more images when scroll reaches end
