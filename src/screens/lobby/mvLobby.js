@@ -88,7 +88,7 @@ class MvLobby extends Component {
           <Right />
         </Header>
 
-        <Content padder>
+        <Content padder style={{ backgroundColor: "#cdc4ff" }}>
           <ScrollView>
             <TouchableOpacity onPress={() => this.props.navigation.navigate('MvTmList')}>       
               <Card style={styles.mb}>
@@ -106,7 +106,7 @@ class MvLobby extends Component {
                     style={{
                       resizeMode: "cover",
                       width: null,
-                      height: 190,
+                      height: 200,
                       flex: 1
                     }}
                     source={tmImage}

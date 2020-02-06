@@ -27,7 +27,7 @@ class main extends Component {
       index: 0,
       images: [
         {
-            caption: '행복한 우리가족의 일상을 기록하고 추억하기 위한 개인사용 목적 앱 입니다. 즐겁게 감상해 주시기 바랍니다 :) \n어떠한 의견도 항상 열려 있습니다. (프로필 > Contact)',
+            caption: '행복한 우리가족의 일상을 기록하고 추억하기 위한 개인사용 목적 앱 입니다. 즐겁게 감상해 주시기 바랍니다 :)',
             source: require('../../../assets/images/home_1.jpg'),
             dimensions: { width: 2400, height: 1800}, /* 540 720 */
         }
@@ -107,7 +107,7 @@ class main extends Component {
       const { images, index } = this.state;
       return (
           //<View style={{ bottom: 0, height: 75, backgroundColor: 'rgba(0, 0, 0, 0.5)', width: '100%', position: 'absolute', justifyContent: 'center' }}>
-          <View style={{ bottom: 0, height: 68, backgroundColor: 'rgba(0, 0, 0, 0.5)', width: '100%', position: 'absolute', justifyContent: 'flex-start' }}>
+          <View style={{ bottom: 0, height: 55, backgroundColor: 'rgba(0, 0, 0, 0.5)', width: '100%', position: 'absolute', justifyContent: 'flex-start' }}>
               <Text style={{ textAlign: 'center', color: 'white', fontSize: 14, fontStyle: 'italic' }}>{ (images[index] && images[index].caption) || '' } </Text>
           </View>
       );
@@ -229,7 +229,7 @@ class main extends Component {
         </Header>
         
         <Content>
-          <H3 style={{alignSelf: "center", marginTop: 8, marginBottom: 7}}>LEE.KIM.RYU FAMILY</H3>
+          <H3 style={{alignSelf: "center", marginTop: 9, marginBottom: 7}}>LEE.KIM.RYU FAMILY</H3>
           <View style={{ flex: 1, width: width, height: height - 220, backgroundColor: 'black' }} >
             <Image
               source={require('../../../assets/images/loading.gif')}

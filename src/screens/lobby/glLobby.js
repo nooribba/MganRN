@@ -88,7 +88,7 @@ class GlLobby extends Component {
           <Right />
         </Header>
 
-        <Content padder>
+        <Content padder style={{ backgroundColor: "#cdc4ff" }}>
           <ScrollView>
             <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('GlTmList')}>       
               <Card style={styles.mb}>
@@ -106,7 +106,7 @@ class GlLobby extends Component {
                     style={{
                       resizeMode: "cover",
                       width: null,
-                      height: 190,
+                      height: 200,
                       flex: 1
                     }}
                     source={tmImage}

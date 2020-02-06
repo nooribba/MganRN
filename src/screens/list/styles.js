@@ -1,9 +1,9 @@
 export default {
   container: {
-    backgroundColor: "#905bc2" //#FFF #795baa #815bb3 #905bc2
+    backgroundColor: "#cdc4ff" //#FFF #795baa #815bb3 #905bc2 #cdc4ff
   },
   text: {
-    color: "#FFF",
+    //color: "#FFF",
     alignSelf: "center",
     // marginBottom: 7
   },

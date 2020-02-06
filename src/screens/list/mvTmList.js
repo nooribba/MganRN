@@ -119,7 +119,7 @@ class MvTmList extends Component {
               {/* <ListItem style={{alignContent:'space-between'}}> */}
                 <Left>
                   <ImageBackground source={dolImgs[0].thumbUrl} style={styles.imageTopLeft}> 
-                    <View><Text style={styles.text}>ㅂㅂ</Text></View>
+                    <View><Text style={styles.textThumb}>ㅂㅂ</Text></View>
                   </ImageBackground>
                 </Left>
                 <Body />
@@ -137,19 +137,19 @@ class MvTmList extends Component {
                 </Left>
                 <Body>
                   <ImageBackground source={dolImgs[0].thumbUrl} style={styles.imageContainerRight}>
-                    <View><Text style={styles.text}>가운데</Text></View>
+                    <View><Text style={styles.textThumb}>가운데</Text></View>
                   </ImageBackground>
                 </Body>
               </ListItem>
               <ListItem last style={{alignContent:'stretch'}}>
                 <Left>
                   <ImageBackground source={dolImgs[1].thumbUrl} style={styles.imageBottomLeft}>
-                    <View><Text style={styles.text}>ㄱ</Text></View>
+                    <View><Text style={styles.textThumb}>ㄱ</Text></View>
                   </ImageBackground>
                 </Left>
                 <Body>
                   <ImageBackground source={dolImgs[3].thumbUrl} style={styles.imageBottomRight}>
-                    <View><Text style={styles.text}>ㅊㅊ</Text></View>
+                    <View><Text style={styles.textThumb}>ㅊㅊ</Text></View>
                   </ImageBackground>
                 </Body>
               </ListItem>

@@ -56,7 +56,7 @@ class GlTmList extends Component {
               {/* <Card style={styles.mb10}> */}
               <Card>
                 <CardItem style={{ justifyContent: 'center' }}>
-                  <Body style={{ marginTop: -11, marginBottom: -11}}>
+                  <Body style={{ marginTop: -13, marginBottom: -13 }}>
                     <ImageBackground
                       source={yearThumb}
                       style={[styles.imageBlock, { width: width - 27, height: 220 }]}
@@ -76,7 +76,7 @@ class GlTmList extends Component {
             <TouchableOpacity onPress={() => this.props.navigation.navigate('GlLobby')}>
               <Card>
                 <CardItem style={{ justifyContent: 'center' }}>
-                  <Body style={{ marginTop: -11, marginBottom: -11}}>
+                  <Body style={{ marginTop: -13, marginBottom: -13}}>
                     <ImageBackground
                       source={hundredThumb}
                       style={[styles.imageBlock, { width: width - 27, height: 220 }]}
@@ -94,7 +94,7 @@ class GlTmList extends Component {
             <TouchableOpacity onPress={() => this.props.navigation.navigate('GlLobby')}>
               <Card>
                 <CardItem style={{ justifyContent: 'center' }}>
-                  <Body style={{ marginTop: -11, marginBottom: -11}}>
+                  <Body style={{ marginTop: -13, marginBottom: -13}}>
                     <ImageBackground
                       source={fiftyThumb}
                       style={[styles.imageBlock, { width: width - 27, height: 220 }]}
@@ -112,7 +112,7 @@ class GlTmList extends Component {
             <TouchableOpacity onPress={() => this.props.navigation.navigate('GlLobby')}>
               <Card>
                 <CardItem style={{ justifyContent: 'center' }}>
-                  <Body style={{ marginTop: -11, marginBottom: -11}}>
+                  <Body style={{ marginTop: -13, marginBottom: -13}}>
                     <ImageBackground
                       source={bornThumb}
                       style={[styles.imageBlock, { width: width - 27, height: 220 }]}
