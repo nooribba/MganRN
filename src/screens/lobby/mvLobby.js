@@ -106,7 +106,7 @@ class MvLobby extends Component {
                     style={{
                       resizeMode: "cover",
                       width: null,
-                      height: 200,
+                      height: 190,
                       flex: 1
                     }}
                     source={tmImage}

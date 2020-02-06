@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container, Header, Title, Content, Button, Footer, FooterTab, Text, Body, Left, Right, Icon, List, ListItem, Card, CardItem, Thumbnail } from "native-base";
-import { ScrollView, View, Dimensions, Image, TouchableWithoutFeedback, TouchableOpacity, ImageBackground } from 'react-native';
+import { ScrollView, View, Dimensions, Image, Animated, TouchableWithoutFeedback, TouchableOpacity, ImageBackground } from 'react-native';
 import axios from "axios";
 import styles from "./styles";
 // import First from "../tab/tabOne"
@@ -222,64 +222,13 @@ class MvTmList extends Component {
           </Right>
         </Header>
 
-        <Content padder>
-          <ScrollView>
-            {/* <List style={{marginTop: -3, marginBottom: -3}}> */}
-              <ListItem itemDivider style={styles.listDivider}>
-                <Text>돌</Text>
-              </ListItem>
-              <ListItem>
-                <Left>
-                  <Thumbnail square source={logo} style={styles.listThumb} />
-                  <Text style={styles.text}>최근 위로 10</Text>
-                </Left>
-              </ListItem>
-              <ListItem last>
-                <Left>
-                  <Thumbnail square source={logo} style={styles.listThumb} />
-                  <Text>99</Text>
-                </Left>
-              </ListItem>
-              
-              <ListItem itemDivider style={styles.listDivider}>
-                <Text>100일</Text>
-              </ListItem>
-              <ListItem>
-                <Text>88</Text>
-              </ListItem>
-              <ListItem>
-                <Text>7777</Text>
-              </ListItem>
-              <ListItem last>
-                <Text>6666</Text>
-              </ListItem>
-
-              <ListItem itemDivider style={styles.listDivider}>
-                <Text>조리원</Text>
-              </ListItem>
-              <ListItem>
-                <Text>555</Text>
-              </ListItem>
-              <ListItem>
-                <Text>444444</Text>
-              </ListItem>
-              <ListItem last>
-                <Text>3333333</Text>
-              </ListItem>
-
-              <ListItem itemDivider style={styles.listDivider}>
-                <Text>출생</Text>
-              </ListItem>
-              <ListItem>
-                <Text>22</Text>
-              </ListItem>
-              <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvTm3d')}>   
-                <ListItem last>
-                  <Text>3D 초음파</Text>
-                </ListItem>
-              </TouchableWithoutFeedback>
-            {/* </List> */}
-          </ScrollView>
+        <Content>
+          <View style={{ flex: 1, width: width, height: height - 170, backgroundColor: 'black' }} >
+            <Animated.Image
+              source={require('../../../assets/images/loading.gif')}
+              style={{ height: height*0.55, width: width, zIndex: 1 }}
+            />
+          </View>
         </Content>
 
         <Footer>

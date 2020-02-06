@@ -34,7 +34,7 @@ export default {
   imageTopLeft: {
     flex: 1,
     width: null,
-    height: 88,
+    height: 92,
     marginTop: -2,
     marginBottom: -5,
     marginRight: 5,
@@ -43,7 +43,7 @@ export default {
   imageTopRight: {
     flex: 1,
     width: null,
-    height: 88,
+    height: 92,
     marginTop: -2,
     marginBottom: -5,
     marginLeft: 5,
@@ -52,7 +52,7 @@ export default {
   imageBottomLeft: {
     flex: 1,
     width: null,
-    height: 88,
+    height: 92,
     marginTop: -5,
     marginBottom: -2,
     marginRight: 5,
@@ -61,7 +61,7 @@ export default {
   imageBottomRight: {
     flex: 1,
     width: null,
-    height: 88,
+    height: 92,
     marginTop: -5,
     marginBottom: -2,
     marginLeft: 5,
@@ -70,7 +70,7 @@ export default {
   imageContainerLeft: {
     flex: 1,
     width: null,
-    height: 88,
+    height: 92,
     marginTop: -5,
     marginBottom: -5,
     marginRight: 5,
@@ -79,7 +79,7 @@ export default {
   imageContainerRight: {
     flex: 1,
     width: null,
-    height: 88,
+    height: 92,
     marginTop: -5,
     marginBottom: -5,
     marginLeft: 5,

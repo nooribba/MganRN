@@ -56,13 +56,13 @@ class GlTmList extends Component {
               {/* <Card style={styles.mb10}> */}
               <Card>
                 <CardItem style={{ justifyContent: 'center' }}>
-                  <Body style={{ marginTop: -5, marginBottom: -5}}>
+                  <Body style={{ marginTop: -11, marginBottom: -11}}>
                     <ImageBackground
                       source={yearThumb}
-                      style={[styles.imageBlock, { width: width - 20, height: 250 }]}
+                      style={[styles.imageBlock, { width: width - 27, height: 220 }]}
                       //style={[styles.imageBlock, { width: width - (16 * 2), height: 252 }]}
                       //imageStyle={{ width: width - (16 * 2), height: 240 }}
-                      imageStyle={{ width: width - 16, height: 230 }}
+                      imageStyle={{ width: width - 27, height: 220 }}
                       >
                       <View style={styles.categoryTitle}>
                         <Text style={styles.textThumb}>이태민</Text>
@@ -76,11 +76,11 @@ class GlTmList extends Component {
             <TouchableOpacity onPress={() => this.props.navigation.navigate('GlLobby')}>
               <Card>
                 <CardItem style={{ justifyContent: 'center' }}>
-                  <Body>
+                  <Body style={{ marginTop: -11, marginBottom: -11}}>
                     <ImageBackground
                       source={hundredThumb}
-                      style={[styles.imageBlock, { width: width - (16 * 2), height: 230 }]}
-                      imageStyle={{ width: width - 16, height: 230 }}
+                      style={[styles.imageBlock, { width: width - 27, height: 220 }]}
+                      imageStyle={{ width: width - 27, height: 220 }}
                       >
                       <View style={styles.categoryTitle}>
                         <Text style={styles.textThumb}>이태민</Text>
@@ -93,12 +93,12 @@ class GlTmList extends Component {
             </TouchableOpacity>
             <TouchableOpacity onPress={() => this.props.navigation.navigate('GlLobby')}>
               <Card>
-                <CardItem>
-                  <Body>
+                <CardItem style={{ justifyContent: 'center' }}>
+                  <Body style={{ marginTop: -11, marginBottom: -11}}>
                     <ImageBackground
                       source={fiftyThumb}
-                      style={[styles.imageBlock, { width: width - 16, height: 230 }]}
-                      imageStyle={{ width: width - 16, height: 230 }}
+                      style={[styles.imageBlock, { width: width - 27, height: 220 }]}
+                      imageStyle={{ width: width - 27, height: 220 }}
                       >
                       <View style={styles.categoryTitle}>
                         <Text style={styles.textThumb}>이태민</Text>
@@ -111,12 +111,12 @@ class GlTmList extends Component {
             </TouchableOpacity>
             <TouchableOpacity onPress={() => this.props.navigation.navigate('GlLobby')}>
               <Card>
-                <CardItem>
-                  <Body>
+                <CardItem style={{ justifyContent: 'center' }}>
+                  <Body style={{ marginTop: -11, marginBottom: -11}}>
                     <ImageBackground
                       source={bornThumb}
-                      style={[styles.imageBlock, { width: width, height: 230 }]}
-                      imageStyle={{ width: width, height: 230 }}
+                      style={[styles.imageBlock, { width: width - 27, height: 220 }]}
+                      imageStyle={{ width: width - 27, height: 220 }}
                       >
                       <View style={styles.categoryTitle}>
                         <Text style={styles.textThumb}>이태민</Text>

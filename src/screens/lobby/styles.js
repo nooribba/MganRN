@@ -11,14 +11,14 @@ export default {
     marginBottom: 7
   },
   mb: {
-    marginBottom: 15
+    marginBottom: 10
   },
   cardTop: {
-    marginTop: -8, 
-    marginBottom: -8
+    marginTop: -11, 
+    marginBottom: -11
   },
   cardBottom: {
-    marginTop: -18, 
-    marginBottom: -18
+    marginTop: -21, 
+    marginBottom: -21
   },
 };
