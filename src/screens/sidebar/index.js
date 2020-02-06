@@ -66,7 +66,7 @@ class SideBar extends Component {
           bounces={false}
           style={{ flex: 1, backgroundColor: "#cdc4ff", top: -1 }}//#fff
         >
-          <View style={{ backgroundColor: "#9C26B0", marginBottom: 4 }}>
+          <View style={{ backgroundColor: "#9C26B0", marginBottom: 8 }}>
           {/* <View style={{ flex: 1, alignItems: "center" }}> */}
             
             <ListItem thumbnail noBorder style={{ marginBottom: 1, borderBottomWidth: 0, borderColor: "#cdc4ff" }}>
@@ -107,11 +107,11 @@ class SideBar extends Component {
                 onPress={() => this.props.navigation.navigate(data.route)}
                 style={{ backgroundColor: focused ? "#9C26B0" : "#cdc4ff", marginRight: 16 }}
               >
-                <Left style={{ marginTop: -8, marginBottom: -9 }}>
+                <Left style={{ marginTop: -7, marginBottom: -8 }}>
                   <Icon
                     active
                     name={data.icon}
-                    style={{ color: focused ? "#fff" : "#777", fontSize: 26, width: 30 }}
+                    style={{ color: focused ? "#fff" : "#777", fontSize: 27, width: 30 }}
                   />
                   <Text style={styles.text}>
                     {data.name}

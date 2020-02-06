@@ -87,19 +87,19 @@ class MvTmList extends Component {
               <ListItem itemDivider>
                 <Text style={styles.listDivider}>돌</Text>
               </ListItem>
-              <ListItem>
+              <ListItem style={{ borderBottomColor: '#738786' }}>
                 <Left>
                   <Thumbnail square source={dolImgs[0].thumbUrl} style={styles.listThumb} />
                   <Text style={styles.text}>최근 위로 0</Text>
                 </Left>
               </ListItem>
-              <ListItem>
+              <ListItem style={{ borderBottomColor: '#738786' }}>
                 <Left>
                   <Thumbnail square source={dolImgs[1].thumbUrl} style={styles.listThumb} />
                   <Text style={styles.text}>최근 위로 1</Text>
                 </Left>
               </ListItem>
-              <ListItem>
+              <ListItem style={{ borderBottomColor: '#738786' }}>
                 <Left>
                   <Thumbnail square source={dolImgs[2].thumbUrl} style={styles.listThumb} />
                   <Text style={styles.text}>최근 위로 2</Text>
@@ -115,7 +115,7 @@ class MvTmList extends Component {
               <ListItem itemDivider>
                 <Text style={styles.listDivider}>100일</Text>
               </ListItem>
-              <ListItem style={{alignContent:'stretch'}}>
+              <ListItem style={{alignContent:'stretch', borderBottomColor: '#738786'}}>
               {/* <ListItem style={{alignContent:'space-between'}}> */}
                 <Left>
                   <ImageBackground source={dolImgs[0].thumbUrl} style={styles.imageTopLeft}> 
@@ -129,7 +129,7 @@ class MvTmList extends Component {
                   </ImageBackground>
                 </Body> */}
               </ListItem>
-              <ListItem style={{alignContent:'stretch'}}>
+              <ListItem style={{alignContent:'stretch', borderBottomColor: '#738786'}}>
                 <Left>
                   <ImageBackground source={dolImgs[1].thumbUrl} style={styles.imageContainerLeft}>
                     <View><Text> </Text></View>
@@ -154,14 +154,13 @@ class MvTmList extends Component {
                 </Body>
               </ListItem>
               
-
               <ListItem itemDivider>
                 <Text style={styles.listDivider}>조리원</Text>
               </ListItem>
-              <ListItem>
+              <ListItem style={{ borderBottomColor: '#738786' }}>
                 <Text style={styles.text}>555</Text>
               </ListItem>
-              <ListItem>
+              <ListItem style={{ borderBottomColor: '#738786' }}>
                 <Text style={styles.text}>444444</Text>
               </ListItem>
               <ListItem last>
@@ -171,7 +170,7 @@ class MvTmList extends Component {
               <ListItem itemDivider>
                 <Text style={styles.listDivider}>출생</Text>
               </ListItem>
-              <ListItem>
+              <ListItem style={{ borderBottomColor: '#738786' }}>
                 <Text style={styles.text}>22</Text>
               </ListItem>
               <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvTm3d')}>   

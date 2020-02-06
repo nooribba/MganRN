@@ -22,7 +22,7 @@ export default {
     height: deviceHeight / 4.1,
     width: null,
     position: "relative",
-    marginTop: 10,
+    marginTop: 18,
     //marginLeft: 1,
     //marginRight: 1,
   },
@@ -45,7 +45,7 @@ export default {
   },
   text: {
     fontWeight: Platform.OS === "ios" ? "500" : "400",
-    fontSize: 16,
+    fontSize: 17,
     marginLeft: 19
   },
   headerText: {
