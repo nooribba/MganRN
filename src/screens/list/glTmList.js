@@ -109,7 +109,7 @@ class GlTmList extends Component {
                 </CardItem>
               </Card>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => this.props.navigation.navigate('GlLobby')}>
+            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('TmGallery',{glTitle:'본아트', glCaption:'이태민 본아트', glUrl:'https://google-photos-album-demo.glitch.me/9VEAacUd6HmvYQdj6'})}>
               <Card>
                 <CardItem style={{ justifyContent: 'center' }}>
                   <Body style={{ marginTop: -13, marginBottom: -13}}>
@@ -126,7 +126,7 @@ class GlTmList extends Component {
                   </Body>
                 </CardItem>
               </Card>
-            </TouchableOpacity>
+            </TouchableWithoutFeedback>
           </ScrollView>
         </Content>
 

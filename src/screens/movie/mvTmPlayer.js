@@ -114,7 +114,7 @@ class MvTmPlayer extends Component {
               {/* <View style={{ flex: 1, height: height / 1.3986}}> */}
               <View style={{ flex: 1, height: height / 1.3686}}>
                 <Video
-                  volume={1.0}
+                  volume={3.0}
                   resizeMode={this.state.screenType}
                   onEnd={this.onEnd}
                   onLoad={this.onLoad}
