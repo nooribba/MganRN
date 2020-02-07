@@ -7,8 +7,15 @@ import MediaControls, { PLAYER_STATES } from "@freakycoder/react-native-media-co
 import styles from "./styles";
 
 const { width, height } = Dimensions.get('screen');
+//const mvTitle = this.props.navigation.getParam('mvTitle');
+//const mvUrl = this.props.navigation.getParam('mvUrl');
 
-class MvTm3d extends Component {
+
+// function mvTmPlayer({mvTitle}) {
+//   return(mvTitle)
+// }
+
+class MvTmPlayer extends Component {
   videoPlayer;
   constructor(props) {
     super(props);
@@ -25,8 +32,12 @@ class MvTm3d extends Component {
       playerState: PLAYER_STATES.PLAYING,
       //playerState: 0,
       screenType: 'cover',//cover, content
-      width: Dimensions.get('window').width, 
-      height: Dimensions.get('window').width / (16 / 9.5),
+      width: Dimensions.get('screen').width,  //window
+      height: Dimensions.get('screen').width / (16 / 9.5),
+      //mvTitle: mvTmPlayer,
+      //mvTitle: '이태민씨 영상',
+      mvTitle: this.props.navigation.getParam('mvTitle'),
+      mvUrl: this.props.navigation.getParam('mvUrl'),
     };
   }
   
@@ -73,7 +84,7 @@ class MvTm3d extends Component {
   };
   renderToolbar = () => (
     <View style={styles.toolbar}>
-      <Text>커스텀 툴바 영역 </Text>
+      <Text>즐거운 감상 되세요♡</Text>
     </View>
   );
   onSeeking = currentTime => this.setState({ currentTime });
@@ -88,13 +99,14 @@ class MvTm3d extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>3D 초음파</Title>
+            <Title>{this.state.mvTitle}</Title>
+            {/* <Title>이태민씨 영상</Title> */}
           </Body>
           <Right/>
         </Header>
 
         <StatusBar barStyle="dark-content" />
-        <Content padder>
+        <Content padder style={{ backgroundColor: "#cdc4ff" }}>
           <SafeAreaView>
             <ScrollView
               contentInsetAdjustmentBehavior="automatic"
@@ -113,7 +125,8 @@ class MvTm3d extends Component {
                   onFullScreen={this.state.isFullScreen}
                   ref={videoPlayer => (this.videoPlayer = videoPlayer)}
                   //source={{ uri: "https://drive.google.com/uc?export=download&id=1096Ymke2ZO3IZZJBGPsyJJI57nzIEJZT" }}
-                  source={require('../../../../assets/images/lights.mp4')}
+                  //source={require('../../../assets/images/lights.mp4')}
+                  source={{ uri: this.state.mvUrl }}
                   width={this.state.width}
                   height={this.state.height}
                 />
@@ -172,4 +185,4 @@ class MvTm3d extends Component {
   }
 }
 
-export default MvTm3d;
+export default MvTmPlayer;

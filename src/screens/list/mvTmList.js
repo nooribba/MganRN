@@ -3,6 +3,9 @@ import { Container, Header, Title, Content, Button, Footer, FooterTab, Text, Bod
 import { ScrollView, View, Dimensions, Image, Animated, TouchableWithoutFeedback, TouchableOpacity, ImageBackground } from 'react-native';
 import axios from "axios";
 import styles from "./styles";
+//import { NavigationContainer } from '@react-navigation/native';
+//import MvTmPlayer from "../movie/mvTmPlayer";
+
 // import First from "../tab/tabOne"
 // import Second from "../tab/tabTwo"
 //import { Block, Button, Text, theme } from 'galio-framework';
@@ -90,94 +93,84 @@ class MvTmList extends Component {
               <ListItem style={{ borderBottomColor: '#738786' }}>
                 <Left>
                   <Thumbnail square source={dolImgs[0].thumbUrl} style={styles.listThumb} />
-                  <Text style={styles.text}>최근 위로 0</Text>
-                </Left>
-              </ListItem>
-              <ListItem style={{ borderBottomColor: '#738786' }}>
-                <Left>
-                  <Thumbnail square source={dolImgs[1].thumbUrl} style={styles.listThumb} />
-                  <Text style={styles.text}>최근 위로 1</Text>
-                </Left>
-              </ListItem>
-              <ListItem style={{ borderBottomColor: '#738786' }}>
-                <Left>
-                  <Thumbnail square source={dolImgs[2].thumbUrl} style={styles.listThumb} />
-                  <Text style={styles.text}>최근 위로 2</Text>
+                  <Text style={styles.text}>100일 아래 썸네일 방식으로 할 예정</Text>
                 </Left>
               </ListItem>
               <ListItem last>
                 <Left>
                   <Thumbnail square large source={dolImgs[3].thumbUrl} style={styles.listThumb} />
-                  <Text style={styles.text}>최근 위로 3</Text>
+                  <Text style={styles.text}>이것도 비교 참고용</Text>
                 </Left>
               </ListItem>
               
               <ListItem itemDivider>
                 <Text style={styles.listDivider}>100일</Text>
               </ListItem>
-              <ListItem style={{alignContent:'stretch', borderBottomColor: '#738786'}}>
-              {/* <ListItem style={{alignContent:'space-between'}}> */}
-                <Left>
-                  <ImageBackground source={dolImgs[0].thumbUrl} style={styles.imageTopLeft}> 
-                    <View><Text style={styles.textThumb}>ㅂㅂ</Text></View>
-                  </ImageBackground>
-                </Left>
-                <Body />
-                {/* <Body>
-                  <ImageBackground source={dolImgs[1].thumbUrl} style={styles.imageTopRight}>
-                    <View><Text>ㅇ</Text></View>
-                  </ImageBackground>
-                </Body> */}
+                  <ListItem style={{alignContent:'stretch', borderBottomColor: '#738786'}}>
+                  {/* <ListItem style={{alignContent:'space-between'}}> */}
+                    <Left>
+                      <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvTmPlayer',{mvTitle:'세로 테스트', mvUrl:'https://drive.google.com/uc?export=download&id=1-WlKIutQD65PbTSf0VqjrC6AUOjo7bJW'})}>   
+                        <ImageBackground source={dolImgs[0].thumbUrl} style={styles.imageTopLeft}> 
+                          <View><Text style={styles.textThumb}>세로 테스트</Text></View>
+                        </ImageBackground>
+                      </TouchableWithoutFeedback>
+                    </Left>
+                    <Body />
+                  </ListItem>
+                  <ListItem style={{alignContent:'stretch', borderBottomColor: '#738786'}}>
+                    <Left>
+                      <ImageBackground source={dolImgs[1].thumbUrl} style={styles.imageContainerLeft}>
+                        <View><Text> </Text></View>
+                      </ImageBackground>
+                    </Left>
+                    <Body>
+                      <ImageBackground source={dolImgs[0].thumbUrl} style={styles.imageContainerRight}>
+                        <View><Text style={styles.textThumb}>가운데</Text></View>
+                      </ImageBackground>
+                    </Body>
+                  </ListItem>
+                  <ListItem last style={{alignContent:'stretch'}}>
+                    <Left>
+                      <ImageBackground source={dolImgs[2].thumbUrl} style={styles.imageBottomLeft}>
+                        <View><Text style={styles.textThumb}>썸네일 설명</Text></View>
+                      </ImageBackground>
+                    </Left>
+                    <Body>
+                      <ImageBackground source={dolImgs[3].thumbUrl} style={styles.imageBottomRight}>
+                        <View><Text style={styles.textThumb}>설명222</Text></View>
+                      </ImageBackground>
+                    </Body>
+                  </ListItem>
+
+              <ListItem itemDivider>
+                <Text style={styles.listDivider}>50일</Text>
               </ListItem>
-              <ListItem style={{alignContent:'stretch', borderBottomColor: '#738786'}}>
-                <Left>
-                  <ImageBackground source={dolImgs[1].thumbUrl} style={styles.imageContainerLeft}>
-                    <View><Text> </Text></View>
-                  </ImageBackground>
-                </Left>
-                <Body>
-                  <ImageBackground source={dolImgs[0].thumbUrl} style={styles.imageContainerRight}>
-                    <View><Text style={styles.textThumb}>가운데</Text></View>
-                  </ImageBackground>
-                </Body>
-              </ListItem>
-              <ListItem last style={{alignContent:'stretch'}}>
-                <Left>
-                  <ImageBackground source={dolImgs[1].thumbUrl} style={styles.imageBottomLeft}>
-                    <View><Text style={styles.textThumb}>ㄱ</Text></View>
-                  </ImageBackground>
-                </Left>
-                <Body>
-                  <ImageBackground source={dolImgs[3].thumbUrl} style={styles.imageBottomRight}>
-                    <View><Text style={styles.textThumb}>ㅊㅊ</Text></View>
-                  </ImageBackground>
-                </Body>
-              </ListItem>
+                  <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvTmPlayer',{mvTitle:'50일 파스텔', mvUrl:'https://drive.google.com/uc?export=download&id=1096Ymke2ZO3IZZJBGPsyJJI57nzIEJZT'})}>   
+                    <ListItem last>
+                      <Text style={styles.text}>50일 촬영(파스텔)</Text>
+                    </ListItem>
+                  </TouchableWithoutFeedback>
               
               <ListItem itemDivider>
                 <Text style={styles.listDivider}>조리원</Text>
               </ListItem>
-              <ListItem style={{ borderBottomColor: '#738786' }}>
-                <Text style={styles.text}>555</Text>
-              </ListItem>
-              <ListItem style={{ borderBottomColor: '#738786' }}>
-                <Text style={styles.text}>444444</Text>
-              </ListItem>
-              <ListItem last>
-                <Text style={styles.text}>3333333</Text>
-              </ListItem>
-
+                  <ListItem last>
+                    <Text style={styles.text}>100일의 첫번째, 50일, 고리만 터치가능</Text>
+                  </ListItem>
+                  
               <ListItem itemDivider>
                 <Text style={styles.listDivider}>출생</Text>
               </ListItem>
-              <ListItem style={{ borderBottomColor: '#738786' }}>
-                <Text style={styles.text}>22</Text>
-              </ListItem>
-              <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvTm3d')}>   
-                <ListItem last>
-                  <Text style={styles.text}>3D 초음파</Text>
-                </ListItem>
-              </TouchableWithoutFeedback>
+                  <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvTmPlayer',{mvTitle:'테스트', mvUrl:'https://drive.google.com/uc?export=download&id=1_uush4RWqeLW2UQT-LxB9FeuZMOnaRTU'})}>   
+                    <ListItem style={{ borderBottomColor: '#738786' }}>
+                      <Text style={styles.text}>고리합창단 테스트</Text>
+                    </ListItem>
+                  </TouchableWithoutFeedback>
+                  {/* <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvTmPlayer',{mvTitle:'세로 테스트', mvUrl:'https://drive.google.com/uc?export=download&id=1-WlKIutQD65PbTSf0VqjrC6AUOjo7bJW'})}>    */}
+                    <ListItem last>
+                      <Text style={styles.text}>3D 초음파(세로테스트)</Text>
+                    </ListItem>
+                  {/* </TouchableWithoutFeedback> */}
             {/* </List> */}
           </ScrollView>
         </Content>

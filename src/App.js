@@ -2,13 +2,15 @@ import React from "react";
 import { Root } from "native-base";
 // import { StackNavigator, DrawerNavigator } from "react-navigation";
 import { createDrawerNavigator, createStackNavigator, createAppContainer } from "react-navigation";
+//import { createDrawerNavigator } from '@react-navigation/drawer';
+//import { createStackNavigator, createAppContainer } from "react-navigation";
 
 
 import Main from "./screens/lobby/main";
 import MvLobby from "./screens/lobby/mvLobby";
 import GlLobby from "./screens/lobby/glLobby";
 import MvTmList from "./screens/list/mvTmList";
-import MvTm3d from "./screens/movie/tm/mvTm3d";
+import MvTmPlayer from "./screens/movie/mvTmPlayer";
 import GlTmList from "./screens/list/glTmList";
 
 
@@ -200,7 +202,7 @@ const AppNavigator = createStackNavigator(
     GlLobby: { screen: GlLobby},
     MvLobby: { screen: MvLobby},
     MvTmList: {screen: MvTmList},
-    MvTm3d: {screen: MvTm3d},
+    MvTmPlayer: {screen: MvTmPlayer},
     GlTmList: {screen: GlTmList},
 
     
