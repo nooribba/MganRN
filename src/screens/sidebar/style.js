@@ -53,7 +53,7 @@ export default {
     fontWeight: "bold",
     fontSize: 20,
     marginLeft: 1,
-    marginRight: 5,
+    marginRight: 9,
     //marginBottom: 10,
     color: "white"
   },

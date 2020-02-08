@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { ImageBackground, ScrollView, View, StatusBar, StyleSheet, Dimensions, Text } from "react-native";
 //import { Container, Button, H3, H2, H1, Text } from "native-base";
 import { Container, Button, H3, H2, H1 } from "native-base";
-
+import SplashScreen from 'react-native-splash-screen'
 import styles from "./styles";
 
 //const launchscreenBg = require("../../../assets/launchscreen-bg.png");
@@ -11,6 +11,14 @@ const launchscreenBg = require("../../../assets/images/onboarding.jpg");
 const { width, height } = Dimensions.get('screen');
 
 class Home extends Component {
+  //componentDidMount() {
+  componentWillMount() {
+    //SplashScreen.hide();
+    setTimeout(() => {
+      SplashScreen.hide();
+    }, 1000);
+  }  
+  
   render() {
     //const { navigation } = this.props;
     return (

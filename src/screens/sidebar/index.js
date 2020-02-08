@@ -75,7 +75,7 @@ class SideBar extends Component {
                 <Thumbnail large source={drawerCover} style={styles.drawerThumbnail} />
               </Left>
               <Right style={{ flex: 1 }}>
-                <Text style={styles.headerText}>우리가족 추억공유 앱</Text>
+                <Text style={styles.headerText}>우리가족 추억기록</Text>
               </Right>
             </ListItem>
             
@@ -120,8 +120,9 @@ class SideBar extends Component {
                     {data.name}
                   </Text>
                 </Left>
-                <Right>
-                  <Icon active name="play" style={{ color: "#e32e2b", marginLeft: 3 }} />
+                <Right style={{ marginLeft: 3 }}>
+                  <Icon active name="play" style={{ color: "#e32e2b" }} />
+                  {/* <Text style={{ color: "#e32e2b" }}> > </Text> */}
                 </Right>
                 {/* {data.types &&
                   <Right style={{ flex: 1 }}>

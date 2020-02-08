@@ -106,7 +106,7 @@ class GlLobby extends Component {
                     style={{
                       resizeMode: "cover",
                       width: null,
-                      height: 200,
+                      height: 205,
                       flex: 1
                     }}
                     source={tmImage}
@@ -139,7 +139,7 @@ class GlLobby extends Component {
                     style={{
                       resizeMode: "cover",
                       width: null,
-                      height: 200,
+                      height: 205,
                       flex: 1
                     }}
                     source={mgImage}
@@ -172,7 +172,7 @@ class GlLobby extends Component {
                     style={{
                       resizeMode: "cover",
                       width: null,
-                      height: 200,
+                      height: 205,
                       flex: 1
                     }}
                     source={djImage}
@@ -205,7 +205,7 @@ class GlLobby extends Component {
                     style={{
                       resizeMode: "cover",
                       width: null,
-                      height: 200,
+                      height: 205,
                       flex: 1
                     }}
                     source={usImage}
