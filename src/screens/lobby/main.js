@@ -107,8 +107,8 @@ class main extends Component {
       const { images, index } = this.state;
       return (
           //<View style={{ bottom: 0, height: 75, backgroundColor: 'rgba(0, 0, 0, 0.5)', width: '100%', position: 'absolute', justifyContent: 'center' }}>
-          <View style={{ bottom: 0, height: 55, backgroundColor: 'rgba(0, 0, 0, 0.5)', width: '100%', position: 'absolute', justifyContent: 'flex-start' }}>
-              <Text style={{ textAlign: 'center', color: 'white', fontSize: 14, fontStyle: 'italic' }}>{ (images[index] && images[index].caption) || '' } </Text>
+          <View style={{ bottom: 0, height: 55, backgroundColor: 'rgba(0, 0, 0, 0.6)', width: '100%', position: 'absolute', justifyContent: 'flex-start' }}>
+              <Text style={{ textAlign: 'center', color: 'white', fontSize: 15, fontStyle: 'italic' }}>{ (images[index] && images[index].caption) || '' } </Text>
           </View>
       );
   }
@@ -116,7 +116,7 @@ class main extends Component {
   get galleryCount () {
       const { index, images } = this.state;
       return (
-          <View style={{ top: 0, height: 32, backgroundColor: 'rgba(0, 0, 0, 0.5)', width: '100%', position: 'absolute', justifyContent: 'center' }}>
+          <View style={{ top: 0, height: 32, backgroundColor: 'rgba(0, 0, 0, 0.6)', width: '100%', position: 'absolute', justifyContent: 'center' }}>
               <Text style={{ textAlign: 'right', color: 'white', fontSize: 15, fontStyle: 'italic', paddingRight: '10%' }}>{ index + 1 } / { images.length }</Text>
           </View>
       );
@@ -189,18 +189,18 @@ class main extends Component {
               <Icon active={this.state.tab1} name="paw" />
               <Text>메인</Text>
             </Button>
-            <Button active={this.state.tab3} onPress={() => {
+            <Button active={this.state.tab2} onPress={() => {
                                                               //this.toggleTab2();
                                                               this.props.navigation.navigate('GlLobby');
                                                             }}>
-              <Icon active={this.state.tab3} name="images" />
+              <Icon active={this.state.tab2} name="images" />
               <Text>사진첩</Text>
             </Button>
-            <Button active={this.state.tab2} onPress={() => {
+            <Button active={this.state.tab3} onPress={() => {
                                                               //this.toggleTab3();
                                                               this.props.navigation.navigate('MvLobby');
                                                             }}>
-              <Icon active={this.state.tab2} name="logo-youtube" />
+              <Icon active={this.state.tab3} name="logo-youtube" />
               <Text>동영상</Text>
             </Button>
             <Button active={this.state.tab4} onPress={() => {
@@ -243,12 +243,12 @@ class main extends Component {
               <Icon active={this.state.tab1} name="paw" />
               <Text>메인</Text>
             </Button>
-            <Button active={this.state.tab3} onPress={() => {this.props.navigation.navigate('GlLobby');}}>
-              <Icon active={this.state.tab3} name="images" />
+            <Button active={this.state.tab2} onPress={() => {this.props.navigation.navigate('GlLobby');}}>
+              <Icon active={this.state.tab2} name="images" />
               <Text>사진첩</Text>
             </Button>
-            <Button active={this.state.tab2} onPress={() => {this.props.navigation.navigate('MvLobby');}}>
-              <Icon active={this.state.tab2} name="logo-youtube" />
+            <Button active={this.state.tab3} onPress={() => {this.props.navigation.navigate('MvLobby');}}>
+              <Icon active={this.state.tab3} name="logo-youtube" />
               <Text>동영상</Text>
             </Button>
             <Button active={this.state.tab4} onPress={() => {

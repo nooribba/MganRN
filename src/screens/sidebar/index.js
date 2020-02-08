@@ -13,6 +13,7 @@ import {
   Thumbnail,
   Badge
 } from "native-base";
+import { withNavigationFocus } from 'react-navigation';
 import styles from "./style";
 
 //const drawerCover = require("../../../assets/drawer-cover.png");
@@ -66,7 +67,7 @@ class SideBar extends Component {
           bounces={false}
           style={{ flex: 1, backgroundColor: "#cdc4ff", top: -1 }}//#fff
         >
-          <View style={{ backgroundColor: "#9C26B0", marginBottom: 8 }}>
+          <View style={{ backgroundColor: "#9C26B0", marginBottom: 10 }}>
           {/* <View style={{ flex: 1, alignItems: "center" }}> */}
             
             <ListItem thumbnail noBorder style={{ marginBottom: 1, borderBottomWidth: 0, borderColor: "#cdc4ff" }}>
@@ -83,14 +84,14 @@ class SideBar extends Component {
                 style={{
                   borderRadius: 3,
                   height: 25,
-                  width: 200,
+                  width: 210,
                   backgroundColor: "#EFB406",//#FF9800 #ff1f4f
                   alignSelf: "center",
-                  marginLeft: 16,
+                  marginLeft: 14,
                   marginBottom: 10
                 }}
               >
-                <Text style={styles.badgeText}>L.K.R Family<Text style={{color: "#ff492e"}}>   3000 ♡</Text></Text>
+                <Text style={styles.badgeText}>L.K.R Family<Text style={{color: "#fa3a1e"}}>   3000 ♡</Text></Text>
               </Badge>
             </View>
             
@@ -105,19 +106,24 @@ class SideBar extends Component {
                 button
                 noBorder
                 onPress={() => this.props.navigation.navigate(data.route)}
-                style={{ backgroundColor: focused ? "#9C26B0" : "#cdc4ff", marginRight: 16 }}
+                style={{ marginRight: 16 }}
               >
-                <Left style={{ marginTop: -7, marginBottom: -8 }}>
+                {/* <Left style={{ marginTop: -6, marginBottom: -7, backgroundColor: this.props.isFocused ? "#9C26B0" : "#cdc4ff", }}> */}
+                <Left style={{ marginTop: -6, marginBottom: -7,}}>  
                   <Icon
                     active
                     name={data.icon}
-                    style={{ color: focused ? "#fff" : "#777", fontSize: 27, width: 30 }}
+                    //style={{ color: this.props.isFocused ? "#fff" : "#777", fontSize: 28, width: 30 }}
+                    style={{ color: "#d91714", fontSize: 28, width: 30 }}
                   />
-                  <Text style={styles.text}>
+                  <Text style={ styles.text }>
                     {data.name}
                   </Text>
                 </Left>
-                {data.types &&
+                <Right>
+                  <Icon active name="play" style={{ color: "#e32e2b", marginLeft: 3 }} />
+                </Right>
+                {/* {data.types &&
                   <Right style={{ flex: 1 }}>
                     <Badge
                       style={{
@@ -131,7 +137,7 @@ class SideBar extends Component {
                         style={styles.badgeText}
                       >{`${data.types} Types`}</Text>
                     </Badge>
-                  </Right>}
+                  </Right>} */}
               </ListItem>}
           />
           <Image source={drawerFoot} style={styles.drawerFoot} />
@@ -142,4 +148,4 @@ class SideBar extends Component {
   }
 }
 
-export default SideBar;
+export default withNavigationFocus(SideBar);

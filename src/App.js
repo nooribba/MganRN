@@ -1,5 +1,6 @@
 import React from "react";
 import { Root } from "native-base";
+import {Dimensions} from 'react-native';
 // import { StackNavigator, DrawerNavigator } from "react-navigation";
 import { createDrawerNavigator, createStackNavigator, createAppContainer } from "react-navigation";
 //import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -153,6 +154,7 @@ import Actionsheet from "./screens/actionsheet";
 import NHAccordion from "./screens/accordion/";
 import NHDatePicker from "./screens/datepicker/";
 
+const width = Dimensions.get("screen").width;
 const Drawer = createDrawerNavigator(
   {
     Main: {screen: Main},
@@ -193,8 +195,25 @@ const Drawer = createDrawerNavigator(
   {
     initialRouteName: "Home",
     contentOptions: {
-      activeTintColor: "#9C26B0"//#e91e63
+      activeTintColor: "#9C26B0",//#e91e63
+      tintColor: "#9C26B0",
+      headerTintColor: "#9C26B0",
+      activeBackgroundColor: '#9C26B0',
+      // activeBackgroundColor: 'transparent',
+      // inactiveTintColor: '#c5e6fc',
+      // inactiveBackgroundColor: 'transparent',
     },
+    tabBarOptions: { 
+      activeTintColor:'#9C26B0', 
+      tintColor: "#9C26B0",
+      headerTintColor: "#9C26B0",
+    },
+    // style:{
+    //   drawer: {width:width*0.9, shadowColor: '#000000', shadowOpacity: 0.5, shadowRadius: 3},
+    //   main: {paddingLeft: 3}
+    // },
+    drawerWidth: width*0.8,
+    overlayColor : "rgba(0,0,0,0.7)",
     contentComponent: props => <SideBar {...props} />
   }
 );

@@ -33,16 +33,16 @@ class TmGallery extends Component {
   async componentDidMount() {
     const glCaption = this.props.navigation.getParam('glCaption');
     const glUrl = this.props.navigation.getParam('glUrl');
-    const response = await axios.get(
-      "https://google-photos-album-demo.glitch.me/9VEAacUd6HmvYQdj6"
-    );
-    //const response = await axios.get({glUrl});
+    // const response = await axios.get(
+    //   "https://google-photos-album-demo.glitch.me/9VEAacUd6HmvYQdj6"
+    // );
+    const response = await axios.get(`${glUrl}`);
     if (response && response.data && response.data.length > 0) {
       this.setState({
         images: response.data.map(url => ({
           source: {uri: `${url}`},
-          //caption: {glCaption},
-          caption: '이태민 본아트',
+          caption: `${glCaption}`,
+          //caption: '이태민 본아트',
           dimensions: { width: 2400, height: 1800},
         }))
       });
@@ -64,8 +64,8 @@ class TmGallery extends Component {
   get caption () {
       const { images, index } = this.state;
       return (
-          <View style={{ bottom: 0, height: 55, backgroundColor: 'rgba(0, 0, 0, 0.5)', width: '100%', position: 'absolute', justifyContent: 'flex-start' }}>
-              <Text style={{ textAlign: 'center', color: 'white', fontSize: 14, fontStyle: 'italic' }}>{ (images[index] && images[index].caption) || '' } </Text>
+          <View style={{ bottom: 0, height: 55, backgroundColor: 'rgba(0, 0, 0, 0.6)', width: '100%', position: 'absolute', justifyContent: 'flex-start' }}>
+              <Text style={{ textAlign: 'center', color: 'white', fontSize: 15, fontStyle: 'italic' }}>{ (images[index] && images[index].caption) || '' } </Text>
           </View>
       );
   }
@@ -73,7 +73,7 @@ class TmGallery extends Component {
   get galleryCount () {
       const { index, images } = this.state;
       return (
-          <View style={{ top: 0, height: 32, backgroundColor: 'rgba(0, 0, 0, 0.5)', width: '100%', position: 'absolute', justifyContent: 'center' }}>
+          <View style={{ top: 0, height: 32, backgroundColor: 'rgba(0, 0, 0, 0.6)', width: '100%', position: 'absolute', justifyContent: 'center' }}>
               <Text style={{ textAlign: 'right', color: 'white', fontSize: 15, fontStyle: 'italic', paddingRight: '10%' }}>{ index + 1 } / { images.length }</Text>
           </View>
       );
@@ -88,8 +88,8 @@ class TmGallery extends Component {
       <Container style={styles.container}>
         <Header>
           <Left>
-            <Button transparent onPress={() => this.props.navigation.openDrawer()}>
-              <Icon name="menu" />
+            <Button transparent onPress={() => this.props.navigation.goBack()}>
+              <Icon name="arrow-back" />
             </Button>
           </Left>
           <Body>
@@ -101,7 +101,7 @@ class TmGallery extends Component {
         <Content>
           <View style={{ flex: 1, width: width, backgroundColor: 'black' }} >
             <GallerySwiper
-                  style={{ flex: 1, backgroundColor: 'black', height: height / 1.3486 }}//1.3686 1.3986
+                  style={{ flex: 1, backgroundColor: 'black', height: height / 1.269 }}//1.3686 1.3986
                   //style={{ flex: 1, backgroundColor: 'black' }}//1.3686 1.3986
                   images={images}
                   onEndReached={() => {}}
@@ -121,12 +121,12 @@ class TmGallery extends Component {
               <Icon active={this.state.tab1} name="paw" />
               <Text>메인</Text>
             </Button>
-            <Button active={this.state.tab3} onPress={() => {this.props.navigation.navigate('GlLobby')}}>
-              <Icon active={this.state.tab3} name="images" />
+            <Button active={this.state.tab2} onPress={() => {this.props.navigation.navigate('GlLobby')}}>
+              <Icon active={this.state.tab2} name="images" />
               <Text>사진첩</Text>
             </Button>
-            <Button active={this.state.tab2} onPress={() => {this.props.navigation.navigate('MvLobby')}}>
-              <Icon active={this.state.tab2} name="logo-youtube" />
+            <Button active={this.state.tab3} onPress={() => {this.props.navigation.navigate('MvLobby')}}>
+              <Icon active={this.state.tab3} name="logo-youtube" />
               <Text>동영상</Text>
             </Button>
             <Button active={this.state.tab4} onPress={() => {}}>
@@ -140,8 +140,8 @@ class TmGallery extends Component {
       <Container style={styles.container}>
         <Header>
           <Left>
-            <Button transparent onPress={() => this.props.navigation.openDrawer()}>
-              <Icon name="menu" />
+            <Button transparent onPress={() => this.props.navigation.goBack()}>
+              <Icon name="arrow-back" />
             </Button>
           </Left>
           <Body>
