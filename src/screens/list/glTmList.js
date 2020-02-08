@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container, Header, Title, Content, Button, Footer, FooterTab, Text, Body, Left, Right, Icon, List, ListItem, Card, CardItem, Thumbnail } from "native-base";
-import { ScrollView, View, Dimensions, Image, TouchableWithoutFeedback, TouchableOpacity, ImageBackground } from 'react-native';
+import { ScrollView, View, Dimensions, Image, TouchableWithoutFeedback, TouchableOpacity, TouchableHighlight, ImageBackground } from 'react-native';
 import axios from "axios";
 import styles from "./styles";
 // import First from "../tab/tabOne"
@@ -91,7 +91,7 @@ class GlTmList extends Component {
                 </CardItem>
               </Card>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => this.props.navigation.navigate('GlLobby')}>
+            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('GlLobby')}>
               <Card>
                 <CardItem style={{ justifyContent: 'center' }}>
                   <Body style={{ marginTop: -13, marginBottom: -13}}>
@@ -108,8 +108,8 @@ class GlTmList extends Component {
                   </Body>
                 </CardItem>
               </Card>
-            </TouchableOpacity>
-            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('TmGallery',{glTitle:'본아트', glCaption:'이태민 본아트', glUrl:'https://google-photos-album-demo.glitch.me/9VEAacUd6HmvYQdj6'})}>
+            </TouchableWithoutFeedback> 
+            <TouchableHighlight onPress={() => this.props.navigation.navigate('TmGallery',{glTitle:'본아트', glCaption:'이태민 본아트', glUrl:'https://google-photos-album-demo.glitch.me/9VEAacUd6HmvYQdj6'})}>
               <Card>
                 <CardItem style={{ justifyContent: 'center' }}>
                   <Body style={{ marginTop: -13, marginBottom: -13}}>
@@ -126,7 +126,7 @@ class GlTmList extends Component {
                   </Body>
                 </CardItem>
               </Card>
-            </TouchableWithoutFeedback>
+            </TouchableHighlight>
           </ScrollView>
         </Content>
 
