@@ -29,25 +29,25 @@ const datas = [
     name: "메인",
     route: "Main",
     icon: "paw",
-    bg: "#B89EF5"
+    //bg: "#B89EF5"
   },
   {
     name: "사진첩",
     route: "GlLobby",
     icon: "images",
-    bg: "#477EEA"
+    //bg: "#477EEA"
   },
   {
     name: "동영상",
     route: "MvLobby",
     icon: "logo-youtube",
-    bg: "#BE6F50"
+    //bg: "#BE6F50"
   },
   {
     name: "Contact",
-    route: "GlTmList",
+    route: "Contact",
     icon: "logo-github",
-    bg: "#EB6B23"
+    //bg: "#EB6B23"
   },
  
 ];
@@ -86,7 +86,8 @@ class SideBar extends Component {
           bounces={false}
           style={{ flex: 1, backgroundColor: "#cdc4ff", top: -1 }}//#fff
         >
-          <View style={{ backgroundColor: "#9C26B0", marginBottom: 10 }}>
+          {/* #722480 #00BCD4 #4CAF50 #57d5ff #FF6F61 */}
+          <View style={{ backgroundColor: "#722480", marginBottom: 10 }}>
           {/* <View style={{ flex: 1, alignItems: "center" }}> */}
             
             <ListItem thumbnail noBorder style={{ marginBottom: 1, borderBottomWidth: 0, borderColor: "#cdc4ff" }}>
@@ -109,13 +110,13 @@ class SideBar extends Component {
                   borderRadius: 3,
                   height: 25,
                   width: 210,
-                  backgroundColor: "#EFB406",//#FF9800 #ff1f4f
+                  backgroundColor: "#FF6F61",//#EFB406 #FF9800 #ff1f4f #ff3700 #db000b
                   alignSelf: "center",
                   marginLeft: 14,
                   marginBottom: 10
                 }}
               >
-                <Text style={styles.badgeText}>L.K.R Family<Text style={{color: "#fa3a1e"}}>   3000 ♡</Text></Text>
+                <Text style={styles.badgeText}>L.K.R Family<Text style={{color: "#a10008"}}>   3000 ♡</Text></Text>
               </Badge>
             </View>
             
