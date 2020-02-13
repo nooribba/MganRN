@@ -24,7 +24,6 @@ class MvLobby extends Component {
     };
   }
   toggleTab1() {
-    console.info('tab1');
     this.setState({
       tab1: true,
       tab2: false,
@@ -33,7 +32,6 @@ class MvLobby extends Component {
     });
   }
   toggleTab2() {
-    console.info('tab2');
     this.setState({
       tab1: false,
       tab2: true,
@@ -42,7 +40,6 @@ class MvLobby extends Component {
     });
   }
   toggleTab3() {
-    console.info('tab3');
     this.setState({
       tab1: false,
       tab2: false,
@@ -51,7 +48,6 @@ class MvLobby extends Component {
     });
   }
   toggleTab4() {
-    console.info('tab4');
     this.setState({
       tab1: false,
       tab2: false,

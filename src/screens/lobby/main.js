@@ -4,6 +4,7 @@ import { StyleSheet, Dimensions, ScrollView, View, StatusBar, ImageBackground, I
 import GallerySwiper from "react-native-gallery-swiper";
 import { Container, Header, Title, Content, Button, Footer, FooterTab, Text, H3, Body, Left, Right, Icon, ListItem } from "native-base";
 import styles from "./styles";
+//import { DrawerActions } from 'react-navigation';
 // import First from "../tab/tabOne"
 // import Second from "../tab/tabTwo"
 //import { Block, Button, Text, theme } from 'galio-framework';
@@ -144,7 +145,17 @@ class main extends Component {
       <Container style={styles.container}>
         <Header>
           <Left>
-            <Button transparent onPress={() => this.props.navigation.openDrawer()}>
+            <Button transparent onPress={() => {
+                                                  // const jumpToAction = DrawerActions.jumpTo('SideBar', { dName: 'Main' });
+                                                  // this.props.navigation.dispatch(jumpToAction);
+                                                  //this.props.navigation.navigate({ key: '39487234985723498572354', params: { dVal: '이거?'}});
+                                                  //this.props.navigation.setParams({ dNameVal: '이게 나와줘야..' });
+                                                  //this.props.navigation.push('SideBar', { dNameVal: 'Main!!' })
+                                                  this.props.navigation.openDrawer();
+                                                  //this.props.navigation.navigate('SideBar', { dNameVal: 'Main!!' })
+                                                  //this.props.navigation.openDrawer(null, { dNameVal: 'Main!!' });
+                                                  //this.props.navigation.navigate('DrawerOpen', { dNameVal: 'Main!!' })
+                                              }}>
               <Icon name="menu" />
             </Button>
           </Left>
@@ -191,7 +202,7 @@ class main extends Component {
             </Button>
             <Button active={this.state.tab2} onPress={() => {
                                                               //this.toggleTab2();
-                                                              this.props.navigation.navigate('GlLobby');
+                                                              this.props.navigation.navigate('GlLobby', {dName:'GlLobby'});
                                                             }}>
               <Icon active={this.state.tab2} name="images" />
               <Text>사진첩</Text>

@@ -46,7 +46,7 @@ export default {
   text: {
     fontWeight: Platform.OS === "ios" ? "500" : "400",
     fontSize: 17,
-    marginLeft: 19
+    marginLeft: 20
   },
   headerText: {
     //fontWeight: Platform.OS === "ios" ? "500" : "400",

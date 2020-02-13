@@ -6,6 +6,7 @@ import {
   List,
   ListItem,
   Icon,
+  //Ionicons,
   Container,
   Left,
   Body,
@@ -14,6 +15,7 @@ import {
   Badge
 } from "native-base";
 import { withNavigationFocus } from 'react-navigation';
+//import { Vicon } from "react-native-vector-icons";
 import styles from "./style";
 
 //const drawerCover = require("../../../assets/drawer-cover.png");
@@ -43,7 +45,7 @@ const datas = [
   },
   {
     name: "Contact",
-    route: "MvLobby",
+    route: "GlTmList",
     icon: "logo-github",
     bg: "#EB6B23"
   },
@@ -55,12 +57,29 @@ class SideBar extends Component {
     super(props);
     this.state = {
       shadowOffsetWidth: 1,
-      shadowRadius: 4
+      shadowRadius: 4,
+      dName: 'Main',
+      dNameVal: this.props.navigation.getParam('dNameVal'),
     };
   }
 
+//   componentWillReceiveProps = (props) => {
+//     if(!props.navigation.state.isDrawerOpen){
+//       console.info('####### props:'+props);
+//       this.state = {
+//         testTxt: props
+//       };
+//     }
+// }
+
   render() {
     const { focused } = this.props;
+    //const dNameParam = this.props.navigation.getParam('dName');
+    //const dVal = this.props.navigation.getParam('dVal');
+    //const pathAndParams = this.props.navigation.router.getPathAndParamsForState(this.props.navigation.state) || {}
+    //const activePath = pathAndParams.path
+    const backScreen = this.props.activeItemKey;
+
     return (
       <Container>
         <Content
@@ -76,6 +95,11 @@ class SideBar extends Component {
               </Left>
               <Right style={{ flex: 1 }}>
                 <Text style={styles.headerText}>우리가족 추억기록</Text>
+                {/* <Text style={styles.headerText}>{this.state.dNameVal}</Text> */}
+                {/* <Text style={styles.headerText}>{this.props.activeItemKey}</Text> */}
+                {/* <Text style={styles.headerText}>{activePath}</Text> */}
+                {/* this.props.navigator.getScreen() */}
+                {/* <Text style={styles.headerText}>{this.state.dNameVal}</Text><Text style={styles.headerText}>{dVal}</Text> */}
               </Right>
             </ListItem>
             
@@ -105,23 +129,28 @@ class SideBar extends Component {
               <ListItem
                 button
                 noBorder
-                onPress={() => this.props.navigation.navigate(data.route)}
-                style={{ marginRight: 16 }}
+                onPress={() => {
+                                this.setState({dName: data.route});
+                                this.props.navigation.navigate(data.route)}
+                              }
+                style={{ marginRight: 16, backgroundColor: data.route == backScreen ? "#9C26B0" : "#cdc4ff", borderRadius: 3, }}
               >
                 {/* <Left style={{ marginTop: -6, marginBottom: -7, backgroundColor: this.props.isFocused ? "#9C26B0" : "#cdc4ff", }}> */}
-                <Left style={{ marginTop: -6, marginBottom: -7,}}>  
+                {/* <Left style={{ marginTop: -6, marginBottom: -7,}}>   */}
+                <Left style={{ marginTop: -6, marginBottom: -6, }}>
                   <Icon
                     active
                     name={data.icon}
                     //style={{ color: this.props.isFocused ? "#fff" : "#777", fontSize: 28, width: 30 }}
-                    style={{ color: "#d91714", fontSize: 28, width: 30 }}
+                    style={{ color: data.route == backScreen ? "#f8fc08" : "#d91714", fontSize: 28, width: 30, marginLeft: 6 }}
                   />
-                  <Text style={ styles.text }>
+                  <Text style={ styles.text, [{color: data.route == backScreen ? "#fff" : "#000", fontWeight: data.route == backScreen ? "bold" : "normal" }] }>
                     {data.name}
                   </Text>
                 </Left>
-                <Right style={{ marginLeft: 3 }}>
-                  <Icon active name="play" style={{ color: "#e32e2b" }} />
+                <Right style={{ marginLeft: 3, marginRight: 2 }}>
+                  <Icon active name="play" style={{ color: data.route == backScreen ? "#f8fc08" : "#e32e2b" }} />
+                  {/* <Ionicons name="chevron-forward-outline" style={{ color: data.route == this.state.dName ? "#f8fc08" : "#e32e2b" }} /> */}
                   {/* <Text style={{ color: "#e32e2b" }}> > </Text> */}
                 </Right>
                 {/* {data.types &&

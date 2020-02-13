@@ -16,7 +16,7 @@ class Home extends Component {
     //SplashScreen.hide();
     setTimeout(() => {
       SplashScreen.hide();
-    }, 1000);
+    }, 1200);
   }  
   
   render() {

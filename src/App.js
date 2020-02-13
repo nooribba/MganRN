@@ -157,11 +157,15 @@ import NHDatePicker from "./screens/datepicker/";
 const width = Dimensions.get("screen").width;
 const Drawer = createDrawerNavigator(
   {
-    Main: {screen: Main},
+    Main: {
+            screen: Main,
+            params: { dNameVal : 'Main!' }
+          },
     MvLobby: {screen: MvLobby},
     GlLobby: {screen: GlLobby},
     MvTmList: {screen: MvTmList},
     GlTmList: {screen: GlTmList},
+    SideBar: {screen: SideBar},
 
     
     Home: { screen: Home },
@@ -208,6 +212,7 @@ const Drawer = createDrawerNavigator(
       tintColor: "#9C26B0",
       headerTintColor: "#9C26B0",
     },
+    headerTintColor: "#9C26B0",
     // style:{
     //   drawer: {width:width*0.9, shadowColor: '#000000', shadowOpacity: 0.5, shadowRadius: 3},
     //   main: {paddingLeft: 3}
@@ -215,6 +220,7 @@ const Drawer = createDrawerNavigator(
     drawerWidth: width*0.8,
     overlayColor : "rgba(0,0,0,0.7)",
     contentComponent: props => <SideBar {...props} />
+    // contentComponent: props => <SideBar {...props} dName={} />
   }
 );
 
@@ -227,6 +233,7 @@ const AppNavigator = createStackNavigator(
     MvTmPlayer: {screen: MvTmPlayer},
     GlTmList: {screen: GlTmList},
     TmGallery: {screen: TmGallery},
+    SideBar: {screen: SideBar},
 
     
     
