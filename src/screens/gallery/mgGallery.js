@@ -7,7 +7,7 @@ import styles from "./styles";
 
 const { width, height } = Dimensions.get('screen');
 
-class TmGallery extends Component {
+class MgGallery extends Component {
   state = {
     index: 0,
     images: null,
@@ -173,4 +173,4 @@ class TmGallery extends Component {
   }
 }
 
-export default TmGallery;
+export default MgGallery;

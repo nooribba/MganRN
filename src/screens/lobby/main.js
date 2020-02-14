@@ -1,13 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { StyleSheet, Dimensions, ScrollView, View, StatusBar, ImageBackground, Image, Animated } from 'react-native';
+import { Dimensions, View, Image } from 'react-native';
 import GallerySwiper from "react-native-gallery-swiper";
-import { Container, Header, Title, Content, Button, Footer, FooterTab, Text, H3, Body, Left, Right, Icon, ListItem } from "native-base";
+import { Container, Header, Title, Content, Button, Footer, FooterTab, Text, H3, Body, Left, Right, Icon } from "native-base";
 import styles from "./styles";
-//import { DrawerActions } from 'react-navigation';
-// import First from "../tab/tabOne"
-// import Second from "../tab/tabTwo"
-//import { Block, Button, Text, theme } from 'galio-framework';
 
 const { width, height } = Dimensions.get('screen');
 
@@ -36,43 +32,7 @@ class main extends Component {
     };
     this.onChangeImage = this.onChangeImage.bind(this);
   }
-  toggleTab1() {
-    console.info('tab1');
-    this.setState({
-      tab1: true,
-      tab2: false,
-      tab3: false,
-      tab4: false
-    });
-  }
-  toggleTab2() {
-    console.info('tab2');
-    this.setState({
-      tab1: false,
-      tab2: true,
-      tab3: false,
-      tab4: false
-    });
-  }
-  toggleTab3() {
-    console.info('tab3');
-    this.setState({
-      tab1: false,
-      tab2: false,
-      tab3: true,
-      tab4: false
-    });
-  }
-  toggleTab4() {
-    console.info('tab4');
-    this.setState({
-      tab1: false,
-      tab2: false,
-      tab3: false,
-      tab4: true
-    });
-  }
-
+ 
   async componentDidMount() {
     const response = await axios.get(
       "https://google-photos-album-demo.glitch.me/BmxoTb4CUc4DJzBN7"/*z12jt3XBTStgzNmY8*/
@@ -107,7 +67,6 @@ class main extends Component {
   get caption () {
       const { images, index } = this.state;
       return (
-          //<View style={{ bottom: 0, height: 75, backgroundColor: 'rgba(0, 0, 0, 0.5)', width: '100%', position: 'absolute', justifyContent: 'center' }}>
           <View style={{ bottom: 0, height: 55, backgroundColor: 'rgba(0, 0, 0, 0.6)', width: '100%', position: 'absolute', justifyContent: 'flex-start' }}>
               <Text style={{ textAlign: 'center', color: 'white', fontSize: 15, fontStyle: 'italic' }}>{ (images[index] && images[index].caption) || '' } </Text>
           </View>
@@ -125,37 +84,13 @@ class main extends Component {
 
 
   render() {
-    // let AppComponent = null;
-    // if (this.state.tab1) {
-    //   console.info('tab1 render');
-    //   AppComponent = First;
-    // } else if(this.state.tab2) {
-    //   console.info('tab2 render');
-    //   AppComponent = Second;
-    // } else if(this.state.tab3) {
-    //   console.info('tab3 render');
-    //   AppComponent = First;
-    // } else {
-    //   console.info('tab4 render');
-    //   AppComponent = Second;
-    // }
     const { imgs } = this.state;
     return (
       imgs ?
       <Container style={styles.container}>
         <Header>
           <Left>
-            <Button transparent onPress={() => {
-                                                  // const jumpToAction = DrawerActions.jumpTo('SideBar', { dName: 'Main' });
-                                                  // this.props.navigation.dispatch(jumpToAction);
-                                                  //this.props.navigation.navigate({ key: '39487234985723498572354', params: { dVal: '이거?'}});
-                                                  //this.props.navigation.setParams({ dNameVal: '이게 나와줘야..' });
-                                                  //this.props.navigation.push('SideBar', { dNameVal: 'Main!!' })
-                                                  this.props.navigation.openDrawer();
-                                                  //this.props.navigation.navigate('SideBar', { dNameVal: 'Main!!' })
-                                                  //this.props.navigation.openDrawer(null, { dNameVal: 'Main!!' });
-                                                  //this.props.navigation.navigate('DrawerOpen', { dNameVal: 'Main!!' })
-                                              }}>
+            <Button transparent onPress={() => {this.props.navigation.openDrawer();}}>
               <Icon name="menu" />
             </Button>
           </Left>
@@ -165,21 +100,13 @@ class main extends Component {
           <Right />
         </Header>
         
-        {/* <Content padder /> */}
         <Content>
-          {/* {AppComponent} */}
-          {/* {this.state.tab1 && <Text>Tab1 Selected</Text>}
-          {this.state.tab2 && <Text>Tab2 Selected</Text>}
-          {this.state.tab3 && <Text>Tab3 Selected</Text>}
-          {this.state.tab4 && <Text>Tab4 Selected</Text>} */}
           <H3 style={{alignSelf: "center", marginTop: 8, marginBottom: 7}}>LEE.KIM.RYU FAMILY</H3>
           <View style={{ flex: 1, width: width, backgroundColor: 'black' }} >
             <GallerySwiper
                   style={{ flex: 1, backgroundColor: 'black', height: height / 1.3486 }}//1.3686 1.3986
                   images={this.state.images}
-                  onEndReached={() => {
-                  // add more images when scroll reaches end
-                  }}
+                  onEndReached={() => {}}
                   initialPage={0}
                   errorComponent={this.renderError}
                   onPageSelected={this.onChangeImage}
@@ -190,35 +117,21 @@ class main extends Component {
           </View>
         </Content>
 
-
         <Footer>
           <FooterTab>
-            <Button active={this.state.tab1} onPress={() => {
-                                                              //this.toggleTab1();
-                                                              this.props.navigation.navigate('Main');
-                                                            }}>
+            <Button active={this.state.tab1} onPress={() => {this.props.navigation.navigate('Main');}}>
               <Icon active={this.state.tab1} name="paw" />
               <Text>메인</Text>
             </Button>
-            <Button active={this.state.tab2} onPress={() => {
-                                                              //this.toggleTab2();
-                                                              this.props.navigation.navigate('GlLobby', {dName:'GlLobby'});
-                                                            }}>
+            <Button active={this.state.tab2} onPress={() => {this.props.navigation.navigate('GlLobby');}}>
               <Icon active={this.state.tab2} name="images" />
               <Text>사진첩</Text>
             </Button>
-            <Button active={this.state.tab3} onPress={() => {
-                                                              //this.toggleTab3();
-                                                              this.props.navigation.navigate('MvLobby');
-                                                            }}>
+            <Button active={this.state.tab3} onPress={() => {this.props.navigation.navigate('MvLobby');}}>
               <Icon active={this.state.tab3} name="logo-youtube" />
               <Text>동영상</Text>
             </Button>
-            <Button active={this.state.tab4} onPress={() => {
-                                                              //this.toggleTab4();
-                                                              //this.props.navigation.navigate('IconText');
-                                                            }}>
-              {/* apps paw contact logo-github */}
+            <Button active={this.state.tab4} onPress={() => {this.props.navigation.navigate('Contact');}}>
               <Icon active={this.state.tab4} name="logo-github" /> 
               <Text>Contact</Text>
             </Button>
@@ -263,7 +176,7 @@ class main extends Component {
               <Text>동영상</Text>
             </Button>
             <Button active={this.state.tab4} onPress={() => {
-                                                              //this.props.navigation.navigate('IconText');
+                                                              this.props.navigation.navigate('Contact');
                                                               //건강하고 행복하게
                                                             }}>
               <Icon active={this.state.tab4} name="logo-github" /> 

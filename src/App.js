@@ -14,9 +14,14 @@ import Contact from "./screens/lobby/contact";
 
 import MvTmList from "./screens/list/mvTmList";
 import MvTmPlayer from "./screens/movie/mvTmPlayer";
+import TestMvPlayer from "./screens/movie/testMvPlayer";
 
 import GlTmList from "./screens/list/glTmList";
 import TmGallery from "./screens/gallery/tmGallery";
+
+import GlMgList from "./screens/list/glMgList";
+import MgGallery from "./screens/gallery/mgGallery";
+
 
 
 import Header from "./screens/Header/";
@@ -158,16 +163,14 @@ import NHDatePicker from "./screens/datepicker/";
 const width = Dimensions.get("screen").width;
 const Drawer = createDrawerNavigator(
   {
-    Main: {
-            screen: Main,
-            params: { dNameVal : 'Main!' }
-          },
-    MvLobby: {screen: MvLobby},
-    GlLobby: {screen: GlLobby},
-    MvTmList: {screen: MvTmList},
-    GlTmList: {screen: GlTmList},
-    Contact: {screen: Contact},
-    SideBar: {screen: SideBar},
+    Main: { screen: Main },
+    MvLobby: { screen: MvLobby },
+    GlLobby: { screen: GlLobby },
+    MvTmList: { screen: MvTmList },
+    GlTmList: { screen: GlTmList },
+    GlMgList: { screen: GlMgList },
+    Contact: { screen: Contact },
+    SideBar: { screen: SideBar },
 
     
     Home: { screen: Home },
@@ -205,9 +208,6 @@ const Drawer = createDrawerNavigator(
       tintColor: "#9C26B0",
       headerTintColor: "#9C26B0",
       activeBackgroundColor: '#9C26B0',
-      // activeBackgroundColor: 'transparent',
-      // inactiveTintColor: '#c5e6fc',
-      // inactiveBackgroundColor: 'transparent',
     },
     tabBarOptions: { 
       activeTintColor:'#9C26B0', 
@@ -215,28 +215,26 @@ const Drawer = createDrawerNavigator(
       headerTintColor: "#9C26B0",
     },
     headerTintColor: "#9C26B0",
-    // style:{
-    //   drawer: {width:width*0.9, shadowColor: '#000000', shadowOpacity: 0.5, shadowRadius: 3},
-    //   main: {paddingLeft: 3}
-    // },
     drawerWidth: width*0.8,
     overlayColor : "rgba(0,0,0,0.7)",
     contentComponent: props => <SideBar {...props} />
-    // contentComponent: props => <SideBar {...props} dName={} />
   }
 );
 
 const AppNavigator = createStackNavigator(
   {
-    Main: { screen: Main},
-    GlLobby: { screen: GlLobby},
-    MvLobby: { screen: MvLobby},
-    MvTmList: {screen: MvTmList},
-    MvTmPlayer: {screen: MvTmPlayer},
-    GlTmList: {screen: GlTmList},
-    TmGallery: {screen: TmGallery},
-    Contact: {screen: Contact},
-    SideBar: {screen: SideBar},
+    Main: { screen: Main },
+    GlLobby: { screen: GlLobby },
+    MvLobby: { screen: MvLobby },
+    MvTmList: {screen: MvTmList },
+    MvTmPlayer: {screen: MvTmPlayer },
+    GlTmList: {screen: GlTmList },
+    GlMgList: { screen: GlMgList },
+    TmGallery: {screen: TmGallery },
+    MgGallery: {screen: MgGallery },
+    Contact: {screen: Contact },
+    SideBar: {screen: SideBar },
+    TestMvPlayer: {screen: TestMvPlayer },
 
     
     

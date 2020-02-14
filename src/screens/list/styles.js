@@ -10,7 +10,7 @@ export default {
   textThumb: {
     color: "#FFF",
     alignSelf: "center",
-    fontSize: 18,
+    fontSize: 16,
     // marginBottom: 7
   },
   mb: {

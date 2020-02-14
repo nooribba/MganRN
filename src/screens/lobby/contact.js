@@ -1,11 +1,8 @@
 import React, { Component } from "react";
-import { Container, Header, Title, Content, Button, Footer, FooterTab, Text, Body, Left, Right, Icon, List, ListItem, Card, CardItem, Thumbnail } from "native-base";
-import { ScrollView, View, Dimensions, Image, TouchableWithoutFeedback, TouchableOpacity, TouchableHighlight, Linking, ImageBackground } from 'react-native';
-import axios from "axios";
+import { Container, Header, Title, Content, Button, Footer, FooterTab, Text, Body, Left, Right, Icon, List, ListItem, Card, CardItem } from "native-base";
+import { ScrollView, View, Dimensions, Image, TouchableWithoutFeedback, Linking, ImageBackground } from 'react-native';
+//import axios from "axios";
 import styles from "./styles";
-// import First from "../tab/tabOne"
-// import Second from "../tab/tabTwo"
-//import { Block, Button, Text, theme } from 'galio-framework';
 
 const { width, height } = Dimensions.get('screen');
 const logo = require("../../../assets/images/test1.png");
@@ -23,10 +20,8 @@ class Contact extends Component {
     };
   }
     
-
   render() {
     return (
-      
       <Container style={styles.container}>
         <Header>
           <Left>
@@ -42,7 +37,7 @@ class Contact extends Component {
 
         <Content padder>
           <ScrollView>
-            <TouchableWithoutFeedback onPress={() => {cnt=0}}>
+            <TouchableWithoutFeedback onPress={() => {cnt=0;this.props.navigation.navigate('GlLobby');}}>
               <Card style={{ marginTop: 29 }}>
                 <CardItem style={{ justifyContent: 'center' }}>
                   <Body style={{ marginTop: -13, marginBottom: -13}}>
@@ -62,20 +57,9 @@ class Contact extends Component {
 
             
             <Card style={{alignItems: 'baseline', marginLeft: 6, marginRight: 6, marginTop: 3, marginBottom: -5, borderRadius: 1, }}>
-              <TouchableWithoutFeedback onPress={() => {cnt++; /*console.info(cnt);*/}}>
+              <TouchableWithoutFeedback onPress={() => {cnt++;}}>
                 <CardItem style={{ justifyContent: 'center', }}>
                   <Body style={{ marginTop: -18, marginBottom: -13, marginLeft: -2 }}>
-                  {/* <Body> */}
-                    {/* <ImageBackground
-                      source={we}
-                      style={[styles.imageBlock, { width: width - 30, height: 360 }]}
-                      imageStyle={{ width: width - 57, height: 360 }}
-                      >
-                      <View style={styles.categoryTitle}>
-                        <Text style={styles.textThumb}> </Text>
-                      </View>
-                    </ImageBackground> */}
-                    {/* <Image source={we} style={{width: width - 47, height: height / 2.3}}/> */}
                     <Image source={we} style={[styles.imageBlock, {width: width - 65, height: height / 2.49}]}/>
                   </Body>
                 </CardItem>
@@ -106,7 +90,7 @@ class Contact extends Component {
                         Linking.openURL('https://github.com/nooribba/mgan')
                       }
                     }
-              }
+                  }
                   round
                   onlyIcon
                   shadowless
@@ -122,7 +106,6 @@ class Contact extends Component {
                 </Body>
               {/* </View> */}
             </Card>
-            
           </ScrollView>
         </Content>
 

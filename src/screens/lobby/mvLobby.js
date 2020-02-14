@@ -23,53 +23,8 @@ class MvLobby extends Component {
       tab4: false
     };
   }
-  toggleTab1() {
-    this.setState({
-      tab1: true,
-      tab2: false,
-      tab3: false,
-      tab4: false
-    });
-  }
-  toggleTab2() {
-    this.setState({
-      tab1: false,
-      tab2: true,
-      tab3: false,
-      tab4: false
-    });
-  }
-  toggleTab3() {
-    this.setState({
-      tab1: false,
-      tab2: false,
-      tab3: true,
-      tab4: false
-    });
-  }
-  toggleTab4() {
-    this.setState({
-      tab1: false,
-      tab2: false,
-      tab3: false,
-      tab4: true
-    });
-  }
+  
   render() {
-    // let AppComponent = null;
-    // if (this.state.tab1) {
-    //   console.info('tab1 render');
-    //   AppComponent = First;
-    // } else if(this.state.tab2) {
-    //   console.info('tab2 render');
-    //   AppComponent = Second;
-    // } else if(this.state.tab3) {
-    //   console.info('tab3 render');
-    //   AppComponent = First;
-    // } else {
-    //   console.info('tab4 render');
-    //   AppComponent = Second;
-    // }
     return (
       <Container style={styles.container}>
         <Header>
@@ -222,31 +177,19 @@ class MvLobby extends Component {
 
         <Footer>
           <FooterTab>
-            <Button active={this.state.tab1} onPress={() => {
-                                                              //this.toggleTab1();
-                                                              this.props.navigation.navigate('Main');
-                                                            }}>
+            <Button active={this.state.tab1} onPress={() => {this.props.navigation.navigate('Main');}}>
               <Icon active={this.state.tab1} name="paw" />
               <Text>메인</Text>
             </Button>
-            <Button active={this.state.tab2} onPress={() => {
-                                                              //this.toggleTab2();
-                                                              this.props.navigation.navigate('GlLobby');
-                                                            }}>
+            <Button active={this.state.tab2} onPress={() => {this.props.navigation.navigate('GlLobby');}}>
               <Icon active={this.state.tab2} name="images" />
               <Text>사진첩</Text>
             </Button>
-            <Button active={this.state.tab3} onPress={() => {
-                                                              //this.toggleTab3();
-                                                              this.props.navigation.navigate('MvLobby');
-                                                            }}>
+            <Button active={this.state.tab3} onPress={() => {this.props.navigation.navigate('MvLobby');}}>
               <Icon active={this.state.tab3} name="logo-youtube" />
               <Text>동영상</Text>
             </Button>
-            <Button active={this.state.tab4} onPress={() => {
-                                                              //this.toggleTab4();
-                                                              //this.props.navigation.navigate('IconText');
-                                                            }}>
+            <Button active={this.state.tab4} onPress={() => {this.props.navigation.navigate('Contact');}}>
               <Icon active={this.state.tab4} name="logo-github" /> 
               <Text>Contact</Text>
             </Button>

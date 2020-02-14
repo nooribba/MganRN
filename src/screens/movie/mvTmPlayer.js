@@ -7,13 +7,6 @@ import MediaControls, { PLAYER_STATES } from "@freakycoder/react-native-media-co
 import styles from "./styles";
 
 const { width, height } = Dimensions.get('screen');
-//const mvTitle = this.props.navigation.getParam('mvTitle');
-//const mvUrl = this.props.navigation.getParam('mvUrl');
-
-
-// function mvTmPlayer({mvTitle}) {
-//   return(mvTitle)
-// }
 
 class MvTmPlayer extends Component {
   videoPlayer;
@@ -30,12 +23,9 @@ class MvTmPlayer extends Component {
       isLoading: true,
       paused: false,
       playerState: PLAYER_STATES.PLAYING,
-      //playerState: 0,
       screenType: 'cover',//cover, content
       width: Dimensions.get('screen').width,  //window
       height: Dimensions.get('screen').width / (16 / 9.5),
-      //mvTitle: mvTmPlayer,
-      //mvTitle: '이태민씨 영상',
       mvTitle: this.props.navigation.getParam('mvTitle'),
       mvUrl: this.props.navigation.getParam('mvUrl'),
     };
@@ -44,33 +34,25 @@ class MvTmPlayer extends Component {
   onSeek = seek => {
     this.videoPlayer.seek(seek);
   };
-
   onPaused = playerState => {
     this.setState({
       paused: !this.state.paused,
       playerState,
     });
   };
-
   onReplay = () => {
     this.setState({ playerState: PLAYER_STATES.PLAYING });
-    //this.setState({ playerState: 0 });
     this.videoPlayer.seek(0);
   };
-
   onProgress = data => {
     const { isLoading, playerState } = this.state;
-    
     if (!isLoading && playerState !== PLAYER_STATES.ENDED) {
-    //if (!isLoading && playerState !== 2) {
       this.setState({ currentTime: data.currentTime });
     }
   };
-
   onLoad = data => this.setState({ duration: data.duration, isLoading: false });
   onLoadStart = data => this.setState({ isLoading: true });
   onEnd = () => this.setState({ playerState: PLAYER_STATES.ENDED }); //PLAYING, PAUSED, ENDED,(0,1,2)
-  //onEnd = () => this.setState({ playerState: 2 });
   onError = () => alert('!Error>', error);
   exitFullScreen = () => {};
   enterFullScreen = () => {};
@@ -80,7 +62,6 @@ class MvTmPlayer extends Component {
     }else{
       this.setState({ screenType: 'content', isFullScreen: true });
     } 
-      
   };
   renderToolbar = () => (
     <View style={styles.toolbar}>
@@ -100,7 +81,6 @@ class MvTmPlayer extends Component {
           </Left>
           <Body>
             <Title>{this.state.mvTitle}</Title>
-            {/* <Title>이태민씨 영상</Title> */}
           </Body>
           <Right/>
         </Header>
@@ -124,20 +104,24 @@ class MvTmPlayer extends Component {
                   onLoadStart={this.onLoadStart}
                   onFullScreen={this.state.isFullScreen}
                   ref={videoPlayer => (this.videoPlayer = videoPlayer)}
-                  //source={{ uri: "https://drive.google.com/uc?export=download&id=1096Ymke2ZO3IZZJBGPsyJJI57nzIEJZT" }}
-                  //source={require('../../../assets/images/lights.mp4')}
                   source={{ uri: this.state.mvUrl }}
                   width={this.state.width}
                   height={this.state.height}
                 />
                 <MediaControls
-                  mainColor="orange"
+                  mainColor="rgba(12, 83, 175, 0.9)"
+                  //mainColor="orange"
+                  playButtonBackgroundColor="rgba(12, 83, 175, 0.9)"
+                  minimumTrackTintColor="rgba(12, 83, 175, 0.9)"
+                  playButtonBorderColor="rgba(255,255,255,0.8)"
+                  containerBackgroundColor="rgba(45, 59, 62, 0.4)"
                   onSeek={this.onSeek}
                   onReplay={this.onReplay}
                   onPaused={this.onPaused}
                   onSeeking={this.onSeeking}
                   duration={this.state.duration}
                   toolbar={this.renderToolbar()}
+                  isFullScreen={this.state.isFullScreen}
                   isLoading={this.state.isLoading}
                   onFullScreen={this.onFullScreen}
                   progress={this.state.currentTime}
@@ -150,31 +134,19 @@ class MvTmPlayer extends Component {
 
         <Footer>
           <FooterTab>
-            <Button active={this.state.tab1} onPress={() => {
-                                                              //this.toggleTab1();
-                                                              this.props.navigation.navigate('Main');
-                                                            }}>
+            <Button active={this.state.tab1} onPress={() => {this.props.navigation.navigate('Main');}}>
               <Icon active={this.state.tab1} name="paw" />
               <Text>메인</Text>
             </Button>
-            <Button active={this.state.tab2} onPress={() => {
-                                                              //this.toggleTab2();
-                                                              this.props.navigation.navigate('GlLobby');
-                                                            }}>
+            <Button active={this.state.tab2} onPress={() => {this.props.navigation.navigate('GlLobby');}}>
               <Icon active={this.state.tab2} name="images" />
               <Text>사진첩</Text>
             </Button>
-            <Button active={this.state.tab3} onPress={() => {
-                                                              //this.toggleTab3();
-                                                              this.props.navigation.navigate('MvLobby');
-                                                            }}>
+            <Button active={this.state.tab3} onPress={() => {this.props.navigation.navigate('MvLobby');}}>
               <Icon active={this.state.tab3} name="logo-youtube" />
               <Text>동영상</Text>
             </Button>
-            <Button active={this.state.tab4} onPress={() => {
-                                                              //this.toggleTab4();
-                                                              //this.props.navigation.navigate('IconText');
-                                                            }}>
+            <Button active={this.state.tab4} onPress={() => {this.props.navigation.navigate('Contact');}}>
               <Icon active={this.state.tab4} name="logo-github" /> 
               <Text>Contact</Text>
             </Button>
