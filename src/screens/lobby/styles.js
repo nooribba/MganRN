@@ -54,4 +54,11 @@ export default {
     marginTop: 20,
     //marginBottom: 4,
   },
+  imageBlockCt: {
+    overflow: 'hidden',
+    borderRadius: 4,
+    marginLeft: 2,
+    marginTop: -5,
+    //marginBottom: 4,
+  },
 };

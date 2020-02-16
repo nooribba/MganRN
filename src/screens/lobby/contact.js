@@ -5,7 +5,7 @@ import { ScrollView, View, Dimensions, Image, TouchableWithoutFeedback, Linking,
 import styles from "./styles";
 
 const { width, height } = Dimensions.get('screen');
-const logo = require("../../../assets/images/test1.png");
+const ct = require("../../../assets/images/contact_top.png");
 const we = require('../../../assets/images/JJH_9999.jpg');
 var cnt = 0;
 
@@ -37,74 +37,75 @@ class Contact extends Component {
 
         <Content padder>
           <ScrollView>
-            <TouchableWithoutFeedback onPress={() => {cnt=0;this.props.navigation.navigate('GlLobby');}}>
-              <Card style={{ marginTop: 29 }}>
-                <CardItem style={{ justifyContent: 'center' }}>
-                  <Body style={{ marginTop: -13, marginBottom: -13}}>
-                    <ImageBackground
-                      source={logo}
-                      style={[styles.imageBlock, { width: width - 27, height: 160 }]}
-                      imageStyle={{ width: width - 27, height: 160 }}
-                      >
-                      <View style={styles.categoryTitle}>
-                        <Text style={styles.textThumb}>~</Text>
-                      </View>
-                    </ImageBackground>
-                  </Body>
+            <TouchableWithoutFeedback onPress={() => {cnt=0;}}>
+              <Card style={{ marginTop: 2, backgroundColor: '#000' }}>
+                <CardItem style={{ justifyContent: 'center', backgroundColor: '#000', marginLeft: 4, marginRight: 1, marginBottom: 5, marginTop: 1 }}>
+                  {/* <Body> */}
+                    <Image source={ct} style={[styles.imageBlockCt, {width: width - 49, height: height / 3.85, backgroundColor: '#000'}]}/>
+                  {/* </Body> */}
                 </CardItem>
               </Card>
             </TouchableWithoutFeedback>
 
             
-            <Card style={{alignItems: 'baseline', marginLeft: 6, marginRight: 6, marginTop: 3, marginBottom: -5, borderRadius: 1, }}>
+            <Card style={{alignItems: 'baseline', marginLeft: 6, marginRight: 6, marginTop: 5, marginBottom: -5, borderRadius: 1, backgroundColor: "#fff" }}>
               <TouchableWithoutFeedback onPress={() => {cnt++;}}>
-                <CardItem style={{ justifyContent: 'center', }}>
-                  <Body style={{ marginTop: -18, marginBottom: -13, marginLeft: -2 }}>
+                <CardItem style={{ justifyContent: 'center', backgroundColor: "#fff" }}>
+                  <Body style={{ marginTop: -18, marginBottom: -15, marginLeft: -2 }}>
                     <Image source={we} style={[styles.imageBlock, {width: width - 65, height: height / 2.49}]}/>
                   </Body>
                 </CardItem>
               </TouchableWithoutFeedback> 
 
+
+              <CardItem noBorder style={{alignContent:'stretch', backgroundColor: "#fff"}}>
               {/* <View style={{alignItems: 'center', justifyContent: 'center'}}> */}
-                <Body>
-                <Button
-                  onPress={() => Linking.openURL('mailto:84mikhail@gmail.com') }
-                  round
-                  onlyIcon
-                  shadowless
-                  color={'#3434fa'}
-                  style={[styles.social, styles.shadow, { alignSelf: "center", marginLeft: 16, marginRight: 16, marginTop: 7, marginBottom: 11 }]}
-                >
-                  <Icon
-                    active
-                    name="logo-google"
-                    style={{ color: "#FFF", fontSize: 36, width: 33, alignSelf: "center", marginLeft: 20, marginBottom: 1 }}
-                  />
-                </Button>
-                <Button
-                  onPress={() => 
-                    {
-                      if(cnt==10){
-                        navigation.navigate('GlLobby') //MgPrivate
-                      }else{
-                        Linking.openURL('https://github.com/nooribba/mgan')
+                <Left style={{marginLeft: 45}}>
+                  <Button
+                    onPress={() => Linking.openURL('mailto:84mikhail@gmail.com') }
+                    round
+                    //flex middle
+                    onlyIcon
+                    shadowless
+                    color={'#3434fa'}
+                    style={[styles.social, styles.shadow, { alignSelf: "center", marginLeft: 16, marginRight: 16, marginTop: -5, marginBottom: 0 }]}
+                  >
+                    <Icon
+                      active
+                      name="logo-google"
+                      style={{ color: "#FFF", fontSize: 34, width: 31, alignSelf: "center", marginLeft: 19, marginBottom: 1 }}
+                    />
+                  </Button>
+                </Left>
+                <Body />
+                <Right style={{marginRight: 45}}>
+                  <Button
+                    onPress={() => 
+                      {
+                        if(cnt==10){
+                          this.props.navigation.navigate('PrivateLobby')
+                        }else{
+                          Linking.openURL('https://github.com/nooribba/mgan')
+                        }
                       }
                     }
-                  }
-                  round
-                  onlyIcon
-                  shadowless
-                  color={'#000'}
-                  style={[styles.social, styles.shadow, { alignSelf: "center", marginLeft: 16, marginRight: 16, marginTop: 7, marginBottom: 11 }]}
-                >
-                  <Icon
-                    active
-                    name="logo-github"
-                    style={{ color: "#FFF", fontSize: 36, width: 33, alignSelf: "center", marginLeft: 20, marginBottom: 1 }}
-                  />
-                </Button>
-                </Body>
+                    round
+                    //flex middle
+                    onlyIcon
+                    shadowless
+                    color={'#000'}
+                    style={[styles.social, styles.shadow, { alignSelf: "center", marginLeft: 16, marginRight: 16, marginTop: -5, marginBottom: 0 }]}
+                  >
+                    <Icon
+                      active
+                      name="logo-github"
+                      style={{ color: "#FFF", fontSize: 34, width: 31, alignSelf: "center", marginLeft: 17, marginBottom: 1 }}
+                    />
+                  </Button>
+                </Right>
               {/* </View> */}
+              </CardItem>
+              
             </Card>
           </ScrollView>
         </Content>

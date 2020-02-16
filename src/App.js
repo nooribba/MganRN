@@ -10,6 +10,7 @@ import { createDrawerNavigator, createStackNavigator, createAppContainer } from 
 import Main from "./screens/lobby/main";
 import MvLobby from "./screens/lobby/mvLobby";
 import GlLobby from "./screens/lobby/glLobby";
+import PrivateLobby from "./screens/lobby/privateLobby";
 import Contact from "./screens/lobby/contact";
 
 import MvTmList from "./screens/list/mvTmList";
@@ -166,6 +167,7 @@ const Drawer = createDrawerNavigator(
     Main: { screen: Main },
     MvLobby: { screen: MvLobby },
     GlLobby: { screen: GlLobby },
+    PrivateLobby: { screen: PrivateLobby },
     MvTmList: { screen: MvTmList },
     GlTmList: { screen: GlTmList },
     GlMgList: { screen: GlMgList },
@@ -225,6 +227,7 @@ const AppNavigator = createStackNavigator(
   {
     Main: { screen: Main },
     GlLobby: { screen: GlLobby },
+    PrivateLobby: { screen: PrivateLobby },
     MvLobby: { screen: MvLobby },
     MvTmList: {screen: MvTmList },
     MvTmPlayer: {screen: MvTmPlayer },
