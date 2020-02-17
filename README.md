@@ -2,7 +2,7 @@
 
 ![version](https://img.shields.io/badge/version-0.8.0-blue.svg)  
 
-Lee Kim Ryu Family App
+Lee Kim Ryu Family App (React Native)
 
 ## Clone repository
 git clone https://github.com/nooribba/MganRN.git
