@@ -1,18 +1,22 @@
-# Mgan
+# [MganRN - LKR Fam](https://github.com/nooribba/MganRN)
 
-## clone repository
+![version](https://img.shields.io/badge/version-0.8.0-blue.svg)  
+
+Lee Kim Ryu Family App
+
+## Clone repository
 git clone https://github.com/nooribba/MganRN.git
 
-## install
+## Install
 npm install
 
-## run
+## Run
 prepare emulator
 npx react-native run-android
 
-## generate keystore
+## Generate keystore
 keytool -genkey -v -keystore mgan-release-key.keystore -alias mgan-key-alias -keyalg RSA -keysize 2048 -validity 100000
 
-## build apk
+## Build apk
 1. react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
 2. cd android > gradlew assembleRelease -x bundleReleaseJsAndAssets
