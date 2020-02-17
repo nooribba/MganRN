@@ -39,20 +39,27 @@ class Contact extends Component {
           <ScrollView>
             <TouchableWithoutFeedback onPress={() => {cnt=0;}}>
               <Card style={{ marginTop: 2, backgroundColor: '#000' }}>
-                <CardItem style={{ justifyContent: 'center', backgroundColor: '#000', marginLeft: 4, marginRight: 1, marginBottom: 5, marginTop: 1 }}>
+                {/* <CardItem style={{ justifyContent: 'center', backgroundColor: '#000', marginLeft: 4, marginRight: 1, marginBottom: 5, marginTop: 1 }}> */}
+                <CardItem style={{ justifyContent: 'center', backgroundColor: '#000', marginBottom: 1, marginTop: 1 }}>
                   {/* <Body> */}
-                    <Image source={ct} style={[styles.imageBlockCt, {width: width - 49, height: height / 3.85, backgroundColor: '#000'}]}/>
+                    {/* <Image source={ct} style={[styles.imageBlockCt, {width: width - 49, height: height / 3.85, backgroundColor: '#000'}]}/> */}
+                    <Image source={ct} style={[styles.imageBlockCt, {width: width - 39, height: height / 3.85, backgroundColor: '#000'}]}/>
                   {/* </Body> */}
                 </CardItem>
               </Card>
             </TouchableWithoutFeedback>
 
             
-            <Card style={{alignItems: 'baseline', marginLeft: 6, marginRight: 6, marginTop: 5, marginBottom: -5, borderRadius: 1, backgroundColor: "#fff" }}>
+            {/* <Card style={{alignItems: 'baseline', marginLeft: 6, marginRight: 6, marginTop: 5, marginBottom: -5, borderRadius: 1, backgroundColor: "#fff" }}> */}
+            <Card style={{alignItems: 'baseline', marginLeft: 5, marginRight: 5, marginTop: 5, marginBottom: -5, borderRadius: 1, backgroundColor: "#fff" }}>
               <TouchableWithoutFeedback onPress={() => {cnt++;}}>
                 <CardItem style={{ justifyContent: 'center', backgroundColor: "#fff" }}>
-                  <Body style={{ marginTop: -18, marginBottom: -15, marginLeft: -2 }}>
-                    <Image source={we} style={[styles.imageBlock, {width: width - 65, height: height / 2.49}]}/>
+                  {/* <Body style={{ marginTop: -18, marginBottom: -15, marginLeft: -2 }}> */}
+                  <Body style={{ marginTop: -19, marginBottom: -16, marginLeft: -2 }}>
+                    {/* <Image source={we} style={[styles.imageBlock, {width: width - 65, height: height / 2.49}]}/> */}
+                    {/* <Image source={we} style={[styles.imageBlock, {width: width - 64, height: height / 2.5}]}/> */}
+                    {/* <Image source={we} style={[styles.imageBlock, {width: width - 63, height: height / 2.55}]}/> */}
+                    <Image source={we} style={[styles.imageBlock, {width: width - 62, height: height / 2.58}]}/>
                   </Body>
                 </CardItem>
               </TouchableWithoutFeedback> 
@@ -68,12 +75,13 @@ class Contact extends Component {
                     onlyIcon
                     shadowless
                     color={'#3434fa'}
-                    style={[styles.social, styles.shadow, { alignSelf: "center", marginLeft: 16, marginRight: 16, marginTop: -5, marginBottom: 0 }]}
+                    // style={[styles.social, styles.shadow, { alignSelf: "center", marginLeft: 16, marginRight: 16, marginTop: -5, marginBottom: 0 }]}
+                    style={[styles.social, styles.shadow, { alignSelf: "center", marginLeft: 16, marginRight: 16, marginTop: -6, marginBottom: -1 }]}
                   >
                     <Icon
                       active
                       name="logo-google"
-                      style={{ color: "#FFF", fontSize: 34, width: 31, alignSelf: "center", marginLeft: 19, marginBottom: 1 }}
+                      style={{ color: "#FFF", fontSize: 34, width: 31, alignSelf: "center", marginLeft: 20, marginBottom: 0 }}
                     />
                   </Button>
                 </Left>
@@ -85,7 +93,7 @@ class Contact extends Component {
                         if(cnt==10){
                           this.props.navigation.navigate('PrivateLobby')
                         }else{
-                          Linking.openURL('https://github.com/nooribba/mgan')
+                          Linking.openURL('https://github.com/nooribba/MganRN')
                         }
                       }
                     }
@@ -93,8 +101,9 @@ class Contact extends Component {
                     //flex middle
                     onlyIcon
                     shadowless
-                    color={'#000'}
-                    style={[styles.social, styles.shadow, { alignSelf: "center", marginLeft: 16, marginRight: 16, marginTop: -5, marginBottom: 0 }]}
+                    color={'black'}
+                    // style={[styles.social, styles.shadow, { alignSelf: "center", marginLeft: 16, marginRight: 16, marginTop: -5, marginBottom: 0 }]}
+                    style={[styles.social, styles.shadow, { alignSelf: "center", marginLeft: 16, marginRight: 16, marginTop: -6, marginBottom: -1, color: 'black', backgroundColor: 'black' }]}
                   >
                     <Icon
                       active

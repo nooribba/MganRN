@@ -34,14 +34,14 @@ class PrivateLobby extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>우리만의 Private Memory</Title>
+            <Title>Our Private Memory</Title>
           </Body>
           <Right />
         </Header>
 
         <Content padder style={{ backgroundColor: "#cdc4ff" }}>
           <ScrollView>
-            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('GlTmList')}>       
+            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('GlPrivateList')}>       
               <Card style={styles.mb}>
                 <CardItem>
                   <Left style={styles.cardTop}>
@@ -74,7 +74,7 @@ class PrivateLobby extends Component {
               </Card>
             </TouchableWithoutFeedback>
             
-            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('GlMgList')}>       
+            <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPrivateList')}>       
               <Card style={styles.mb}>
                 <CardItem>
                   <Left style={styles.cardTop}>

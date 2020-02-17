@@ -6,7 +6,7 @@ import styles from "./styles";
 
 const { width, height } = Dimensions.get('screen');
 
-class MvTmList extends Component {
+class MvPrivateList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -38,12 +38,12 @@ class MvTmList extends Component {
       <Container style={styles.container}>
         <Header>
           <Left>
-            <Button transparent onPress={() => this.props.navigation.navigate('MvLobby')}>
+            <Button transparent onPress={() => this.props.navigation.navigate('PrivateLobby')}>
               <Icon name="arrow-back" />
             </Button>
           </Left>
           <Body>
-            <Title>이태민</Title>
+            <Title>Our Private Video</Title>
           </Body>
           <Right>
             <Button transparent onPress={() => this.props.navigation.openDrawer()}>
@@ -70,7 +70,7 @@ class MvTmList extends Component {
                 <ListItem last style={{alignContent:'stretch', borderBottomColor: '#738786'}}>
                   <Left>
                     {/* <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvTmPlayer',{mvTitle:'세로 테스트', mvUrl:'https://drive.google.com/uc?export=download&id=1-WlKIutQD65PbTSf0VqjrC6AUOjo7bJW'})}>    */}
-                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvTmPlayer',{mvTitle:'50일 파스텔', mvUrl:'https://drive.google.com/uc?export=download&id=1096Ymke2ZO3IZZJBGPsyJJI57nzIEJZT'})}>   
+                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPrivatePlayer',{mvTitle:'50일 파스텔-Private', mvUrl:'https://drive.google.com/uc?export=download&id=1096Ymke2ZO3IZZJBGPsyJJI57nzIEJZT'})}>   
                       <ImageBackground source={dolImgs[0].thumbUrl} style={styles.imageTopLeft}> 
                         <View><Text style={styles.textThumb}>파스텔(50일촬영)</Text></View>
                       </ImageBackground>
@@ -117,7 +117,7 @@ class MvTmList extends Component {
             <ListItem itemDivider>
               <Text style={styles.listDivider}>출생</Text>
             </ListItem>
-                <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvTmPlayer',{mvTitle:'테스트', mvUrl:'https://drive.google.com/uc?export=download&id=1_uush4RWqeLW2UQT-LxB9FeuZMOnaRTU'})}>   
+                <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPrivatePlayer',{mvTitle:'테스트-Private', mvUrl:'https://drive.google.com/uc?export=download&id=1_uush4RWqeLW2UQT-LxB9FeuZMOnaRTU'})}>   
                   <ListItem style={{ borderBottomColor: '#738786' }}>
                     <Text style={styles.text}>고리합창단 테스트</Text>
                   </ListItem>
@@ -201,4 +201,4 @@ class MvTmList extends Component {
   }
 }
 
-export default MvTmList;
+export default MvPrivateList;

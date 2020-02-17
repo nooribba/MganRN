@@ -57,7 +57,7 @@ export default {
   imageBlockCt: {
     overflow: 'hidden',
     borderRadius: 4,
-    marginLeft: 2,
+    marginLeft: 4,//2
     marginTop: -5,
     //marginBottom: 4,
   },

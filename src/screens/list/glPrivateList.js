@@ -6,13 +6,14 @@ import styles from "./styles";
 
 const { width, height } = Dimensions.get('screen');
 //const logo = require("../../../assets/images/test1.png");
-const bornThumb = require('../../../assets/images/mgan_born_thumb.jpg');
-const fiftyThumb = require('../../../assets/images/mgan_fifty_thumb.jpg');
-const hundredThumb = require('../../../assets/images/mgan_1hundred_thumb.jpg');
-const yearThumb = require('../../../assets/images/mg_thumb.jpg');
+const jejuThumb = require('../../../assets/images/mg_jeju_thumb.jpg');
+const studioThumb = require('../../../assets/images/mg_studio_thumb.jpg');
+const weddingThumb = require('../../../assets/images/mg_wedding_thumb.jpg');
+const maltaThumb = require('../../../assets/images/mg_malta_thumb.jpg');
+const pregnantThumb = require('../../../assets/images/mg_pregnant_thumb.jpg');
 
 
-class GlTmList extends Component {
+class GlPrivateList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,7 +21,6 @@ class GlTmList extends Component {
       tab2: true,
       tab3: false,
       tab4: false,
-      //dolImgs: null, //일상(돌까지 등)
     };
   }
   
@@ -29,12 +29,12 @@ class GlTmList extends Component {
       <Container style={styles.container}>
         <Header>
           <Left>
-            <Button transparent onPress={() => this.props.navigation.navigate('GlLobby')}>
+            <Button transparent onPress={() => this.props.navigation.navigate('PrivateLobby')}>
               <Icon name="arrow-back" />
             </Button>
           </Left>
           <Body>
-            <Title>이태민</Title>
+            <Title>Our Private Gallery</Title>
           </Body>
           <Right>
             <Button transparent onPress={() => this.props.navigation.openDrawer()}>
@@ -45,73 +45,91 @@ class GlTmList extends Component {
 
         <Content padder>
           <ScrollView>
-          <TouchableHighlight onPress={() => this.props.navigation.navigate('GlTmList')}>
+          <TouchableHighlight onPress={() => this.props.navigation.navigate('PrivateGallery',{glTitle:'제주 스냅-Private', glCaption:'이민혁 김수진 결혼 전 제주도 스냅(제주안)', glUrl:'https://google-photos-album-demo.glitch.me/kwVwkb7KEy3TnKKE7'})}>
               <Card>
                 <CardItem style={{ justifyContent: 'center' }}>
                   <Body style={{ marginTop: -13, marginBottom: -13 }}>
                     <ImageBackground
-                      source={yearThumb}
+                      source={jejuThumb}
                       style={[styles.imageBlock, { width: width - 27, height: 220 }]}
                       imageStyle={{ width: width - 27, height: 220 }}
                       >
                       <View style={styles.categoryTitle}>
-                        <Text style={styles.textThumb}>이태민</Text>
-                        <Text style={styles.textThumb}>돌</Text>
-                        <Text style={styles.textThumb}>(좀 더 크면 만나요~)</Text>
+                        <Text style={styles.textThumb}>이민혁 김수진</Text>
+                        <Text style={styles.textThumb}>제주 스냅</Text>
+                        
                       </View>
                     </ImageBackground>
                   </Body>
                 </CardItem>
               </Card>
             </TouchableHighlight>
-            <TouchableHighlight onPress={() => this.props.navigation.navigate('TmGallery',{glTitle:'100일', glCaption:'이태민 100일 파스텔 스튜디오 목동점\n(4차에 걸쳐 촬영)', glUrl:'https://google-photos-album-demo.glitch.me/BmxoTb4CUc4DJzBN7'})}>
+            <TouchableHighlight onPress={() => this.props.navigation.navigate('PrivateGallery',{glTitle:'Wedding(식전)-Private', glCaption:'이민혁 김수진 Wedding 식전 스튜디오 촬영', glUrl:'https://google-photos-album-demo.glitch.me/2Ugo5g3m6auDZLRp8'})}>
               <Card>
                 <CardItem style={{ justifyContent: 'center' }}>
                   <Body style={{ marginTop: -13, marginBottom: -13}}>
                     <ImageBackground
-                      source={hundredThumb}
+                      source={studioThumb}
                       style={[styles.imageBlock, { width: width - 27, height: 220 }]}
                       imageStyle={{ width: width - 27, height: 220 }}
                       >
                       <View style={styles.categoryTitle}>
-                        <Text style={styles.textThumb}>이태민</Text>
-                        <Text style={styles.textThumb}>100일</Text>
+                        <Text style={styles.textThumb}>이민혁 김수진</Text>
+                        <Text style={styles.textThumb}>Wedding - 식전 스튜디오</Text>
                       </View>
                     </ImageBackground>
                   </Body>
                 </CardItem>
               </Card>
             </TouchableHighlight>
-            <TouchableHighlight onPress={() => this.props.navigation.navigate('TmGallery',{glTitle:'50일', glCaption:'이태민 50일 파스텔 스튜디오 목동점', glUrl:'https://google-photos-album-demo.glitch.me/3NZm66RmUArKhwrv6'})}>
+            <TouchableHighlight onPress={() => this.props.navigation.navigate('PrivateGallery',{glTitle:'Wedding(본식)-Private', glCaption:'이민혁 김수진 Wedding 본식 앨범 촬영\n강남 서울 쉐라톤 팔래스 호텔(투아이즈)', glUrl:'https://google-photos-album-demo.glitch.me/jfmZqGe7tP1tBfGcA'})}>
               <Card>
                 <CardItem style={{ justifyContent: 'center' }}>
                   <Body style={{ marginTop: -13, marginBottom: -13}}>
                     <ImageBackground
-                      source={fiftyThumb}
+                      source={weddingThumb}
                       style={[styles.imageBlock, { width: width - 27, height: 220 }]}
                       imageStyle={{ width: width - 27, height: 220 }}
                       >
                       <View style={styles.categoryTitle}>
-                        <Text style={styles.textThumb}>이태민</Text>
-                        <Text style={styles.textThumb}>50일</Text>
+                        <Text style={styles.textThumb}>이민혁 김수진</Text>
+                        <Text style={styles.textThumb}>Wedding - 본식앨범</Text>
                       </View>
                     </ImageBackground>
                   </Body>
                 </CardItem>
               </Card>
             </TouchableHighlight> 
-            <TouchableHighlight onPress={() => this.props.navigation.navigate('TmGallery',{glTitle:'본아트', glCaption:'이태민 본아트 파스텔 스튜디오 목동점', glUrl:'https://google-photos-album-demo.glitch.me/9VEAacUd6HmvYQdj6'})}>
+            <TouchableHighlight onPress={() => this.props.navigation.navigate('PrivateGallery',{glTitle:'허니문(몰타)-Private', glCaption:'이민혁 김수진 허니문 스냅 촬영(몰타)', glUrl:'https://google-photos-album-demo.glitch.me/NNcUwDXZwUj6Qo147'})}>
               <Card>
                 <CardItem style={{ justifyContent: 'center' }}>
                   <Body style={{ marginTop: -13, marginBottom: -13}}>
                     <ImageBackground
-                      source={bornThumb}
+                      source={maltaThumb}
                       style={[styles.imageBlock, { width: width - 27, height: 220 }]}
                       imageStyle={{ width: width - 27, height: 220 }}
                       >
                       <View style={styles.categoryTitle}>
-                        <Text style={styles.textThumb}>이태민</Text>
-                        <Text style={styles.textThumb}>본아트</Text>
+                        <Text style={styles.textThumb}>이민혁 김수진</Text>
+                        <Text style={styles.textThumb}>허니문 - 몰타스냅</Text>
+                      </View>
+                    </ImageBackground>
+                  </Body>
+                </CardItem>
+              </Card>
+            </TouchableHighlight>
+            <TouchableHighlight onPress={() => this.props.navigation.navigate('PrivateGallery',{glTitle:'만삭(이태민)-Private', glCaption:'만삭 촬영(이태민) 파스텔 스튜디오 목동점', glUrl:'https://google-photos-album-demo.glitch.me/JguKeK1jFk5Fvar5A'})}>
+              <Card>
+                <CardItem style={{ justifyContent: 'center' }}>
+                  <Body style={{ marginTop: -13, marginBottom: -13}}>
+                    <ImageBackground
+                      source={pregnantThumb}
+                      style={[styles.imageBlock, { width: width - 27, height: 220 }]}
+                      imageStyle={{ width: width - 27, height: 220 }}
+                      >
+                      <View style={styles.categoryTitle}>
+                        <Text style={styles.textThumb}>이민혁 김수진</Text>
+                        <Text style={styles.textThumb}>만삭 - 파스텔</Text>
                       </View>
                     </ImageBackground>
                   </Body>
@@ -146,4 +164,4 @@ class GlTmList extends Component {
   }
 }
 
-export default GlTmList;
+export default GlPrivateList;

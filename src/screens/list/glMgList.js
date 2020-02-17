@@ -29,7 +29,7 @@ class GlMgList extends Component {
       <Container style={styles.container}>
         <Header>
           <Left>
-            <Button transparent onPress={() => this.props.navigation.goBack(null)}>
+            <Button transparent onPress={() => this.props.navigation.navigate('GlLobby')}>
               <Icon name="arrow-back" />
             </Button>
           </Left>
@@ -118,7 +118,7 @@ class GlMgList extends Component {
                 </CardItem>
               </Card>
             </TouchableHighlight>
-            <TouchableHighlight onPress={() => this.props.navigation.navigate('TmGallery',{glTitle:'만삭(이태민)', glCaption:'만삭 촬영(이태민) 파스텔 스튜디오 목동점', glUrl:'https://google-photos-album-demo.glitch.me/JguKeK1jFk5Fvar5A'})}>
+            <TouchableHighlight onPress={() => this.props.navigation.navigate('MgGallery',{glTitle:'만삭(이태민)', glCaption:'만삭 촬영(이태민) 파스텔 스튜디오 목동점', glUrl:'https://google-photos-album-demo.glitch.me/JguKeK1jFk5Fvar5A'})}>
               <Card>
                 <CardItem style={{ justifyContent: 'center' }}>
                   <Body style={{ marginTop: -13, marginBottom: -13}}>
