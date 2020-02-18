@@ -33,6 +33,8 @@ class MvTmList extends Component {
 
   render() {
     const { dolImgs, index } = this.state;
+    //const dHeight = width / (16 / 9.5);
+    //const vHeight = width * (16 / 9.5);
     return (
       dolImgs ?
       <Container style={styles.container}>
@@ -70,61 +72,100 @@ class MvTmList extends Component {
                 <ListItem last style={{alignContent:'stretch', borderBottomColor: '#738786'}}>
                   <Left>
                     {/* <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvTmPlayer',{mvTitle:'세로 테스트', mvUrl:'https://drive.google.com/uc?export=download&id=1-WlKIutQD65PbTSf0VqjrC6AUOjo7bJW'})}>    */}
-                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvTmPlayer',{mvTitle:'50일 파스텔', mvUrl:'https://drive.google.com/uc?export=download&id=1096Ymke2ZO3IZZJBGPsyJJI57nzIEJZT'})}>   
+                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPlayer',{mvTitle:'50일 스튜디오', mvDesc: '이태민 베이비파스텔 목동점 50일 스튜디오\n2019.10.26', vertical: false, mvUrl:'https://drive.google.com/uc?export=download&id=1096Ymke2ZO3IZZJBGPsyJJI57nzIEJZT'})}>   
                       <ImageBackground source={dolImgs[0].thumbUrl} style={styles.imageTopLeft}> 
-                        <View><Text style={styles.textThumb}>파스텔(50일촬영)</Text></View>
+                        <View><Text style={styles.textThumb}> </Text></View>
                       </ImageBackground>
                     </TouchableWithoutFeedback>
                   </Left>
                   <Body />
                 </ListItem>
-                
-                {/* <ListItem last style={{alignContent:'stretch'}}>
-                  <Left>
-                    <ImageBackground source={dolImgs[2].thumbUrl} style={styles.imageBottomLeft}>
-                      <View><Text style={styles.textThumb}>썸네일 설명</Text></View>
-                    </ImageBackground>
-                  </Left>
-                  <Body>
-                    <ImageBackground source={dolImgs[3].thumbUrl} style={styles.imageBottomRight}>
-                      <View><Text style={styles.textThumb}>설명222</Text></View>
-                    </ImageBackground>
-                  </Body>
-                </ListItem> */}
-
+            
             <ListItem itemDivider>
               <Text style={styles.listDivider}>50일</Text>
             </ListItem>
-                <ListItem last style={{alignContent:'stretch', borderBottomColor: '#738786'}}>
-                  {/* <Left> */}
-                    <Text>영상 못올림ㅠ</Text>
-                    {/* <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvTmPlayer',{mvTitle:'50일 파스텔', mvUrl:'https://drive.google.com/uc?export=download&id=1096Ymke2ZO3IZZJBGPsyJJI57nzIEJZT'})}>   
+                <ListItem style={{alignContent:'stretch', borderBottomColor: '#738786'}}>
+                  <Left>
+                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPlayer',{mvTitle:'36일(로토토&무드등)', mvDesc: '신정동 우리집\n2019.10.06', vertical: false, mvUrl:'https://drive.google.com/uc?export=download&id=127fNzdtD-T195X2M_yfR3_l_D9NFPxlb'})}>   
                       <ImageBackground source={dolImgs[0].thumbUrl} style={styles.imageTopLeft}> 
-                        <View><Text style={styles.textThumb}>파스텔(50일촬영)</Text></View>
+                        <View><Text style={styles.textThumb}> </Text></View>
                       </ImageBackground>
-                    </TouchableWithoutFeedback> */}
-                  {/* </Left>
-                  <Body /> */}
+                    </TouchableWithoutFeedback>
+                  </Left>
+                  <Body/>
+                </ListItem>
+                <ListItem last style={{alignContent:'stretch', borderBottomColor: '#738786'}}>
+                  <Left>
+                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPlayer',{mvTitle:'36일(로토토)', mvDesc: '신정동 우리집\n2019.10.06', vertical: false, mvUrl:'https://drive.google.com/uc?export=download&id=124sny7WHVt6ikv5Cvn091Pdo1kpege3h'})}>   
+                      <ImageBackground source={dolImgs[0].thumbUrl} style={styles.imageTopLeft}> 
+                        <View><Text style={styles.textThumb}> </Text></View>
+                      </ImageBackground>
+                    </TouchableWithoutFeedback>
+                  </Left>
+                  <Body>
+                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPlayer',{mvTitle:'34일(흑백모빌)', mvDesc: '신정동 우리집\n2019.10.04', vertical: true, mvUrl:'https://drive.google.com/uc?export=download&id=11x9ImN4dWUADFrAaO088fnUgjcWMEZqb'})}>   
+                      <ImageBackground source={dolImgs[0].thumbUrl} style={styles.imageTopLeft}> 
+                        <View><Text style={styles.textThumb}> </Text></View>
+                      </ImageBackground>
+                    </TouchableWithoutFeedback>
+                  </Body>
                 </ListItem>
               
             <ListItem itemDivider>
               <Text style={styles.listDivider}>조리원</Text>
             </ListItem>
-                <ListItem last>
-                  <Text style={styles.text}>100일의 첫번째, 50일, 고리만 터치가능</Text>
+                <ListItem style={{alignContent:'stretch', borderBottomColor: '#738786'}}>
+                  <Left>
+                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPlayer',{mvTitle:'조리원(침대)', mvDesc: '르베르쏘 조리원\n2019.09.12', vertical: false, mvUrl:'https://drive.google.com/uc?export=download&id=11eg_D_LwY7WgISTlNYvUBDXskpSiY2kg'})}>   
+                      <ImageBackground source={dolImgs[0].thumbUrl} style={styles.imageTopLeft}> 
+                        <View><Text style={styles.textThumb}> </Text></View>
+                      </ImageBackground>
+                    </TouchableWithoutFeedback>
+                  </Left>
+                  <Body>
+                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPlayer',{mvTitle:'조리원(CCTV)', mvDesc: '르베르쏘 조리원\n2019.09.06', vertical: false, mvUrl:'https://drive.google.com/uc?export=download&id=11dc2ZNznBC9RkGShclHO4IWU3dnt2E46'})}>   
+                      <ImageBackground source={dolImgs[0].thumbUrl} style={styles.imageTopLeft}> 
+                        <View><Text style={styles.textThumb}> </Text></View>
+                      </ImageBackground>
+                    </TouchableWithoutFeedback>
+                  </Body>
+                </ListItem>
+                <ListItem last style={{alignContent:'stretch', borderBottomColor: '#738786'}}>
+                  <Left>
+                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPlayer',{mvTitle:'인정병원(신생아실)', mvDesc: '인정병원 신생아실 면회\n2019.09.03', vertical: true, mvUrl:'https://drive.google.com/uc?export=download&id=11bOkzB9OTk5KEJJ_rfpJDeAh8L_j3kKf'})}>   
+                      <ImageBackground source={dolImgs[0].thumbUrl} style={styles.imageTopLeft}> 
+                        <View><Text style={styles.textThumb}> </Text></View>
+                      </ImageBackground>
+                    </TouchableWithoutFeedback>
+                  </Left>
+                  <Body>
+                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPlayer',{mvTitle:'인정병원(신생아실)', mvDesc: '인정병원 신생아실 면회\n2019.09.02', vertical: true, mvUrl:'https://drive.google.com/uc?export=download&id=11JDxiEFrBeiyPkvwYFUglkzSJ0fQ0anR'})}>   
+                      <ImageBackground source={dolImgs[0].thumbUrl} style={styles.imageTopLeft}> 
+                        <View><Text style={styles.textThumb}> </Text></View>
+                      </ImageBackground>
+                    </TouchableWithoutFeedback>
+                  </Body>
                 </ListItem>
                   
             <ListItem itemDivider>
               <Text style={styles.listDivider}>출생</Text>
             </ListItem>
-                <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvTmPlayer',{mvTitle:'테스트', mvUrl:'https://drive.google.com/uc?export=download&id=1_uush4RWqeLW2UQT-LxB9FeuZMOnaRTU'})}>   
-                  <ListItem style={{ borderBottomColor: '#738786' }}>
-                    <Text style={styles.text}>고리합창단 테스트</Text>
-                  </ListItem>
-                </TouchableWithoutFeedback>
-                  <ListItem last>
-                    <Text style={styles.text}>3D 초음파(세로테스트)</Text>
-                  </ListItem>
+                <ListItem last style={{alignContent:'stretch', borderBottomColor: '#738786'}}>
+                  <Left>
+                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPlayer',{mvTitle:'인정병원(분만실)', mvDesc: '인정병원 분만실 출산 직후\n2019.09.01 22:32(출생시간 21:14)', vertical: true, mvUrl:'https://drive.google.com/uc?export=download&id=11EzZVX-Qt1CrYKYxDcwrqcGoDiYemlm2'})}>   
+                      <ImageBackground source={dolImgs[0].thumbUrl} style={styles.imageTopLeft}> 
+                        <View><Text style={styles.textThumb}> </Text></View>
+                      </ImageBackground>
+                    </TouchableWithoutFeedback>
+                  </Left>
+                  <Body>
+                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPlayer',{mvTitle:'3D 초음파', mvDesc: '이태민 3D 초음파\n2019.06.10(189일)', vertical: false, mvUrl:'https://drive.google.com/uc?export=download&id=10f9vzAZ0cWcVOhZYGJxMFHfLGInF48FT'})}>   
+                      <ImageBackground source={dolImgs[0].thumbUrl} style={styles.imageTopLeft}> 
+                        <View><Text style={styles.textThumb}> </Text></View>
+                      </ImageBackground>
+                    </TouchableWithoutFeedback>
+                  </Body>
+                </ListItem>
           </ScrollView>
         </Content>
 

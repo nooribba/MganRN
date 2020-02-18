@@ -27,8 +27,8 @@ import TmGallery from "./screens/gallery/tmGallery";
 import MgGallery from "./screens/gallery/mgGallery";
 import PrivateGallery from "./screens/gallery/privateGallery";
 
-import MvTmPlayer from "./screens/movie/mvTmPlayer";
-import MvPrivatePlayer from "./screens/movie/mvPrivatePlayer";
+import MvPlayer from "./screens/movie/mvPlayer";
+//import MvPrivatePlayer from "./screens/movie/mvPrivatePlayer";
 //import TestMvPlayer from "./screens/movie/testMvPlayer";
 
 
@@ -84,8 +84,8 @@ const AppNavigator = createStackNavigator(
     TmGallery: {screen: TmGallery },
     MgGallery: {screen: MgGallery },
     PrivateGallery: {screen: PrivateGallery },
-    MvTmPlayer: {screen: MvTmPlayer },
-    MvPrivatePlayer: {screen: MvPrivatePlayer },
+    MvPlayer: {screen: MvPlayer },
+    //MvPrivatePlayer: {screen: MvPrivatePlayer },
     Contact: {screen: Contact },
     //TestMvPlayer: {screen: TestMvPlayer },
 

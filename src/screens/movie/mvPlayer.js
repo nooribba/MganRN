@@ -30,6 +30,7 @@ class MvPlayer extends Component {
       mvTitle: this.props.navigation.getParam('mvTitle'),
       mvDesc: this.props.navigation.getParam('mvDesc'),
       mvUrl: this.props.navigation.getParam('mvUrl'),
+      rotate: 0,
     };
   }
   
@@ -59,10 +60,11 @@ class MvPlayer extends Component {
   exitFullScreen = () => {};
   enterFullScreen = () => {};
   onFullScreen = () => {
-    if (this.state.screenType == 'content'){
-      this.setState({ screenType: 'cover', isFullScreen: false });
+    if (this.state.screenType == 'stretch'){
+      this.setState({ screenType: 'cover', isFullScreen: false, width: Dimensions.get('screen').width, height: this.props.navigation.getParam('vertical') ? Dimensions.get('screen').width * (16 / 9.5) : Dimensions.get('screen').width / (16 / 9.5), rotate: this.props.navigation.getParam('vertical') ? 0 : -90 });
     }else{
-      this.setState({ screenType: 'content', isFullScreen: true });
+      //this.setState({ screenType: 'content', isFullScreen: true });
+      this.setState({ screenType: 'stretch', isFullScreen: true, width: this.props.navigation.getParam('vertical') ? Dimensions.get('window').width : Dimensions.get('window').height, height: this.props.navigation.getParam('vertical') ?  Dimensions.get('window').height : Dimensions.get('window').width, rotate: this.props.navigation.getParam('vertical') ? 0 : 90 });
     } 
   };
   renderToolbar = () => (
@@ -73,7 +75,62 @@ class MvPlayer extends Component {
   onSeeking = currentTime => this.setState({ currentTime });
 
   render() {
+    const { isFullScreen } = this.state;
     return (
+      isFullScreen ? 
+      <Container style={styles.container}>
+        <StatusBar barStyle="dark-content" />
+        {/* <Content padder style={{ backgroundColor: "#cdc4ff" }}> */}
+        <Content padder style={{ backgroundColor: "#000" }}>
+          <SafeAreaView>
+            <ScrollView
+              contentInsetAdjustmentBehavior="automatic"
+              style={styles.scrollView}>
+              {/* <View style={{ flex: 1, height: height / 1.3986}}> */}
+              <View style={{ flex: 1, height: height / 1.45}}>
+                <Video
+                  volume={3.0}
+                  resizeMode={this.state.screenType}
+                  onEnd={this.onEnd}
+                  onLoad={this.onLoad}
+                  paused={this.state.paused}
+                  //style={styles.mediaPlayer, [{transform: [{ rotate: this.state.rotate }]}]}
+                  //style={styles.mediaPlayer, [{transform: [{ rotate: "0deg" }]}]}
+                  style={styles.mediaPlayer}
+                  onProgress={this.onProgress}
+                  onLoadStart={this.onLoadStart}
+                  onFullScreen={this.state.isFullScreen}
+                  ref={videoPlayer => (this.videoPlayer = videoPlayer)}
+                  source={{ uri: this.state.mvUrl }}
+                  width={this.state.width}
+                  height={this.state.height}
+                  //rotation = {this.state.rotate}
+                />
+                <MediaControls
+                  mainColor="rgba(12, 83, 175, 0.9)"
+                  //mainColor="orange"
+                  playButtonBackgroundColor="rgba(12, 83, 175, 0.9)"
+                  minimumTrackTintColor="rgba(12, 83, 175, 0.9)"
+                  playButtonBorderColor="rgba(255,255,255,0.8)"
+                  containerBackgroundColor="rgba(45, 59, 62, 0.4)"
+                  onSeek={this.onSeek}
+                  onReplay={this.onReplay}
+                  onPaused={this.onPaused}
+                  onSeeking={this.onSeeking}
+                  duration={this.state.duration}
+                  toolbar={this.renderToolbar()}
+                  isFullScreen={this.state.isFullScreen}
+                  isLoading={this.state.isLoading}
+                  onFullScreen={this.onFullScreen}
+                  progress={this.state.currentTime}
+                  playerState={this.state.playerState}
+                />
+              </View>
+            </ScrollView>
+          </SafeAreaView>
+        </Content>
+      </Container>
+      :
       <Container style={styles.container}>
         <Header>
           <Left>
@@ -102,6 +159,7 @@ class MvPlayer extends Component {
                   onEnd={this.onEnd}
                   onLoad={this.onLoad}
                   paused={this.state.paused}
+                  //style={styles.mediaPlayer, [{transform: [{ rotate: this.state.rotate }]}]}
                   style={styles.mediaPlayer}
                   onProgress={this.onProgress}
                   onLoadStart={this.onLoadStart}
@@ -132,7 +190,7 @@ class MvPlayer extends Component {
                 />
               </View>
               <View style={{backgroundColor: '#000'}}>
-                <Text style={{color: 'red'}}>{this.state.mvDesc}</Text>
+                <Text style={{color: '#FFF'}}>{this.state.mvDesc}</Text>
               </View>
             </ScrollView>
           </SafeAreaView>

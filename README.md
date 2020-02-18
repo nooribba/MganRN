@@ -7,11 +7,11 @@ Lee Kim Ryu Family App (React Native)
 ## Clone repository
 git clone https://github.com/nooribba/MganRN.git
 
-## Install
+## Install node module
 npm install
 
 ## Run
-prepare emulator
+execute emulator
 npx react-native run-android
 
 ## Generate keystore

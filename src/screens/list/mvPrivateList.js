@@ -33,6 +33,7 @@ class MvPrivateList extends Component {
 
   render() {
     const { dolImgs, index } = this.state;
+   
     return (
       dolImgs ?
       <Container style={styles.container}>
@@ -43,7 +44,7 @@ class MvPrivateList extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>Our Private Video</Title>
+            <Title>Private Video</Title>
           </Body>
           <Right>
             <Button transparent onPress={() => this.props.navigation.openDrawer()}>
@@ -55,76 +56,39 @@ class MvPrivateList extends Component {
         <Content padder>
           <ScrollView>
             <ListItem itemDivider>
-              <Text style={styles.listDivider}>돌</Text>
-            </ListItem>
-                <ListItem last>
-                  <Left>
-                    <Thumbnail square large source={dolImgs[3].thumbUrl} style={styles.listThumb} />
-                    <Text style={styles.text}>돌 이후 업데이트</Text>
-                  </Left>
-                </ListItem>
-              
-            <ListItem itemDivider>
-              <Text style={styles.listDivider}>100일</Text>
+              <Text style={styles.listDivider}>결혼 후</Text>
             </ListItem>
                 <ListItem last style={{alignContent:'stretch', borderBottomColor: '#738786'}}>
                   <Left>
-                    {/* <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvTmPlayer',{mvTitle:'세로 테스트', mvUrl:'https://drive.google.com/uc?export=download&id=1-WlKIutQD65PbTSf0VqjrC6AUOjo7bJW'})}>    */}
-                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPrivatePlayer',{mvTitle:'50일 파스텔-Private', mvUrl:'https://drive.google.com/uc?export=download&id=1096Ymke2ZO3IZZJBGPsyJJI57nzIEJZT'})}>   
+                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPlayer',{mvTitle:'이태민 탄생순간', mvDesc: '이태민 인정병원 분만실\n2019.09.01 21:14', vertical: true, mvUrl:'https://drive.google.com/uc?export=download&id=1683_Q5UuyPO7xSF6qez52IdPRcSbR4rg'})}>   
                       <ImageBackground source={dolImgs[0].thumbUrl} style={styles.imageTopLeft}> 
-                        <View><Text style={styles.textThumb}>파스텔(50일촬영)</Text></View>
+                        <View><Text style={styles.textThumb}> </Text></View>
                       </ImageBackground>
                     </TouchableWithoutFeedback>
                   </Left>
-                  <Body />
-                </ListItem>
-                
-                {/* <ListItem last style={{alignContent:'stretch'}}>
-                  <Left>
-                    <ImageBackground source={dolImgs[2].thumbUrl} style={styles.imageBottomLeft}>
-                      <View><Text style={styles.textThumb}>썸네일 설명</Text></View>
-                    </ImageBackground>
-                  </Left>
                   <Body>
-                    <ImageBackground source={dolImgs[3].thumbUrl} style={styles.imageBottomRight}>
-                      <View><Text style={styles.textThumb}>설명222</Text></View>
-                    </ImageBackground>
+                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPlayer',{mvTitle:'제주 스킨스쿠버', mvDesc: '오픈워터 자격증 취득(올리브낭/퍼플)\n2018.11.09~11', vertical: false, mvUrl:'https://drive.google.com/uc?export=download&id=10oQnuGeD2jh_BhzwlRVK9OVVYIodbcqW'})}>   
+                      <ImageBackground source={dolImgs[0].thumbUrl} style={styles.imageTopLeft}> 
+                        <View><Text style={styles.textThumb}> </Text></View>
+                      </ImageBackground>
+                    </TouchableWithoutFeedback>
                   </Body>
-                </ListItem> */}
-
+                </ListItem>
+            
             <ListItem itemDivider>
-              <Text style={styles.listDivider}>50일</Text>
+              <Text style={styles.listDivider}>결혼 전</Text>
             </ListItem>
                 <ListItem last style={{alignContent:'stretch', borderBottomColor: '#738786'}}>
-                  {/* <Left> */}
-                    <Text>영상 못올림ㅠ</Text>
-                    {/* <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvTmPlayer',{mvTitle:'50일 파스텔', mvUrl:'https://drive.google.com/uc?export=download&id=1096Ymke2ZO3IZZJBGPsyJJI57nzIEJZT'})}>   
+                  <Left>
+                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPlayer',{mvTitle:'고리합창단(수진)', mvDesc: '고리합창단 노량진 성당 성가\n2017.12.25', vertical: false, mvUrl:'https://drive.google.com/uc?export=download&id=1_uush4RWqeLW2UQT-LxB9FeuZMOnaRTU'})}>   
                       <ImageBackground source={dolImgs[0].thumbUrl} style={styles.imageTopLeft}> 
-                        <View><Text style={styles.textThumb}>파스텔(50일촬영)</Text></View>
+                        <View><Text style={styles.textThumb}> </Text></View>
                       </ImageBackground>
-                    </TouchableWithoutFeedback> */}
-                  {/* </Left>
-                  <Body /> */}
+                    </TouchableWithoutFeedback>
+                  </Left>
+                  <Body/>
                 </ListItem>
-              
-            <ListItem itemDivider>
-              <Text style={styles.listDivider}>조리원</Text>
-            </ListItem>
-                <ListItem last>
-                  <Text style={styles.text}>100일의 첫번째, 50일, 고리만 터치가능</Text>
-                </ListItem>
-                  
-            <ListItem itemDivider>
-              <Text style={styles.listDivider}>출생</Text>
-            </ListItem>
-                <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPrivatePlayer',{mvTitle:'테스트-Private', mvUrl:'https://drive.google.com/uc?export=download&id=1_uush4RWqeLW2UQT-LxB9FeuZMOnaRTU'})}>   
-                  <ListItem style={{ borderBottomColor: '#738786' }}>
-                    <Text style={styles.text}>고리합창단 테스트</Text>
-                  </ListItem>
-                </TouchableWithoutFeedback>
-                  <ListItem last>
-                    <Text style={styles.text}>3D 초음파(세로테스트)</Text>
-                  </ListItem>
+                
           </ScrollView>
         </Content>
 
@@ -158,7 +122,7 @@ class MvPrivateList extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>이태민</Title>
+            <Title>Private Video</Title>
           </Body>
           <Right>
             <Button transparent onPress={() => this.props.navigation.openDrawer()}>

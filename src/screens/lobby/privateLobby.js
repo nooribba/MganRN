@@ -34,7 +34,7 @@ class PrivateLobby extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>Our Private Memory</Title>
+            <Title>Private Memory</Title>
           </Body>
           <Right />
         </Header>

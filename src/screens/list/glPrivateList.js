@@ -34,7 +34,7 @@ class GlPrivateList extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>Our Private Gallery</Title>
+            <Title>Private Gallery</Title>
           </Body>
           <Right>
             <Button transparent onPress={() => this.props.navigation.openDrawer()}>
