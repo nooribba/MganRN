@@ -79,15 +79,11 @@ class MvPlayer extends Component {
     return (
       isFullScreen ? 
       <Container style={styles.container}>
-        <StatusBar barStyle="dark-content" />
-        {/* <Content padder style={{ backgroundColor: "#cdc4ff" }}> */}
         <Content padder style={{ backgroundColor: "#000" }}>
           <SafeAreaView>
-            {/* <ScrollView
-              contentInsetAdjustmentBehavior="automatic"
-              style={styles.scrollView}> */}
               {/* <View style={{ flex: 1, height: height / 1.3986}}> */}
-              <View style={{ flex: 1, height: height / 1.45}}>
+              {/* <View style={{ flex: 1, height: height / 1.45}}> */}
+              <View style={{ flex: 1, height: this.state.height / 1.1 }}>
                 <Video
                   volume={3.0}
                   resizeMode={this.state.screenType}
@@ -126,7 +122,6 @@ class MvPlayer extends Component {
                   playerState={this.state.playerState}
                 />
               </View>
-            {/* </ScrollView> */}
           </SafeAreaView>
         </Content>
       </Container>
@@ -153,6 +148,7 @@ class MvPlayer extends Component {
               style={styles.scrollView}>
               {/* <View style={{ flex: 1, height: height / 1.3986}}> */}
               <View style={{ flex: 1, height: height / 1.45}}>
+              {/* <View style={{ flex: 1, height: this.state.height / 1.2}}> */}
                 <Video
                   volume={3.0}
                   resizeMode={this.state.screenType}
@@ -168,6 +164,7 @@ class MvPlayer extends Component {
                   source={{ uri: this.state.mvUrl }}
                   width={this.state.width}
                   height={this.state.height}
+                  //rotation = {this.state.rotate}
                 />
                 <MediaControls
                   mainColor="rgba(12, 83, 175, 0.9)"

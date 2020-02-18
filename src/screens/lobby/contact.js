@@ -43,7 +43,7 @@ class Contact extends Component {
                 <CardItem style={{ justifyContent: 'center', backgroundColor: '#000', marginBottom: 1, marginTop: 1 }}>
                   {/* <Body> */}
                     {/* <Image source={ct} style={[styles.imageBlockCt, {width: width - 49, height: height / 3.85, backgroundColor: '#000'}]}/> */}
-                    <Image source={ct} style={[styles.imageBlockCt, {width: width - 39, height: height / 3.85, backgroundColor: '#000'}]}/>
+                    <Image source={ct} style={[styles.imageBlockCt, {width: width - 47, height: height / 3.85, backgroundColor: '#000'}]}/>
                   {/* </Body> */}
                 </CardItem>
               </Card>

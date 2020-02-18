@@ -47,11 +47,14 @@ class SideBar extends Component {
     const backScreen = this.props.activeItemKey;
     
     if(backScreen == 'Main'){tabScreen = 'Main';}
+    else if(backScreen == 'PrivateLobby'){tabScreen = 'Main';}
     else if(backScreen == 'GlLobby'){tabScreen = 'GlLobby';}
     else if(backScreen == 'GlTmList'){tabScreen = 'GlLobby';}
     else if(backScreen == 'GlMgList'){tabScreen = 'GlLobby';}
+    else if(backScreen == 'GlPrivateList'){tabScreen = 'GlLobby';}
     else if(backScreen == 'MvLobby'){tabScreen = 'MvLobby';}
     else if(backScreen == 'MvTmList'){tabScreen = 'MvLobby';}
+    else if(backScreen == 'MvPrivateList'){tabScreen = 'MvLobby';}
     else if(backScreen == 'Contact'){tabScreen = 'Contact';}
     else{tabScreen = 'Main';}
 
