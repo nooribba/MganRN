@@ -64,7 +64,7 @@ class MvPlayer extends Component {
       this.setState({ screenType: 'cover', isFullScreen: false, width: Dimensions.get('screen').width, height: this.props.navigation.getParam('vertical') ? Dimensions.get('screen').width * (16 / 9.5) : Dimensions.get('screen').width / (16 / 9.5), rotate: this.props.navigation.getParam('vertical') ? 0 : -90 });
     }else{
       //this.setState({ screenType: 'content', isFullScreen: true });
-      this.setState({ screenType: 'stretch', isFullScreen: true, width: this.props.navigation.getParam('vertical') ? Dimensions.get('window').width : Dimensions.get('window').height, height: this.props.navigation.getParam('vertical') ?  Dimensions.get('window').height : Dimensions.get('window').width, rotate: this.props.navigation.getParam('vertical') ? 0 : 90 });
+      this.setState({ screenType: 'stretch', isFullScreen: true, width: this.props.navigation.getParam('vertical') ? Dimensions.get('window').width : Dimensions.get('window').height, height: this.props.navigation.getParam('vertical') ?  Dimensions.get('window').height : Dimensions.get('window').width*0.98, rotate: this.props.navigation.getParam('vertical') ? 0 : 90 });
     } 
   };
   renderToolbar = () => (
@@ -83,9 +83,9 @@ class MvPlayer extends Component {
         {/* <Content padder style={{ backgroundColor: "#cdc4ff" }}> */}
         <Content padder style={{ backgroundColor: "#000" }}>
           <SafeAreaView>
-            <ScrollView
+            {/* <ScrollView
               contentInsetAdjustmentBehavior="automatic"
-              style={styles.scrollView}>
+              style={styles.scrollView}> */}
               {/* <View style={{ flex: 1, height: height / 1.3986}}> */}
               <View style={{ flex: 1, height: height / 1.45}}>
                 <Video
@@ -126,7 +126,7 @@ class MvPlayer extends Component {
                   playerState={this.state.playerState}
                 />
               </View>
-            </ScrollView>
+            {/* </ScrollView> */}
           </SafeAreaView>
         </Content>
       </Container>
