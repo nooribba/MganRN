@@ -60,38 +60,33 @@ class MvPlayer extends Component {
   exitFullScreen = () => {};
   enterFullScreen = () => {};
   onFullScreen = () => {
-    if (this.state.screenType == 'content'){
+    if (this.state.screenType == 'stretch'){
       this.setState({ screenType: 'cover', isFullScreen: false, width: Dimensions.get('screen').width, height: this.props.navigation.getParam('vertical') ? Dimensions.get('screen').width * (16 / 9.5) : Dimensions.get('screen').width / (16 / 9.5), rotate: this.props.navigation.getParam('vertical') ? 0 : -90 });
     }else{
       //this.setState({ screenType: 'content', isFullScreen: true });
-      this.setState({ screenType: 'content', isFullScreen: true, width: this.props.navigation.getParam('vertical') ? Dimensions.get('window').width : Dimensions.get('window').height, height: this.props.navigation.getParam('vertical') ?  Dimensions.get('window').height : Dimensions.get('window').width*0.98, rotate: this.props.navigation.getParam('vertical') ? 0 : 90 });
+      this.setState({ screenType: 'stretch', isFullScreen: true, width: this.props.navigation.getParam('vertical') ? Dimensions.get('window').width : Dimensions.get('window').height, height: this.props.navigation.getParam('vertical') ?  Dimensions.get('window').height : Dimensions.get('window').width*0.98, rotate: this.props.navigation.getParam('vertical') ? 0 : 90 });
     } 
   };
   renderToolbar = () => (
     <View style={styles.toolbar}>
-      {/* <Text>즐거운 감상 되세요♡</Text> */}
-      <Text>{this.state.width}/{this.state.height}/{width}/{height}</Text>
+      <Text>즐거운 감상 되세요♡</Text>
     </View>
   );
   onSeeking = currentTime => this.setState({ currentTime });
 
   render() {
     const { isFullScreen } = this.state;
-    var h = 800;
-    var w = 390;
     return (
       isFullScreen ? 
       <Container style={styles.container}>
-        <StatusBar barStyle="dark-content" hidden={true} />
         <Content padder style={{ backgroundColor: "#000" }}>
-          <SafeAreaView style={{ flex: 1, transform: [{rotate: this.state.vertical ? '0deg' : '90deg'}] }}>
+          <SafeAreaView>
               {/* <View style={{ flex: 1, height: height / 1.3986}}> */}
               {/* <View style={{ flex: 1, height: height / 1.45}}> */}
-              <View style={{ flex: 1, width: h, height: w }}>
+              <View style={{ flex: 1, height: this.state.height / 1.1 }}>
                 <Video
                   volume={3.0}
-                  //resizeMode={this.state.screenType}
-                  resizeMode='cover'
+                  resizeMode={this.state.screenType}
                   onEnd={this.onEnd}
                   onLoad={this.onLoad}
                   paused={this.state.paused}
@@ -103,8 +98,8 @@ class MvPlayer extends Component {
                   onFullScreen={this.state.isFullScreen}
                   ref={videoPlayer => (this.videoPlayer = videoPlayer)}
                   source={{ uri: this.state.mvUrl }}
-                  width={h}
-                  height={w}
+                  width={this.state.width}
+                  height={this.state.height}
                   //rotation = {this.state.rotate}
                 />
                 <MediaControls
@@ -125,7 +120,6 @@ class MvPlayer extends Component {
                   onFullScreen={this.onFullScreen}
                   progress={this.state.currentTime}
                   playerState={this.state.playerState}
-                  
                 />
               </View>
           </SafeAreaView>
