@@ -61,14 +61,14 @@ class MvPlayer extends Component {
   exitFullScreen = () => {};
   enterFullScreen = () => {};
   onFullScreen = () => {
-    if (this.state.screenType == 'stretch'){
+    if (this.state.screenType == 'contain'){
       //this.setState({ screenType: 'cover', isFullScreen: false, width: Dimensions.get('screen').width, height: this.props.navigation.getParam('vertical') ? Dimensions.get('screen').width * (16 / 9.5) : Dimensions.get('screen').width / (16 / 9.5), rotate: this.props.navigation.getParam('vertical') ? '0deg' : '-90deg' });
       //this.setState({ screenType: 'cover', isFullScreen: false, width: Dimensions.get('screen').width, height: this.props.navigation.getParam('vertical') ? Dimensions.get('screen').width * (16 / 9.5) : Dimensions.get('screen').width / (16 / 9.5), rotate: '0deg' });
       this.setState({ screenType: 'cover', isFullScreen: false, width: Dimensions.get('screen').width, height: this.state.vertical ? Dimensions.get('screen').width * (16 / 9.5) : Dimensions.get('screen').width / (16 / 9.5) });
       //this.videoPlayer.dismissFullscreenPlayer();
     }else{
       //this.setState({ screenType: 'content', isFullScreen: true });
-      this.setState({ screenType: 'stretch', isFullScreen: true, width: this.state.vertical ? Dimensions.get('screen').width : Dimensions.get('screen').height, height: this.state.vertical ?  Dimensions.get('screen').height : Dimensions.get('screen').width*0.98 });
+      this.setState({ screenType: 'contain', isFullScreen: true, width: this.state.vertical ? Dimensions.get('screen').width : Dimensions.get('screen').height, height: this.state.vertical ?  Dimensions.get('screen').height : Dimensions.get('screen').width*0.98 });
       //this.videoPlayer.presentFullscreenPlayer();
     } 
   };
@@ -85,8 +85,8 @@ class MvPlayer extends Component {
       isFullScreen ? 
       <Container style={styles.container}>
         <StatusBar barStyle="dark-content" hidden = {true} />
-        <Content padder style={{ backgroundColor: "#000" }}>
-          <SafeAreaView>
+        {/* <Content padder style={{ backgroundColor: "#000" }}>
+          <SafeAreaView style={{ transform: [{rotate: this.state.vertical ? '0deg' : '90deg'}], width: width, height: height }}> */}
               {/* <View style={{ flex: 1, height: height / 1.3986}}> */}
               {/* <View style={{ flex: 1, height: height / 1.45}}> */}
               {/* <View style={{ flex: 1, width: this.state.width, height: this.state.height / 1.05, transform: [{rotate: this.state.vertical ? '0deg' : '90deg'}] }}> */}
@@ -95,7 +95,11 @@ class MvPlayer extends Component {
               {/* <View style={{ flex: 1, width: width, height: this.state.height, transform: [{rotate: this.state.vertical ? '0deg' : '90deg'}] }}> */}
               {/* video는 width=height, height=width일때 가로모드 전체화면 영상 비율 맞음 */}
 
-              <View style={{ flex: 1, backgroundColor: 'yellow', width: height, height: height/2, transform: [{rotate: this.state.vertical ? '0deg' : '90deg'}] }}>
+              {/* <View style={{ flex: 1, backgroundColor: 'yellow', width: height, height: height/2, }}> */}
+              {/* <View style={{ flex: 1, width: height / 1.04, height: width / 1.04, backgroundColor: 'green', transform: [{rotate: this.state.vertical ? '0deg' : '90deg'}] }}> */}
+              {/* <View style={{ flex: 1, width: this.state.vertical ? null : height / 1.04, height: this.state.vertical ? height / 1.04 : width / 1.04, backgroundColor: 'green' }}> */}
+              {/* //////// , flexDirection: 'row'*/}
+              <View style={{ flex: 1, marginLeft: -160, width: this.state.vertical ? null : height / 1.04, height: this.state.vertical ? height / 1.04 : width / 1.04, backgroundColor: 'green', transform: [{rotate: this.state.vertical ? '0deg' : '90deg'}] }}>
                 <Video
                   volume={3.0}
                   resizeMode={this.state.screenType}
@@ -104,23 +108,31 @@ class MvPlayer extends Component {
                   paused={this.state.paused}
                   //style={styles.mediaPlayer, [{transform: [{ rotate: this.state.rotate }]}]}
                   //style={styles.mediaPlayer, [{transform: [{ rotate: "0deg" }]}]}
-                  style={styles.mediaPlayer}
+                  //style={styles.mediaPlayer}
+                  //style={{ position: 'absolute', top: this.state.vertical ? 0 : width*(width/height), left: 0, bottom: 0, right: 0, backgroundColor: 'yellow', transform: [{rotate: this.state.vertical ? '0deg' : '90deg'}] }}
+                  //style={{ position: 'absolute', top: this.state.vertical ? 0 : width*(width/height), left: 0, bottom: 0, right: 0, backgroundColor: 'yellow' }}
+                  //style={{ position: 'absolute', top: this.state.vertical ? 0 : width*(width/height)+100, left: 0, bottom: 0, right: 0, backgroundColor: 'yellow' }}
+                  //////////
+                  style={{ position: 'absolute', top: 0, left: 0, bottom: 0, right: 0, backgroundColor: 'yellow' }}
                   //style={styles.mediaPlayer, [{transform: [{rotate: '90deg'}]}]}
                   onProgress={this.onProgress}
                   onLoadStart={this.onLoadStart}
                   onFullScreen={this.state.isFullScreen}
                   ref={videoPlayer => (this.videoPlayer = videoPlayer)}
                   source={{ uri: this.state.mvUrl }}
-                  //width={height}
+                  //width={width}
                   //height={this.state.height}
                   //height={width}
-                  //width={this.state.width}
-                  height={this.state.height}
+                  width={this.state.vertical ? null : height / 1.04}
+                  height={this.state.vertical ? height / 1.04 : null}
+
+                  // width={this.state.width}
+                  // height={this.state.height}
                   //rotation = {this.state.rotate}
                 />
+                <View style={{ width: 300, height: 300 }}>
                 <MediaControls
                   mainColor="rgba(12, 83, 175, 0.9)"
-                  //mainColor="orange"
                   playButtonBackgroundColor="rgba(12, 83, 175, 0.9)"
                   minimumTrackTintColor="rgba(12, 83, 175, 0.9)"
                   playButtonBorderColor="rgba(255,255,255,0.8)"
@@ -136,10 +148,19 @@ class MvPlayer extends Component {
                   onFullScreen={this.onFullScreen}
                   progress={this.state.currentTime}
                   playerState={this.state.playerState}
+                  //style={{ marginLeft: 450, marginTop: -700 }}
+                  //style={{ marginLeft: 450, marginTop: -700, position: 'absolute', top: 0, left: 0, bottom: 100, right: 0, backgroundColor: 'red' }}
+                  
+                  //style={{alignSelf: 'stretch', alignItems: 'stretch'}}
+                  //style={{alignSelf: 'center', alignItems: 'center'}}
+                  //width={this.state.vertical ? null : height / 1.04}
+                  //style={{height: width, width: width, marginTop: this.state.vertical ? 0 : 300, marginRight: this.state.vertical ? 0 : -300}}
+                  //height={this.state.vertical ? height / 1.04 : width / 1.04}
                 />
+                </View>
               </View>
-          </SafeAreaView>
-        </Content>
+          {/* </SafeAreaView>
+        </Content> */}
       </Container>
       :
       <Container style={styles.container}>
@@ -163,7 +184,7 @@ class MvPlayer extends Component {
               contentInsetAdjustmentBehavior="automatic"
               style={styles.scrollView}> */}
               {/* <View style={{ flex: 1, height: height / 1.3986}}> */}
-              <View style={{ flex: 1, height: height / 1.45, transform: [{rotate: '0deg'}] }}>
+              <View style={{ flex: 1, height: height / 1.47, transform: [{rotate: '0deg'}] }}>
               {/* <View style={{ flex: 1, height: this.state.height / 1.2}}> */}
                 <Video
                   volume={3.0}
