@@ -74,7 +74,7 @@ class MvLobby extends Component {
               </Card>
             </TouchableOpacity>
             
-            <TouchableOpacity onPress={() => this.props.navigation.navigate('Main')}>       
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('MvMgList')}>       
               <Card style={styles.mb}>
                 <CardItem>
                   <Left style={styles.cardTop}>

@@ -139,7 +139,7 @@ class MvTmList extends Component {
                     </TouchableWithoutFeedback>
                   </Left>
                   <Body>
-                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPlayer',{mvTitle:'인정병원(신생아실)', mvDesc: '인정병원 신생아실 면회\n2019.09.02', vertical: true, mvUrl:'https://drive.google.com/uc?export=download&id=11JDxiEFrBeiyPkvwYFUglkzSJ0fQ0anR'})}>   
+                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPlayer',{mvTitle:'인정병원(신생아실)', mvDesc: '인정병원 신생아실 면회\n2019.09.02', vertical: false, mvUrl:'https://drive.google.com/uc?export=download&id=11JDxiEFrBeiyPkvwYFUglkzSJ0fQ0anR'})}>   
                       <ImageBackground source={dolImgs[0].thumbUrl} style={styles.imageTopLeft}> 
                         <View><Text style={styles.textThumb}> </Text></View>
                       </ImageBackground>

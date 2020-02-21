@@ -20,6 +20,7 @@ import GlTmList from "./screens/list/glTmList";
 import GlMgList from "./screens/list/glMgList";
 import GlPrivateList from "./screens/list/glPrivateList";
 import MvTmList from "./screens/list/mvTmList";
+import MvMgList from "./screens/list/mvMgList";
 import MvPrivateList from "./screens/list/mvPrivateList";
 
 
@@ -45,6 +46,7 @@ const Drawer = createDrawerNavigator(
     GlMgList: { screen: GlMgList },
     GlPrivateList: { screen: GlPrivateList },
     MvTmList: { screen: MvTmList },
+    MvMgList: { screen: MvMgList },
     MvPrivateList: { screen: MvPrivateList },
     Contact: { screen: Contact }, 
   },
@@ -80,6 +82,7 @@ const AppNavigator = createStackNavigator(
     GlMgList: { screen: GlMgList },
     GlPrivateList: { screen: GlPrivateList },
     MvTmList: {screen: MvTmList },
+    MvMgList: { screen: MvMgList },
     MvPrivateList: { screen: MvPrivateList },
     TmGallery: {screen: TmGallery },
     MgGallery: {screen: MgGallery },

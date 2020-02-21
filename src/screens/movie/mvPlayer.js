@@ -7,6 +7,7 @@ import MediaControls, { PLAYER_STATES } from "@freakycoder/react-native-media-co
 import styles from "./styles";
 
 const { width, height } = Dimensions.get('screen');
+//const { ww, wh } = Dimensions.get('window');
 
 class MvPlayer extends Component {
   videoPlayer;
@@ -64,17 +65,18 @@ class MvPlayer extends Component {
     if (this.state.screenType == 'contain'){
       //this.setState({ screenType: 'cover', isFullScreen: false, width: Dimensions.get('screen').width, height: this.props.navigation.getParam('vertical') ? Dimensions.get('screen').width * (16 / 9.5) : Dimensions.get('screen').width / (16 / 9.5), rotate: this.props.navigation.getParam('vertical') ? '0deg' : '-90deg' });
       //this.setState({ screenType: 'cover', isFullScreen: false, width: Dimensions.get('screen').width, height: this.props.navigation.getParam('vertical') ? Dimensions.get('screen').width * (16 / 9.5) : Dimensions.get('screen').width / (16 / 9.5), rotate: '0deg' });
-      this.setState({ screenType: 'cover', isFullScreen: false, width: Dimensions.get('screen').width, height: this.state.vertical ? Dimensions.get('screen').width * (16 / 9.5) : Dimensions.get('screen').width / (16 / 9.5) });
+      this.setState({ screenType: 'cover', isFullScreen: false, width: width, height: this.state.vertical ? width * ((width*(width/height))/96) : width / ((width*(width/height))/96) });
       //this.videoPlayer.dismissFullscreenPlayer();
     }else{
       //this.setState({ screenType: 'content', isFullScreen: true });
-      this.setState({ screenType: 'contain', isFullScreen: true, width: this.state.vertical ? Dimensions.get('screen').width : Dimensions.get('screen').height, height: this.state.vertical ?  Dimensions.get('screen').height : Dimensions.get('screen').width*0.98 });
+      this.setState({ screenType: 'contain', isFullScreen: true, width: this.state.vertical ? width : width * ((width*(width/height))/96), height: this.state.vertical ?  width * ((width*(width/height))/96) : width });
       //this.videoPlayer.presentFullscreenPlayer();
     } 
   };
   renderToolbar = () => (
     <View style={styles.toolbar}>
-      <Text>즐거운 감상 되세요♡</Text>
+      {/* <Text>즐거운 감상 되세요♡</Text> */}
+      <Text>{width*(width/height)}/{(width*(width/height))*1.04}</Text>
     </View>
   );
   onSeeking = currentTime => this.setState({ currentTime });
@@ -99,7 +101,8 @@ class MvPlayer extends Component {
               {/* <View style={{ flex: 1, width: height / 1.04, height: width / 1.04, backgroundColor: 'green', transform: [{rotate: this.state.vertical ? '0deg' : '90deg'}] }}> */}
               {/* <View style={{ flex: 1, width: this.state.vertical ? null : height / 1.04, height: this.state.vertical ? height / 1.04 : width / 1.04, backgroundColor: 'green' }}> */}
               {/* //////// , flexDirection: 'row'*/}
-              <View style={{ flex: 1, marginLeft: -160, width: this.state.vertical ? null : height / 1.04, height: this.state.vertical ? height / 1.04 : width / 1.04, backgroundColor: 'green', transform: [{rotate: this.state.vertical ? '0deg' : '90deg'}] }}>
+              {/* <View style={{ flex: 1, marginLeft: this.state.vertical ? 0 : (width*(width/height))/(-1.15), width: this.state.vertical ? null : height, height: this.state.vertical ? height : width, backgroundColor: 'green', transform: [{rotate: this.state.vertical ? '0deg' : '90deg'}] }}> */}
+              <View style={{ flex: 1, marginLeft: this.state.vertical ? 0 : (width*(width/height))/(-1.08), width: this.state.vertical ? null : height, height: this.state.vertical ? height : width, backgroundColor: 'green', transform: [{rotate: this.state.vertical ? '0deg' : '90deg'}] }}>
                 <Video
                   volume={3.0}
                   resizeMode={this.state.screenType}
@@ -123,14 +126,18 @@ class MvPlayer extends Component {
                   //width={width}
                   //height={this.state.height}
                   //height={width}
-                  width={this.state.vertical ? null : height / 1.04}
-                  height={this.state.vertical ? height / 1.04 : null}
+                  // width={this.state.vertical ? null : height / 1.04}
+                  // height={this.state.vertical ? height / 1.04 : null}
+                  width={this.state.vertical ? null : this.state.width}
+                  height={this.state.vertical ? this.state.height : null}
 
                   // width={this.state.width}
                   // height={this.state.height}
                   //rotation = {this.state.rotate}
                 />
-                <View style={{ width: 300, height: 300 }}>
+                {/* <View style={{ position: 'absolute', top: this.state.vertical ? 0 : (width*(width/height))*1.04 , left: 0, bottom: 0, right: 0, width: this.state.vertical ? null : height / 1.04, height: this.state.vertical ? height / 1.04 : width / 1.04 }}> */}
+                {/* <View style={{ position: 'absolute', top: this.state.vertical ? 0 : (width*(width/height))*1.15 , left: 10, bottom: 0, right: 0, width: this.state.vertical ? null : this.state.width, height: this.state.height }}> */}
+                <View style={{ position: 'absolute', top: this.state.vertical ? 0 : (width*(width/height))*1.10 , left: 0, bottom: 0, right: 0, width: this.state.vertical ? null : height/1.04, height: this.state.vertical ? height/1.02 : width/1.025 }}>
                 <MediaControls
                   mainColor="rgba(12, 83, 175, 0.9)"
                   playButtonBackgroundColor="rgba(12, 83, 175, 0.9)"
