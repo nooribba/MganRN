@@ -47,7 +47,7 @@ class GlMgList extends Component {
           <ScrollView>
           <TouchableHighlight onPress={() => this.props.navigation.navigate('MgGallery',{glTitle:'제주 스냅', glCaption:'이민혁 김수진 결혼 전 제주도 스냅(제주안)', glUrl:'https://google-photos-album-demo.glitch.me/kwVwkb7KEy3TnKKE7'})}>
               <Card>
-                <CardItem style={{ justifyContent: 'center' }}>
+                <CardItem style={{ justifyContent: 'center', backgroundColor: '#cdc4ff' }}>
                   <Body style={{ marginTop: -13, marginBottom: -13 }}>
                     <ImageBackground
                       source={jejuThumb}
@@ -66,7 +66,7 @@ class GlMgList extends Component {
             </TouchableHighlight>
             <TouchableHighlight onPress={() => this.props.navigation.navigate('MgGallery',{glTitle:'Wedding(식전)', glCaption:'이민혁 김수진 Wedding 식전 스튜디오 촬영', glUrl:'https://google-photos-album-demo.glitch.me/2Ugo5g3m6auDZLRp8'})}>
               <Card>
-                <CardItem style={{ justifyContent: 'center' }}>
+                <CardItem style={{ justifyContent: 'center', backgroundColor: '#cdc4ff' }}>
                   <Body style={{ marginTop: -13, marginBottom: -13}}>
                     <ImageBackground
                       source={studioThumb}
@@ -84,7 +84,7 @@ class GlMgList extends Component {
             </TouchableHighlight>
             <TouchableHighlight onPress={() => this.props.navigation.navigate('MgGallery',{glTitle:'Wedding(본식)', glCaption:'이민혁 김수진 Wedding 본식 앨범 촬영\n강남 서울 쉐라톤 팔래스 호텔(투아이즈)', glUrl:'https://google-photos-album-demo.glitch.me/jfmZqGe7tP1tBfGcA'})}>
               <Card>
-                <CardItem style={{ justifyContent: 'center' }}>
+                <CardItem style={{ justifyContent: 'center', backgroundColor: '#cdc4ff' }}>
                   <Body style={{ marginTop: -13, marginBottom: -13}}>
                     <ImageBackground
                       source={weddingThumb}
@@ -102,7 +102,7 @@ class GlMgList extends Component {
             </TouchableHighlight> 
             <TouchableHighlight onPress={() => this.props.navigation.navigate('MgGallery',{glTitle:'허니문(몰타)', glCaption:'이민혁 김수진 허니문 스냅 촬영(몰타)', glUrl:'https://google-photos-album-demo.glitch.me/NNcUwDXZwUj6Qo147'})}>
               <Card>
-                <CardItem style={{ justifyContent: 'center' }}>
+                <CardItem style={{ justifyContent: 'center', backgroundColor: '#cdc4ff' }}>
                   <Body style={{ marginTop: -13, marginBottom: -13}}>
                     <ImageBackground
                       source={maltaThumb}
@@ -120,7 +120,7 @@ class GlMgList extends Component {
             </TouchableHighlight>
             <TouchableHighlight onPress={() => this.props.navigation.navigate('MgGallery',{glTitle:'만삭(이태민)', glCaption:'만삭 촬영(이태민) 파스텔 스튜디오 목동점', glUrl:'https://google-photos-album-demo.glitch.me/JguKeK1jFk5Fvar5A'})}>
               <Card>
-                <CardItem style={{ justifyContent: 'center' }}>
+                <CardItem style={{ justifyContent: 'center', backgroundColor: '#cdc4ff' }}>
                   <Body style={{ marginTop: -13, marginBottom: -13}}>
                     <ImageBackground
                       source={pregnantThumb}

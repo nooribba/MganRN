@@ -39,7 +39,7 @@ class MvPrivateList extends Component {
       <Container style={styles.container}>
         <Header>
           <Left>
-            <Button transparent onPress={() => this.props.navigation.navigate('PrivateLobby')}>
+            <Button transparent onPress={() => this.props.navigation.navigate('MvLobby')}>
               <Icon name="arrow-back" />
             </Button>
           </Left>
@@ -67,7 +67,7 @@ class MvPrivateList extends Component {
             </ListItem>
                 <ListItem last style={{alignContent:'stretch', borderBottomColor: '#738786'}}>
                 <Left>
-                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPlayer',{mvTitle:'웨딩 셀프 축가', mvDesc: '지천비화 - 결혼합니다\n결혼식 2018.09.16', vertical: true, mvUrl:'https://drive.google.com/uc?export=download&id=15mfhhd0Kgap5h9tqwZQWDxyKGPxXGiA_'})}>   
+                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPlayer',{mvTitle:'웨딩 셀프 축가', mvDesc: '지천비화 - 결혼합니다\n결혼식 2018.09.16', vertical: false, mvUrl:'https://drive.google.com/uc?export=download&id=15mfhhd0Kgap5h9tqwZQWDxyKGPxXGiA_'})}>   
                       <ImageBackground source={dolImgs[0].thumbUrl} style={styles.imageTopLeft}> 
                         <View><Text style={styles.textThumb}> </Text></View>
                       </ImageBackground>
@@ -115,7 +115,7 @@ class MvPrivateList extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>Private Video</Title>
+            <Title>이민혁♥김수진</Title>
           </Body>
           <Right>
             <Button transparent onPress={() => this.props.navigation.openDrawer()}>

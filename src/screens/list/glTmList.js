@@ -47,7 +47,7 @@ class GlTmList extends Component {
           <ScrollView>
           <TouchableHighlight onPress={() => this.props.navigation.navigate('GlTmList')}>
               <Card>
-                <CardItem style={{ justifyContent: 'center' }}>
+                <CardItem style={{ justifyContent: 'center', backgroundColor: '#cdc4ff' }}>
                   <Body style={{ marginTop: -13, marginBottom: -13 }}>
                     <ImageBackground
                       source={yearThumb}
@@ -66,7 +66,7 @@ class GlTmList extends Component {
             </TouchableHighlight>
             <TouchableHighlight onPress={() => this.props.navigation.navigate('TmGallery',{glTitle:'100일', glCaption:'이태민 100일 파스텔 스튜디오 목동점\n(4차에 걸쳐 촬영)', glUrl:'https://google-photos-album-demo.glitch.me/BmxoTb4CUc4DJzBN7'})}>
               <Card>
-                <CardItem style={{ justifyContent: 'center' }}>
+                <CardItem style={{ justifyContent: 'center', backgroundColor: '#cdc4ff' }}>
                   <Body style={{ marginTop: -13, marginBottom: -13}}>
                     <ImageBackground
                       source={hundredThumb}
@@ -84,7 +84,7 @@ class GlTmList extends Component {
             </TouchableHighlight>
             <TouchableHighlight onPress={() => this.props.navigation.navigate('TmGallery',{glTitle:'50일', glCaption:'이태민 50일 파스텔 스튜디오 목동점', glUrl:'https://google-photos-album-demo.glitch.me/3NZm66RmUArKhwrv6'})}>
               <Card>
-                <CardItem style={{ justifyContent: 'center' }}>
+                <CardItem style={{ justifyContent: 'center', backgroundColor: '#cdc4ff' }}>
                   <Body style={{ marginTop: -13, marginBottom: -13}}>
                     <ImageBackground
                       source={fiftyThumb}
@@ -102,7 +102,7 @@ class GlTmList extends Component {
             </TouchableHighlight> 
             <TouchableHighlight onPress={() => this.props.navigation.navigate('TmGallery',{glTitle:'본아트', glCaption:'이태민 본아트 파스텔 스튜디오 목동점', glUrl:'https://google-photos-album-demo.glitch.me/9VEAacUd6HmvYQdj6'})}>
               <Card>
-                <CardItem style={{ justifyContent: 'center' }}>
+                <CardItem style={{ justifyContent: 'center', backgroundColor: '#cdc4ff' }}>
                   <Body style={{ marginTop: -13, marginBottom: -13}}>
                     <ImageBackground
                       source={bornThumb}

@@ -4,6 +4,9 @@ const { StyleSheet } = React;
 
 export default {
   container: {
+    backgroundColor: "#FFF",
+  },
+  containerContact: {
     backgroundColor: "#000",
   },
   text: {

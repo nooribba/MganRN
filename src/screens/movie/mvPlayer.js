@@ -75,8 +75,8 @@ class MvPlayer extends Component {
   };
   renderToolbar = () => (
     <View style={styles.toolbar}>
-      {/* <Text>즐거운 감상 되세요♡</Text> */}
-      <Text>{width*(width/height)}/{(width*(width/height))*1.04}</Text>
+      <Text>즐거운 감상 되세요♡</Text>
+      {/* <Text>{width*(width/height)}/{(width*(width/height))*1.04}</Text> */}
     </View>
   );
   onSeeking = currentTime => this.setState({ currentTime });
@@ -102,7 +102,7 @@ class MvPlayer extends Component {
               {/* <View style={{ flex: 1, width: this.state.vertical ? null : height / 1.04, height: this.state.vertical ? height / 1.04 : width / 1.04, backgroundColor: 'green' }}> */}
               {/* //////// , flexDirection: 'row'*/}
               {/* <View style={{ flex: 1, marginLeft: this.state.vertical ? 0 : (width*(width/height))/(-1.15), width: this.state.vertical ? null : height, height: this.state.vertical ? height : width, backgroundColor: 'green', transform: [{rotate: this.state.vertical ? '0deg' : '90deg'}] }}> */}
-              <View style={{ flex: 1, marginLeft: this.state.vertical ? 0 : (width*(width/height))/(-1.08), width: this.state.vertical ? null : height, height: this.state.vertical ? height : width, backgroundColor: 'green', transform: [{rotate: this.state.vertical ? '0deg' : '90deg'}] }}>
+              <View style={{ flex: 1, marginLeft: this.state.vertical ? 0 : (width*(width/height))/(-1.12), marginBottom: this.state.vertical ? 0 : -5, width: this.state.vertical ? null : height, height: this.state.vertical ? height : width, backgroundColor: '#000', transform: [{rotate: this.state.vertical ? '0deg' : '90deg'}] }}>
                 <Video
                   volume={3.0}
                   resizeMode={this.state.screenType}
@@ -116,7 +116,7 @@ class MvPlayer extends Component {
                   //style={{ position: 'absolute', top: this.state.vertical ? 0 : width*(width/height), left: 0, bottom: 0, right: 0, backgroundColor: 'yellow' }}
                   //style={{ position: 'absolute', top: this.state.vertical ? 0 : width*(width/height)+100, left: 0, bottom: 0, right: 0, backgroundColor: 'yellow' }}
                   //////////
-                  style={{ position: 'absolute', top: 0, left: 0, bottom: 0, right: 0, backgroundColor: 'yellow' }}
+                  style={{ position: 'absolute', top: this.state.vertical ? 0 : 25, left: 0, bottom: 0, right: 0, backgroundColor: '#000' }}
                   //style={styles.mediaPlayer, [{transform: [{rotate: '90deg'}]}]}
                   onProgress={this.onProgress}
                   onLoadStart={this.onLoadStart}
@@ -137,7 +137,7 @@ class MvPlayer extends Component {
                 />
                 {/* <View style={{ position: 'absolute', top: this.state.vertical ? 0 : (width*(width/height))*1.04 , left: 0, bottom: 0, right: 0, width: this.state.vertical ? null : height / 1.04, height: this.state.vertical ? height / 1.04 : width / 1.04 }}> */}
                 {/* <View style={{ position: 'absolute', top: this.state.vertical ? 0 : (width*(width/height))*1.15 , left: 10, bottom: 0, right: 0, width: this.state.vertical ? null : this.state.width, height: this.state.height }}> */}
-                <View style={{ position: 'absolute', top: this.state.vertical ? 0 : (width*(width/height))*1.10 , left: 0, bottom: 0, right: 0, width: this.state.vertical ? null : height/1.04, height: this.state.vertical ? height/1.02 : width/1.025 }}>
+                <View style={{ position: 'absolute', top: this.state.vertical ? 0 : (width*(width/height))*1.13 , left: this.state.vertical ? 0 : 16, bottom: 0, right: 0, width: this.state.vertical ? null : height/1.051, height: this.state.vertical ? height/1.02 : width/0.98 }}>
                 <MediaControls
                   mainColor="rgba(12, 83, 175, 0.9)"
                   playButtonBackgroundColor="rgba(12, 83, 175, 0.9)"
