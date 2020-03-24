@@ -64,7 +64,7 @@ class MvPlayer extends Component {
   exitFullScreen = () => {};
   enterFullScreen = () => {};
   onFullScreen = () => {
-    if (this.state.screenType == 'contain'){
+    if (this.state.screenType == 'content'){
       //this.setState({ screenType: 'cover', isFullScreen: false, width: Dimensions.get('screen').width, height: this.props.navigation.getParam('vertical') ? Dimensions.get('screen').width * (16 / 9.5) : Dimensions.get('screen').width / (16 / 9.5), rotate: this.props.navigation.getParam('vertical') ? '0deg' : '-90deg' });
       //this.setState({ screenType: 'cover', isFullScreen: false, width: Dimensions.get('screen').width, height: this.props.navigation.getParam('vertical') ? Dimensions.get('screen').width * (16 / 9.5) : Dimensions.get('screen').width / (16 / 9.5), rotate: '0deg' });
       this.setState({ screenType: 'cover', isFullScreen: false, width: width, height: this.state.vertical ? width * ((width*(width/height))/96) : width / ((width*(width/height))/96) });
@@ -72,7 +72,7 @@ class MvPlayer extends Component {
     }else{
       //this.setState({ screenType: 'content', isFullScreen: true });
       //this.setState({ screenType: 'contain', isFullScreen: true, width: this.state.vertical ? width : width * ((width*(width/height))/96), height: this.state.vertical ?  width * ((width*(width/height))/96) : width });
-      this.setState({ screenType: 'contain', isFullScreen: true, width: this.state.vertical ? width : width * ((width*(width/height))/96), height: this.state.vertical ?  width * ((width*(width/height))/96) : width });
+      this.setState({ screenType: 'content', isFullScreen: true, width: this.state.vertical ? width : width * ((width*(width/height))/96), height: this.state.vertical ?  width * ((width*(width/height))/96) : width });
       //this.videoPlayer.presentFullscreenPlayer();
     } 
   };
@@ -90,33 +90,6 @@ class MvPlayer extends Component {
   render() {
     const { isFullScreen } = this.state;
     return (
-      isFullScreen?
-      <Container style={styles.container, [{backgroundColor: "red" }]}>
-        <StatusBar barStyle="dark-content" hidden={isFullScreen?true:false} />
-        {/* <Content padder style={{ backgroundColor: "#cdc4ff" }}> */}
-        <Content padder style={{ backgroundColor: "#cdc4ff", width: height-4, transform: [{rotate: isFullScreen?'90deg':'0deg'}], }}>
-          {/* <View style={{ alignItems:'center', flexDirection: 'row', width: 695, backgroundColor: "green"}}> */}
-          <ScrollView style={{ flex: 1, height: width-8, backgroundColor: "green", marginTop: height/2}}>
-              <View style={{ flex: 1, backgroundColor: "blue", height: width-12 }}>
-              {/* <View> */}
-                <VideoPlayer
-                    //source={{ uri: 'https://vjs.zencdn.net/v/oceans.mp4' }}
-                    source={ inMedia }
-                    navigator={ this.props.navigator }
-                    onBack={this.onBack}
-                    //disableBack={true}
-                    onEnterFullscreen={this.onFullScreen}
-                    onExitFullscreen={this.onFullScreen}
-                    fullscreen={isFullScreen}
-                    resizeMode={this.screenType}
-                    videoStyle={{ flex: 1, height: width-13}}
-                    //videoStyle={{height: isFullScreen?width+250:height/1.3}}
-                />
-              </View>
-          </ScrollView>
-        </Content>
-      </Container>
-      :
       <Container style={styles.container}>
         <Header>
           <Left>

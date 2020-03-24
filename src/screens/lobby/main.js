@@ -64,23 +64,24 @@ class main extends Component {
           </View>
       );
   }
+  get galleryCount () {
+    const { index, images } = this.state;
+    return (
+        <View style={{ top: 0, height: 30, marginBottom: -3, backgroundColor: 'rgba(0, 0, 0, 0.6)', width: '100%', position: 'absolute', justifyContent: 'center' }}>
+            <Text style={{ textAlign: 'right', color: 'white', fontSize: 15, fontStyle: 'italic', paddingRight: '10%' }}>{ index + 1 } / { images.length }</Text>
+        </View>
+    );
+  }
   get caption () {
       const { images, index } = this.state;
       return (
-          <View style={{ bottom: 0, height: 54, backgroundColor: 'rgba(0, 0, 0, 0.6)', width: '100%', position: 'absolute', justifyContent: 'flex-start' }}>
+          <View style={{ bottom: 0, height: 55, backgroundColor: 'rgba(0, 0, 0, 0.6)', width: '100%', position: 'absolute', justifyContent: 'flex-start' }}>
               <Text style={{ textAlign: 'center', color: 'white', fontSize: 15, fontStyle: 'italic' }}>{ (images[index] && images[index].caption) || '' } </Text>
           </View>
       );
   }
 
-  get galleryCount () {
-      const { index, images } = this.state;
-      return (
-          <View style={{ top: 0, height: 32, backgroundColor: 'rgba(0, 0, 0, 0.6)', width: '100%', position: 'absolute', justifyContent: 'center' }}>
-              <Text style={{ textAlign: 'right', color: 'white', fontSize: 15, fontStyle: 'italic', paddingRight: '10%' }}>{ index + 1 } / { images.length }</Text>
-          </View>
-      );
-  }
+  
 
 
   render() {
@@ -101,10 +102,13 @@ class main extends Component {
         </Header>
         
         <Content>
-          <H3 style={{alignSelf: "center", marginTop: 8, marginBottom: 7}}>LEE.KIM.RYU FAMILY</H3>
+          <View style={{backgroundColor: '#FFF'}}>
+            <H3 style={{alignSelf: "center", marginTop: 8, marginBottom: 7}}>LEE.KIM.RYU FAMILY</H3>
+          </View>
           <View style={{ flex: 1, width: width, backgroundColor: 'black' }} >
             <GallerySwiper
-                  style={{ flex: 1, backgroundColor: 'black', height: height / 1.3486, marginTop: -2 }}//1.3686 1.3986
+                  //style={{ flex: 1, backgroundColor: 'black', height: height / 1.3486 }}//1.3686 1.3986
+                  style={{ flex: 1, backgroundColor: 'black', height: height-222 }}//1.3686 1.3986
                   images={this.state.images}
                   onEndReached={() => {}}
                   initialPage={0}

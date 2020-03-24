@@ -90,7 +90,7 @@ class PrivateGallery extends Component {
         <Content>
           <View style={{ flex: 1, width: width, backgroundColor: 'black' }} >
             <GallerySwiper
-                  style={{ flex: 1, backgroundColor: 'black', height: height / 1.269 }}//1.3686 1.3986
+                  style={{ flex: 1, backgroundColor: 'black', height: height-188 }}//1.3686 1.3986
                   images={images}
                   onEndReached={() => {}}
                   initialPage={0}

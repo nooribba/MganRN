@@ -24,36 +24,43 @@ class Home extends Component {
         <ImageBackground source={launchscreenBg} style={styles.imageContainer}>
           <View
             style={{
-              alignItems: "center",
-              marginBottom: 50,
+              //alignItems: "center",
+              flex: 1,
+              flexDirection: "row",
+              alignItems: "flex-end",
+              marginBottom: 1,
               backgroundColor: "transparent"
             }}
           >
+            <View>
+              <View style={{ marginTop: 4 }}>
+                <Text style={{fontSize: 39, color: "white", paddingLeft: 24}}>Mikhail</Text>
+              </View>
+              <View style={{ marginTop: 4 }}>
+                <Text style={{fontSize: 39, color: "white", paddingLeft: 24}}>Grace</Text>
+              </View>
+              <View style={{ marginTop: 4 }}>
+                <Text style={{fontSize: 39, color: "white", paddingLeft: 24}}>Anthony</Text>
+              </View>
+              <View style={{ marginTop: 1 }}>
+                <Text style={{fontSize: 16, color: "#aba9a9", paddingLeft: 24}}>  &  Family</Text>
+              </View>
+              <View style={{ marginTop: 17 }}>
+                <Text style={{fontSize: 25, color: "white", paddingLeft: 24}}>오늘도 사랑해요~</Text>
+              </View>
+              <View style={{ marginTop: 33 }} />
+              
+            </View>
           </View>
-          <ScrollView style={{ marginTop: height / 2.455, marginBottom: 3 }}>
-            <View style={{ marginTop: 4 }}>
-              <Text style={{fontSize: 39, color: "white", paddingLeft: 24}}>Mikhail</Text>
-            </View>
-            <View style={{ marginTop: 4 }}>
-              <Text style={{fontSize: 39, color: "white", paddingLeft: 24}}>Grace</Text>
-            </View>
-            <View style={{ marginTop: 4 }}>
-              <Text style={{fontSize: 39, color: "white", paddingLeft: 24}}>Anthony</Text>
-            </View>
-            <View style={{ marginTop: 1 }}>
-              <Text style={{fontSize: 16, color: "#aba9a9", paddingLeft: 24}}>  &  Family</Text>
-            </View>
-            <View style={{ marginTop: 17 }}>
-              <Text style={{fontSize: 25, color: "white", paddingLeft: 24}}>오늘도 사랑해요~</Text>
-            </View>
-            <View style={{ marginTop: 33 }} />
+          {/* <ScrollView style={{ marginTop: height / 2.455, marginBottom: 3 }}> */}
+          <View style={{marginBottom: 8}}>
             <Button
               style={{ backgroundColor: "#9C26B0", alignSelf: "center", width: width - 16 * 3, height: 16 * 2.8, justifyContent: 'center', alignItems: 'center' }} //#6FAF98
               onPress={() => this.props.navigation.navigate('Main')}
             >
               <Text style={{fontSize: 17, fontWeight: "bold", color: "white"}}>저도요♥</Text>
             </Button>
-          </ScrollView>
+          </View>
         </ImageBackground>
       </Container>
     );
