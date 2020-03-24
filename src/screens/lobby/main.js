@@ -105,7 +105,7 @@ class main extends Component {
           <View style={{backgroundColor: '#FFF'}}>
             <H3 style={{alignSelf: "center", marginTop: 8, marginBottom: 7}}>LEE.KIM.RYU FAMILY</H3>
           </View>
-          <View style={{ flex: 1, width: width, backgroundColor: 'black' }} >
+          <View style={{ flex: 1, width: width, height: height-222, backgroundColor: 'black' }} >
             <GallerySwiper
                   //style={{ flex: 1, backgroundColor: 'black', height: height / 1.3486 }}//1.3686 1.3986
                   style={{ flex: 1, backgroundColor: 'black', height: height-222 }}//1.3686 1.3986
