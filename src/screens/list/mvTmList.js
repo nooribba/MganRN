@@ -86,7 +86,7 @@ class MvTmList extends Component {
             </ListItem>
                 <ListItem style={{alignContent:'stretch', borderBottomColor: '#738786'}}>
                   <Left>
-                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPlayer',{mvTitle:'36일(로토토&무드등)', mvDesc: '신정동 우리집\n2019.10.06', vertical: false, mvUrl:'https://drive.google.com/uc?export=download&id=127fNzdtD-T195X2M_yfR3_l_D9NFPxlb'})}>   
+                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPrivatePlayer',{mvTitle:'36일(로토토&무드등)', mvDesc: '신정동 우리집\n2019.10.06', vertical: false, mvUrl:'https://drive.google.com/uc?export=download&id=127fNzdtD-T195X2M_yfR3_l_D9NFPxlb'})}>   
                       <ImageBackground source={dolImgs[0].thumbUrl} style={styles.imageTopLeft}> 
                         <View><Text style={styles.textThumb}> </Text></View>
                       </ImageBackground>
