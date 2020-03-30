@@ -26,10 +26,21 @@ class MgGallery extends Component {
     this.onChangeImage = this.onChangeImage.bind(this);
   }
   
+  
   async componentDidMount() {
     const glCaption = this.props.navigation.getParam('glCaption');
     const glUrl = this.props.navigation.getParam('glUrl');
     const response = await axios.get(`${glUrl}`);
+
+    // const regex = /\["(https:\/\/lh3\.googleusercontent\.com\/[a-zA-Z0-9\-_]*)"/g;
+    // //const regex = /\["(https:\/\/photos\.google\.com\/share\/[a-zA-Z0-9\-_]*)"/g;
+    // const resp = await axios.get(`https://photos.app.goo.gl/${glUrl}`)
+    // const links = new Set()
+    //   let match
+    //   while (match = regex.exec(resp.data)) {
+    //     links.add(match[1])
+    //   } 
+    //   const response = Array.from(links);
     if (response && response.data && response.data.length > 0) {
       this.setState({
         images: response.data.map(url => ({

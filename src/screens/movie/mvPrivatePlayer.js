@@ -6,7 +6,9 @@ import MediaControls, { PLAYER_STATES } from "@freakycoder/react-native-media-co
 //import MediaControls, { PLAYER_STATES } from 'react-native-media-controls';
 import styles from "./styles";
 
+
 const { width, height } = Dimensions.get('screen');
+const inMedia = require("../../../assets/images/lights.mp4");
 
 class MvPrivatePlayer extends Component {
   videoPlayer;
@@ -104,7 +106,8 @@ class MvPrivatePlayer extends Component {
                   onLoadStart={this.onLoadStart}
                   onFullScreen={this.state.isFullScreen}
                   ref={videoPlayer => (this.videoPlayer = videoPlayer)}
-                  source={{ uri: this.state.mvUrl }}
+                  //source={{ uri: this.state.mvUrl }}
+                  source={inMedia}
                   width={this.state.width}
                   height={this.state.height}
                 />

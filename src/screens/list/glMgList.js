@@ -46,6 +46,7 @@ class GlMgList extends Component {
         <Content padder>
           <ScrollView>
           <TouchableHighlight onPress={() => this.props.navigation.navigate('MgGallery',{glTitle:'제주 스냅', glCaption:'이민혁 김수진 결혼 전 제주도 스냅(제주안)', glUrl:'https://google-photos-album-demo.glitch.me/kwVwkb7KEy3TnKKE7'})}>
+          {/* <TouchableHighlight onPress={() => this.props.navigation.navigate('MgGallery',{glTitle:'제주 스냅', glCaption:'이민혁 김수진 결혼 전 제주도 스냅(제주안)', glUrl:'kwVwkb7KEy3TnKKE7'})}> */}
               <Card>
                 <CardItem style={{ justifyContent: 'center', backgroundColor: '#cdc4ff' }}>
                   <Body style={{ marginTop: -13, marginBottom: -13 }}>
