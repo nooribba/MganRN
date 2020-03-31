@@ -55,7 +55,7 @@ class PrivateGallery extends Component {
   get caption () {
       const { images, index } = this.state;
       return (
-          <View style={{ bottom: 0, height: 55, backgroundColor: 'rgba(0, 0, 0, 0.6)', width: '100%', position: 'absolute', justifyContent: 'flex-start' }}>
+          <View style={{ bottom: 0, height: 55, backgroundColor: 'rgba(0, 0, 0, 0.3)', width: '100%', position: 'absolute', justifyContent: 'flex-start' }}>
               <Text style={{ textAlign: 'center', color: 'white', fontSize: 15, fontStyle: 'italic' }}>{ (images[index] && images[index].caption) || '' } </Text>
           </View>
       );
@@ -63,7 +63,7 @@ class PrivateGallery extends Component {
   get galleryCount () {
       const { index, images } = this.state;
       return (
-          <View style={{ top: 0, height: 32, backgroundColor: 'rgba(0, 0, 0, 0.6)', width: '100%', position: 'absolute', justifyContent: 'center' }}>
+          <View style={{ top: 0, height: 32, backgroundColor: 'rgba(0, 0, 0, 0.3)', width: '100%', position: 'absolute', justifyContent: 'center' }}>
               <Text style={{ textAlign: 'right', color: 'white', fontSize: 15, fontStyle: 'italic', paddingRight: '10%' }}>{ index + 1 } / { images.length }</Text>
           </View>
       );

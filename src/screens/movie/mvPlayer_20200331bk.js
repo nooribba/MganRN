@@ -11,8 +11,7 @@ import VideoPlayer from 'react-native-video-controls';
 //https://github.com/paypal/accessible-html5-video-player
 
 //sw360/sh760/ww360/wh712
-//const { width, height } = Dimensions.get('window');
-
+const { width, height } = Dimensions.get('window');
 //const { width, height } = Dimensions.get('screen');
 //const { ww, wh } = Dimensions.get('window');
 const inMedia = require("../../../assets/images/lights.mp4");
@@ -20,8 +19,6 @@ const statusBarSize = 25;
 
 class MvPlayer extends Component {
   videoPlayer;
-  width;
-  height;
   constructor(props) {
     super(props);
     this.state = {
@@ -36,21 +33,25 @@ class MvPlayer extends Component {
       paused: false,
       playerState: PLAYER_STATES.PLAYING,
       screenType: 'cover',//cover, content
+      width: Dimensions.get('screen').width,  //window
+      height: this.props.navigation.getParam('vertical') ? Dimensions.get('screen').width * (16 / 9.5) : Dimensions.get('screen').width / (16 / 9.5),
       mvTitle: this.props.navigation.getParam('mvTitle'),
       mvDesc: this.props.navigation.getParam('mvDesc'),
       mvUrl: this.props.navigation.getParam('mvUrl'),
       vertical: this.props.navigation.getParam('vertical'),
+      //rotate: '0deg',
     };
     this.getDimension();
   }
 
   getDimension() {
     if (Dimensions.get('window').width < Dimensions.get('window').height) {
-      this.width = Math.round(Dimensions.get('window').width);
-      this.height = Math.round(Dimensions.get('window').height);
-    } else {
       this.width = Math.round(Dimensions.get('window').height);
       this.height = Math.round(Dimensions.get('window').width);
+    }
+    else {
+      this.width = Math.round(Dimensions.get('window').width);
+      this.height = Math.round(Dimensions.get('window').height);
     }
   }
 
@@ -82,14 +83,23 @@ class MvPlayer extends Component {
   enterFullScreen = () => {};
   onFullScreen = () => {
     if (this.state.screenType == 'contain'){
+      //this.setState({ screenType: 'cover', isFullScreen: false, width: Dimensions.get('screen').width, height: this.props.navigation.getParam('vertical') ? Dimensions.get('screen').width * (16 / 9.5) : Dimensions.get('screen').width / (16 / 9.5), rotate: this.props.navigation.getParam('vertical') ? '0deg' : '-90deg' });
+      //this.setState({ screenType: 'cover', isFullScreen: false, width: Dimensions.get('screen').width, height: this.props.navigation.getParam('vertical') ? Dimensions.get('screen').width * (16 / 9.5) : Dimensions.get('screen').width / (16 / 9.5), rotate: '0deg' });
+      //this.setState({ screenType: 'cover', isFullScreen: false, width: width, height: this.state.vertical ? width * ((width*(width/height))/96) : width / ((width*(width/height))/96) });
       this.setState({ screenType: 'cover', isFullScreen: false });
+      //this.videoPlayer.dismissFullscreenPlayer();
     }else{
+      //this.setState({ screenType: 'content', isFullScreen: true });
+      //this.setState({ screenType: 'contain', isFullScreen: true, width: this.state.vertical ? width : width * ((width*(width/height))/96), height: this.state.vertical ?  width * ((width*(width/height))/96) : width });
+      //this.setState({ screenType: 'contain', isFullScreen: true, width: this.state.vertical ? width : width * ((width*(width/height))/96), height: this.state.vertical ?  width * ((width*(width/height))/96) : width });
       this.setState({ screenType: 'contain', isFullScreen: true });
+      //this.videoPlayer.presentFullscreenPlayer();
     } 
   };
   renderToolbar = () => (
     <View style={styles.toolbar}>
       <Text>즐거운 감상 되세요♡</Text>
+      {/* <Text>{width*(width/height)}/{(width*(width/height))*1.04}</Text> */}
     </View>
   );
   onSeeking = currentTime => this.setState({ currentTime });
@@ -107,9 +117,11 @@ class MvPlayer extends Component {
         <View style={{flex: 1, 
                       transform: [{ rotateZ: this.state.vertical?'0deg':'90deg'}, 
                         //{ translateY: ((PixelRatio.getPixelSizeForLayoutSize(height)-PixelRatio.getPixelSizeForLayoutSize(width))/PixelRatio.get()) - statusBarSize },
-                        { translateY: this.state.vertical?0:((PixelRatio.getPixelSizeForLayoutSize(this.height)-PixelRatio.getPixelSizeForLayoutSize(this.width))/PixelRatio.get())+20 },
+                        { translateY: this.state.vertical?0:((PixelRatio.getPixelSizeForLayoutSize(height)-PixelRatio.getPixelSizeForLayoutSize(width))/PixelRatio.get())+20 },
                       ],
-                      width: this.state.vertical?this.width:this.height+statusBarSize, height: this.state.vertical?this.height+statusBarSize:this.width+statusBarSize,
+                      width: this.state.vertical?width:height+statusBarSize, height: this.state.vertical?height+statusBarSize:width+statusBarSize,
+                      //underlayColor:"transparent", 
+                      //zIndex:9999 
                     }}>
           <VideoPlayer
             //source={ inMedia }
@@ -123,9 +135,11 @@ class MvPlayer extends Component {
             resizeMode={this.screenType}
             seekColor={"#cdc4ff"}
             repeat={true}
-            style={{ alignSelf: "stretch", height: this.state.vertical?this.height+statusBarSize:this.width+statusBarSize, 
-                    marginBottom: this.state.vertical?0:this.height-this.width+statusBarSize, zIndex:9999 }}
-            videoStyle={{ alignSelf: "stretch", height: this.state.vertical?this.height+statusBarSize:this.width+statusBarSize }}
+            // style={{ alignSelf: "stretch", height: this.state.vertical?height:width+20, marginBottom: this.state.vertical?0:27 }}
+            // videoStyle={{ alignSelf: "stretch", height: this.state.vertical?height:width+20 }}
+            style={{ alignSelf: "stretch", height: this.state.vertical?height+statusBarSize:width+statusBarSize, 
+                    marginBottom: this.state.vertical?0:height-width+statusBarSize, zIndex:9999 }}
+            videoStyle={{ alignSelf: "stretch", height: this.state.vertical?height+statusBarSize:width+statusBarSize }}
           />
         </View>
       </View>
@@ -146,7 +160,7 @@ class MvPlayer extends Component {
         <StatusBar barStyle="dark-content" hidden={false} />
         <Content padder style={{ backgroundColor: "#000" }}>
           <SafeAreaView>            
-              <View style={{ width: this.width, height: this.state.vertical?this.height/1.35:this.height/1.4, marginLeft: -8 }}>
+              <View style={{ width: width, height: this.state.vertical?height/1.35:height/1.4, marginLeft: -8 }}>
                 <VideoPlayer
                     source={{ uri: this.state.mvUrl }}
                     navigator={ this.props.navigator }
@@ -157,8 +171,8 @@ class MvPlayer extends Component {
                     resizeMode={this.screenType}
                     seekColor={"#cdc4ff"}
                     repeat={true}
-                    style={{ alignSelf: "stretch", height: this.state.vertical?this.height/1.35:this.height/1.4, marginTop: this.state.vertical?-5:-1 }}
-                    videoStyle={{width: this.width, height: this.state.vertical?this.height/1.35:this.height/1.4}}
+                    style={{ alignSelf: "stretch", height: this.state.vertical?height/1.35:height/1.4, marginTop: this.state.vertical?-5:-1 }}
+                    videoStyle={{width: width, height: this.state.vertical?height/1.35:height/1.4}}
                 />
               </View>
               <ScrollView style={{backgroundColor: '#000'}}>

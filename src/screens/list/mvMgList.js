@@ -74,7 +74,7 @@ class MvPrivateList extends Component {
                     </TouchableWithoutFeedback>
                   </Left>
                   <Body>
-                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPlayer',{mvTitle:'식전 영상-1', mvDesc: '식전 소개 영상', vertical: false, mvUrl:'https://drive.google.com/uc?export=download&id=15hSisONzTFRkqnb7TlMH2x9WrBMDbkhG'})}>   
+                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPlayer',{mvTitle:'식전 영상-1', mvDesc: '식전 소개 영상(invitation)', vertical: false, mvUrl:'https://drive.google.com/uc?export=download&id=15hSisONzTFRkqnb7TlMH2x9WrBMDbkhG'})}>   
                       <ImageBackground source={dolImgs[0].thumbUrl} style={styles.imageTopLeft}> 
                         <View><Text style={styles.textThumb}> </Text></View>
                       </ImageBackground>

@@ -35,7 +35,7 @@ class main extends Component {
  
   async componentDidMount() {
     const response = await axios.get(
-      "https://google-photos-album-demo.glitch.me/BmxoTb4CUc4DJzBN7"/*z12jt3XBTStgzNmY8*/
+      "https://google-photos-album-demo.glitch.me/z12jt3XBTStgzNmY8"/*z12jt3XBTStgzNmY8 BmxoTb4CUc4DJzBN7*/
     );
     if (response && response.data && response.data.length > 0) {
       this.setState({
@@ -67,7 +67,7 @@ class main extends Component {
   get galleryCount () {
     const { index, images } = this.state;
     return (
-        <View style={{ top: 0, height: 30, marginBottom: -3, backgroundColor: 'rgba(0, 0, 0, 0.6)', width: '100%', position: 'absolute', justifyContent: 'center' }}>
+        <View style={{ top: 0, height: 30, marginBottom: -3, backgroundColor: 'rgba(0, 0, 0, 0.4)', width: '100%', position: 'absolute', justifyContent: 'center' }}>
             <Text style={{ textAlign: 'right', color: 'white', fontSize: 15, fontStyle: 'italic', paddingRight: '10%' }}>{ index + 1 } / { images.length }</Text>
         </View>
     );
@@ -75,7 +75,7 @@ class main extends Component {
   get caption () {
       const { images, index } = this.state;
       return (
-          <View style={{ bottom: 0, height: 55, backgroundColor: 'rgba(0, 0, 0, 0.6)', width: '100%', position: 'absolute', justifyContent: 'flex-start' }}>
+          <View style={{ bottom: 0, height: 55, backgroundColor: 'rgba(0, 0, 0, 0.4)', width: '100%', position: 'absolute', justifyContent: 'flex-start' }}>
               <Text style={{ textAlign: 'center', color: 'white', fontSize: 15, fontStyle: 'italic' }}>{ (images[index] && images[index].caption) || '' } </Text>
           </View>
       );

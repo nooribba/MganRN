@@ -53,7 +53,7 @@ class Home extends Component {
             </View>
           </View>
           {/* <ScrollView style={{ marginTop: height / 2.455, marginBottom: 3 }}> */}
-          <View style={{marginBottom: 8}}>
+          <View style={{marginBottom: 16}}>
             <Button
               style={{ backgroundColor: "#9C26B0", alignSelf: "center", width: width - 16 * 3, height: 16 * 2.8, justifyContent: 'center', alignItems: 'center' }} //#6FAF98
               onPress={() => this.props.navigation.navigate('Main')}

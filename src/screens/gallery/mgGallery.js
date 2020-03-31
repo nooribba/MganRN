@@ -4,8 +4,12 @@ import { Dimensions, View, ImageBackground, Image } from 'react-native';
 import GallerySwiper from "react-native-gallery-swiper";
 import { Container, Header, Title, Content, Button, Footer, FooterTab, Text, Body, Left, Right, Icon } from "native-base";
 import styles from "./styles";
+//import Grab from 'react-native-google-photos';
 
 const { width, height } = Dimensions.get('screen');
+
+
+
 
 class MgGallery extends Component {
   state = {
@@ -27,11 +31,19 @@ class MgGallery extends Component {
   }
   
   
+  
   async componentDidMount() {
     const glCaption = this.props.navigation.getParam('glCaption');
     const glUrl = this.props.navigation.getParam('glUrl');
+    
+    // var photos = "https://photos.google.com/share/AF1QipMTEPAiVF8t0YqLukflnOSQjwfd8ARIoT2h37AXvYO1uaWodbeiFoBUDuD_19tEbg/photo/AF1QipPA2Bq0JlAR9LoGD3mogsxSb9OZWEG4XqBDD4Rv?key=cjhUT0xrZjM5NGN2SVRLOVptZU5SMUlKV0lQYWpB";
+    // Grab.Photos(photos).then(res=>{
+    //   console.log(res); 
+    // })
     const response = await axios.get(`${glUrl}`);
 
+    //https://lh3.googleusercontent.com/p/AF1QipNePpAvxLPZRcL9TbdEu_iX6XL6TZYkav7iPAYz=s1600-w400
+                                        //AF1QipOo8Xd2Ju2slJAWScOG7goJF6NKu1D97PVvRorBzHBlCs2fLj4rLpTc-xRruENvnw
     // const regex = /\["(https:\/\/lh3\.googleusercontent\.com\/[a-zA-Z0-9\-_]*)"/g;
     // //const regex = /\["(https:\/\/photos\.google\.com\/share\/[a-zA-Z0-9\-_]*)"/g;
     // const resp = await axios.get(`https://photos.app.goo.gl/${glUrl}`)
@@ -67,7 +79,7 @@ class MgGallery extends Component {
   get caption () {
       const { images, index } = this.state;
       return (
-          <View style={{ bottom: 0, height: 55, backgroundColor: 'rgba(0, 0, 0, 0.6)', width: '100%', position: 'absolute', justifyContent: 'flex-start' }}>
+          <View style={{ bottom: 0, height: 55, backgroundColor: 'rgba(0, 0, 0, 0.3)', width: '100%', position: 'absolute', justifyContent: 'flex-start' }}>
               <Text style={{ textAlign: 'center', color: 'white', fontSize: 15, fontStyle: 'italic' }}>{ (images[index] && images[index].caption) || '' } </Text>
           </View>
       );
@@ -75,7 +87,7 @@ class MgGallery extends Component {
   get galleryCount () {
       const { index, images } = this.state;
       return (
-          <View style={{ top: 0, height: 32, backgroundColor: 'rgba(0, 0, 0, 0.6)', width: '100%', position: 'absolute', justifyContent: 'center' }}>
+          <View style={{ top: 0, height: 32, backgroundColor: 'rgba(0, 0, 0, 0.3)', width: '100%', position: 'absolute', justifyContent: 'center' }}>
               <Text style={{ textAlign: 'right', color: 'white', fontSize: 15, fontStyle: 'italic', paddingRight: '10%' }}>{ index + 1 } / { images.length }</Text>
           </View>
       );
