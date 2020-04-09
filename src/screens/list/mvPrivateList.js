@@ -14,17 +14,28 @@ class MvPrivateList extends Component {
       tab2: false,
       tab3: true,
       tab4: false,
-      dolImgs: null,
+      thumblImgs1: null,
     };
   }
   
   async componentDidMount() {
-    const response = await axios.get(
-      "https://google-photos-album-demo.glitch.me/C3qaNXJEny3HtecG6"
+    const response1 = await axios.get(
+      "https://google-photos-album-demo.glitch.me/XPULvAbgzdJ2dQXZ8"
     );
-    if (response && response.data && response.data.length > 0) {
+    const response2 = await axios.get(
+      "https://google-photos-album-demo.glitch.me/aaajngABGW5rYz5T8"
+    );
+
+    if (response2 && response2.data && response2.data.length > 0) {
       this.setState({
-        dolImgs: response.data.map(url => ({
+        thumblImgs2: response2.data.map(url => ({
+          thumbUrl: {uri: `${url}`},
+        }))
+      });
+    }
+    if (response1 && response1.data && response1.data.length > 0) {
+      this.setState({
+        thumblImgs1: response1.data.map(url => ({
           thumbUrl: {uri: `${url}`},
         }))
       });
@@ -32,10 +43,10 @@ class MvPrivateList extends Component {
   }
 
   render() {
-    const { dolImgs, index } = this.state;
+    const { thumblImgs1, thumblImgs2, index } = this.state;
    
     return (
-      dolImgs ?
+      thumblImgs1 && thumblImgs2 ?
       <Container style={styles.container}>
         <Header>
           <Left>
@@ -61,14 +72,14 @@ class MvPrivateList extends Component {
                 <ListItem last style={{alignContent:'stretch', borderBottomColor: '#738786'}}>
                   <Left>
                     <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPlayer',{mvTitle:'이태민 탄생순간', mvDesc: '이태민 인정병원 분만실\n2019.09.01 21:14', vertical: true, mvUrl:'https://drive.google.com/uc?export=download&id=1683_Q5UuyPO7xSF6qez52IdPRcSbR4rg'})}>   
-                      <ImageBackground source={dolImgs[0].thumbUrl} style={styles.imageTopLeft}> 
+                      <ImageBackground source={thumblImgs2[1].thumbUrl} style={styles.imageTopLeft}> 
                         <View><Text style={styles.textThumb}> </Text></View>
                       </ImageBackground>
                     </TouchableWithoutFeedback>
                   </Left>
                   <Body>
                     <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPlayer',{mvTitle:'제주 스킨스쿠버', mvDesc: '오픈워터 자격증 취득(올리브낭/퍼플)\n2018.11.09~11', vertical: false, mvUrl:'https://drive.google.com/uc?export=download&id=10oQnuGeD2jh_BhzwlRVK9OVVYIodbcqW'})}>   
-                      <ImageBackground source={dolImgs[0].thumbUrl} style={styles.imageTopLeft}> 
+                      <ImageBackground source={thumblImgs2[0].thumbUrl} style={styles.imageTopLeft}> 
                         <View><Text style={styles.textThumb}> </Text></View>
                       </ImageBackground>
                     </TouchableWithoutFeedback>
@@ -80,8 +91,8 @@ class MvPrivateList extends Component {
             </ListItem>
                 <ListItem last style={{alignContent:'stretch', borderBottomColor: '#738786'}}>
                   <Left>
-                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPlayer',{mvTitle:'고리합창단(수진)', mvDesc: '고리합창단 노량진 성당 성가\n2017.12.25', vertical: false, mvUrl:'https://drive.google.com/uc?export=download&id=1_uush4RWqeLW2UQT-LxB9FeuZMOnaRTU'})}>   
-                      <ImageBackground source={dolImgs[0].thumbUrl} style={styles.imageTopLeft}> 
+                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPlayer',{mvTitle:'고리합창단(수진)', mvDesc: '고리합창단 노량진 성당 성가\n2017.12.25', vertical: false, mvUrl:'https://drive.google.com/uc?export=download&id=1GfF_m7P503lvqVbsyes4AvIwQK8JH-CB'})}>   
+                      <ImageBackground source={thumblImgs1[0].thumbUrl} style={styles.imageTopLeft}> 
                         <View><Text style={styles.textThumb}> </Text></View>
                       </ImageBackground>
                     </TouchableWithoutFeedback>

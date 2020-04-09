@@ -104,12 +104,14 @@ class MvPlayer extends Component {
       <View
         style={{flex: 1, backgroundColor: "#000"}}>
         <StatusBar hidden={true} />
-        <View style={{flex: 1, 
+        <View style={{flex: 1,
                       transform: [{ rotateZ: this.state.vertical?'0deg':'90deg'}, 
                         //{ translateY: ((PixelRatio.getPixelSizeForLayoutSize(height)-PixelRatio.getPixelSizeForLayoutSize(width))/PixelRatio.get()) - statusBarSize },
-                        { translateY: this.state.vertical?0:((PixelRatio.getPixelSizeForLayoutSize(this.height)-PixelRatio.getPixelSizeForLayoutSize(this.width))/PixelRatio.get())+20 },
+                        { translateY: this.state.vertical?0:((PixelRatio.getPixelSizeForLayoutSize(this.height)-PixelRatio.getPixelSizeForLayoutSize(this.width))/PixelRatio.get())+10 },
+                        //{ translateY: this.state.vertical?0:((PixelRatio.getPixelSizeForLayoutSize(this.width)-PixelRatio.getPixelSizeForLayoutSize(this.height))/PixelRatio.get())+10 },
                       ],
-                      width: this.state.vertical?this.width:this.height+statusBarSize, height: this.state.vertical?this.height+statusBarSize:this.width+statusBarSize,
+                      //width: this.state.vertical?this.width:this.height+statusBarSize, height: this.state.vertical?this.height+statusBarSize:this.width+statusBarSize,
+                      width: this.state.vertical?this.width:this.height+5, height: this.state.vertical?this.height+statusBarSize:this.width+5,
                     }}>
           <VideoPlayer
             //source={ inMedia }
@@ -123,9 +125,16 @@ class MvPlayer extends Component {
             resizeMode={this.screenType}
             seekColor={"#cdc4ff"}
             repeat={true}
-            style={{ alignSelf: "stretch", height: this.state.vertical?this.height+statusBarSize:this.width+statusBarSize, 
-                    marginBottom: this.state.vertical?0:this.height-this.width+statusBarSize, zIndex:9999 }}
-            videoStyle={{ alignSelf: "stretch", height: this.state.vertical?this.height+statusBarSize:this.width+statusBarSize }}
+            style={{ alignSelf: "stretch", flex: 1, width: this.state.vertical?this.width:this.height+5,
+                    //height: this.state.vertical?this.height+statusBarSize:this.width+statusBarSize, 
+                    height: this.state.vertical?this.height+5:this.width+5, 
+                    marginBottom: this.state.vertical?0:this.height-this.width+statusBarSize-3,
+                    zIndex:9500 }}
+            videoStyle={{ alignSelf: "stretch",
+                         //height: this.state.vertical?this.height+statusBarSize:this.width+statusBarSize 
+                         height: this.state.vertical?this.height+5:this.width+5, 
+                         //zIndex:9000
+                        }}
           />
         </View>
       </View>

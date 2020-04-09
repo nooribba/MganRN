@@ -14,17 +14,17 @@ class MvPrivateList extends Component {
       tab2: false,
       tab3: true,
       tab4: false,
-      dolImgs: null,
+      thumbImgs: null,
     };
   }
   
   async componentDidMount() {
     const response = await axios.get(
-      "https://google-photos-album-demo.glitch.me/C3qaNXJEny3HtecG6"
+      "https://google-photos-album-demo.glitch.me/WZoNGd7uGnofF8Z66" //C3qaNXJEny3HtecG6
     );
     if (response && response.data && response.data.length > 0) {
       this.setState({
-        dolImgs: response.data.map(url => ({
+        thumbImgs: response.data.map(url => ({
           thumbUrl: {uri: `${url}`},
         }))
       });
@@ -32,10 +32,10 @@ class MvPrivateList extends Component {
   }
 
   render() {
-    const { dolImgs, index } = this.state;
+    const { thumbImgs, index } = this.state;
    
     return (
-      dolImgs ?
+      thumbImgs ?
       <Container style={styles.container}>
         <Header>
           <Left>
@@ -65,17 +65,27 @@ class MvPrivateList extends Component {
             <ListItem itemDivider>
               <Text style={styles.listDivider}>결혼 전</Text>
             </ListItem>
-                <ListItem last style={{alignContent:'stretch', borderBottomColor: '#738786'}}>
+              <ListItem style={{alignContent:'stretch', borderBottomColor: '#738786'}}>
                 <Left>
-                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPlayer',{mvTitle:'웨딩 셀프 축가', mvDesc: '지천비화 - 결혼합니다\n결혼식 2018.09.16', vertical: false, mvUrl:'https://drive.google.com/uc?export=download&id=15mfhhd0Kgap5h9tqwZQWDxyKGPxXGiA_'})}>   
-                      <ImageBackground source={dolImgs[0].thumbUrl} style={styles.imageTopLeft}> 
+                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPlayer',{mvTitle:'본식-신부입장', mvDesc: '신부입장(수진,민혁,장인어른)\n새로운 가정을 이룬 역사적 순간\n2018.09.16', vertical: false, mvUrl:'https://drive.google.com/uc?export=download&id=10jqW0I-D4IppckphkWfJ5AiWpr7qCbH7'})}>   
+                      <ImageBackground source={thumbImgs[2].thumbUrl} style={styles.imageTopLeft}> 
+                        <View><Text style={styles.textThumb}> </Text></View>
+                      </ImageBackground>
+                    </TouchableWithoutFeedback>
+                  </Left>
+                  <Body/>
+                </ListItem>
+                <ListItem last style={{alignContent:'stretch', borderBottomColor: '#738786'}}>
+                  <Left>
+                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPlayer',{mvTitle:'웨딩 셀프 축가', mvDesc: '지천비화 - 결혼합니다\n파티 아뜰리에\n2018.07.15', vertical: false, mvUrl:'https://drive.google.com/uc?export=download&id=15mfhhd0Kgap5h9tqwZQWDxyKGPxXGiA_'})}>   
+                      <ImageBackground source={thumbImgs[1].thumbUrl} style={styles.imageTopLeft}> 
                         <View><Text style={styles.textThumb}> </Text></View>
                       </ImageBackground>
                     </TouchableWithoutFeedback>
                   </Left>
                   <Body>
                     <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPlayer',{mvTitle:'식전 영상-1', mvDesc: '식전 소개 영상(invitation)', vertical: false, mvUrl:'https://drive.google.com/uc?export=download&id=15hSisONzTFRkqnb7TlMH2x9WrBMDbkhG'})}>   
-                      <ImageBackground source={dolImgs[0].thumbUrl} style={styles.imageTopLeft}> 
+                      <ImageBackground source={thumbImgs[0].thumbUrl} style={styles.imageTopLeft}> 
                         <View><Text style={styles.textThumb}> </Text></View>
                       </ImageBackground>
                     </TouchableWithoutFeedback>
