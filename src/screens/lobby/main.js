@@ -25,8 +25,16 @@ class main extends Component {
       images: [
         {
             caption: '행복한 우리가족의 일상을 기록하고 추억하기 위한 개인사용 목적 앱 입니다. 즐겁게 감상해 주시기 바랍니다 :)',
-            source: require('../../../assets/images/home_1.jpg'),
+            source: require('../../../assets/images/home_2.jpg'),
             dimensions: { width: 2400, height: 1800}, /* 540 720 */
+        },{
+          caption: '어서오세요 ♡',
+          source: require('../../../assets/images/home_3.jpg'),
+          dimensions: { width: 2400, height: 1800}, 
+        },{
+          caption: '이태민(안토니오/Anthony) Hot & Best Cut',
+          source: require('../../../assets/images/home_1.jpg'),
+          dimensions: { width: 2400, height: 1800}, 
         }
       ]
     };
@@ -67,7 +75,7 @@ class main extends Component {
   get galleryCount () {
     const { index, images } = this.state;
     return (
-        <View style={{ top: 0, height: 30, marginBottom: -3, backgroundColor: 'rgba(0, 0, 0, 0.4)', width: '100%', position: 'absolute', justifyContent: 'center' }}>
+        <View style={{ top: 0, height: 30, marginBottom: -4, backgroundColor: 'rgba(0, 0, 0, 0.4)', width: '100%', position: 'absolute', justifyContent: 'center' }}>
             <Text style={{ textAlign: 'right', color: 'white', fontSize: 15, fontStyle: 'italic', paddingRight: '10%' }}>{ index + 1 } / { images.length }</Text>
         </View>
     );
@@ -75,7 +83,7 @@ class main extends Component {
   get caption () {
       const { images, index } = this.state;
       return (
-          <View style={{ bottom: 0, height: 55, backgroundColor: 'rgba(0, 0, 0, 0.4)', width: '100%', position: 'absolute', justifyContent: 'flex-start' }}>
+          <View style={{ bottom: 0, height: 45, backgroundColor: 'rgba(0, 0, 0, 0.4)', width: '100%', position: 'absolute', justifyContent: 'flex-end', marginBottom: 0 }}>
               <Text style={{ textAlign: 'center', color: 'white', fontSize: 15, fontStyle: 'italic' }}>{ (images[index] && images[index].caption) || '' } </Text>
           </View>
       );
@@ -105,10 +113,10 @@ class main extends Component {
           <View style={{backgroundColor: '#FFF'}}>
             <H3 style={{alignSelf: "center", marginTop: 8, marginBottom: 7}}>LEE.KIM.RYU FAMILY</H3>
           </View>
-          <View style={{ flex: 1, width: width, height: height-222, backgroundColor: 'black' }} >
+          <View style={{ flex: 1, width: width, height: height-220, backgroundColor: 'black' }} >
             <GallerySwiper
                   //style={{ flex: 1, backgroundColor: 'black', height: height / 1.3486 }}//1.3686 1.3986
-                  style={{ flex: 1, backgroundColor: 'black', height: height-222 }}//1.3686 1.3986
+                  style={{ flex: 1, backgroundColor: 'black', height: height-220 }}//1.3686 1.3986
                   images={this.state.images}
                   onEndReached={() => {}}
                   initialPage={0}

@@ -160,7 +160,7 @@ class MvTmList extends Component {
             </ListItem>
                 <ListItem style={{alignContent:'stretch', borderBottomColor: '#738786'}}>
                   <Left>
-                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPlayer',{mvTitle:'조리원(침대)', mvDesc: '르베르쏘 조리원\n모자동시간 침대 영상\n2019.09.12', vertical: false, mvUrl:'https://drive.google.com/uc?export=download&id=11eg_D_LwY7WgISTlNYvUBDXskpSiY2kg'})}>   
+                    <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('MvPlayer',{mvTitle:'조리원(침대)', mvDesc: '르베르쏘 조리원\n모자동시간 원실 침대\n2019.09.12', vertical: false, mvUrl:'https://drive.google.com/uc?export=download&id=11eg_D_LwY7WgISTlNYvUBDXskpSiY2kg'})}>   
                       <ImageBackground source={thumbImgs2[3].thumbUrl} style={styles.imageTopLeft}> 
                         <View><Text style={styles.textThumb}> </Text></View>
                       </ImageBackground>
@@ -256,7 +256,7 @@ class MvTmList extends Component {
           <View style={{ flex: 1, width: width, height: height - 170, backgroundColor: 'black' }} >
             <Animated.Image
               source={require('../../../assets/images/loading.gif')}
-              style={{ height: height*0.55, width: width, zIndex: 1 }}
+              style={{ height: height*0.56, width: width, marginTop: 50, backgroundColor: 'black', zIndex: 1 }}
             />
           </View>
         </Content>

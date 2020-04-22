@@ -8,10 +8,10 @@ import styles from "./styles";
 
 const { width, height } = Dimensions.get('screen');
 const logo = require("../../../assets/images/camera_side.png");
-const tmImage = require("../../../assets/images/mgan_thumb.jpg");
+const tmImage = require("../../../assets/images/mgan_thumb_gl.jpg");
 const mgImage = require("../../../assets/images/mg_thumb.jpg");
 const djImage = require("../../../assets/images/dj_thumb.jpg");
-const usImage = require("../../../assets/images/us_thumb.jpg");
+const usImage = require("../../../assets/images/mgan_thumb.jpg");
 
 class GlLobby extends Component {
   constructor(props) {

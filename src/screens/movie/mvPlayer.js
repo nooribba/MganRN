@@ -128,7 +128,8 @@ class MvPlayer extends Component {
             style={{ alignSelf: "stretch", flex: 1, width: this.state.vertical?this.width:this.height+5,
                     //height: this.state.vertical?this.height+statusBarSize:this.width+statusBarSize, 
                     height: this.state.vertical?this.height+5:this.width+5, 
-                    marginBottom: this.state.vertical?0:this.height-this.width+statusBarSize-3,
+                    //marginBottom: this.state.vertical?0:this.height-this.width+statusBarSize-3,
+                    marginBottom: this.state.vertical?0:this.height-this.width+statusBarSize-5,
                     zIndex:9500 }}
             videoStyle={{ alignSelf: "stretch",
                          //height: this.state.vertical?this.height+statusBarSize:this.width+statusBarSize 
@@ -166,8 +167,8 @@ class MvPlayer extends Component {
                     resizeMode={this.screenType}
                     seekColor={"#cdc4ff"}
                     repeat={true}
-                    style={{ alignSelf: "stretch", height: this.state.vertical?this.height/1.35:this.height/1.4, marginTop: this.state.vertical?-5:-1 }}
-                    videoStyle={{width: this.width, height: this.state.vertical?this.height/1.35:this.height/1.4}}
+                    style={{ alignSelf: "stretch", height: this.state.vertical?this.height/1.35:this.height/1.4, marginTop: this.state.vertical?-5:-1, backgroundColor: '#000' }}
+                    videoStyle={{width: this.width, height: this.state.vertical?this.height/1.35:this.height/1.4, backgroundColor: '#000'}}
                 />
               </View>
               <ScrollView style={{backgroundColor: '#000'}}>

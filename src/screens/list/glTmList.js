@@ -9,6 +9,7 @@ const { width, height } = Dimensions.get('screen');
 const bornThumb = require('../../../assets/images/mgan_born_thumb.jpg');
 const fiftyThumb = require('../../../assets/images/mgan_fifty_thumb.jpg');
 const hundredThumb = require('../../../assets/images/mgan_1hundred_thumb.jpg');
+const twohundredThumb = require('../../../assets/images/mgan_2hundred_thumb.jpg');
 const yearThumb = require('../../../assets/images/mg_thumb.jpg');
 
 
@@ -57,7 +58,25 @@ class GlTmList extends Component {
                       <View style={styles.categoryTitle}>
                         <Text style={styles.textThumb}>이태민</Text>
                         <Text style={styles.textThumb}>돌</Text>
-                        <Text style={styles.textThumb}>(좀 더 크면 만나요~)</Text>
+                        <Text style={styles.textThumb}>(아직 크는 중이예요~)</Text>
+                      </View>
+                    </ImageBackground>
+                  </Body>
+                </CardItem>
+              </Card>
+            </TouchableHighlight>
+            <TouchableHighlight onPress={() => this.props.navigation.navigate('TmGallery',{glTitle:'200일', glCaption:'이태민 200일 파스텔 스튜디오 목동점\n20분만에 촬영. 그새 많이 컸네 우리 아들^^', glUrl:'https://google-photos-album-demo.glitch.me/J8RxaLPbLHpr2CA39'})}>
+              <Card>
+                <CardItem style={{ justifyContent: 'center', backgroundColor: '#cdc4ff' }}>
+                  <Body style={{ marginTop: -13, marginBottom: -13}}>
+                    <ImageBackground
+                      source={twohundredThumb}
+                      style={[styles.imageBlock, { width: width - 27, height: 220 }]}
+                      imageStyle={{ width: width - 27, height: 220 }}
+                      >
+                      <View style={styles.categoryTitle}>
+                        <Text style={styles.textThumb}>이태민</Text>
+                        <Text style={styles.textThumb}>200일</Text>
                       </View>
                     </ImageBackground>
                   </Body>

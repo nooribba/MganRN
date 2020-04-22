@@ -146,7 +146,7 @@ class MvPrivateList extends Component {
           <View style={{ flex: 1, width: width, height: height - 170, backgroundColor: 'black' }} >
             <Animated.Image
               source={require('../../../assets/images/loading.gif')}
-              style={{ height: height*0.55, width: width, zIndex: 1 }}
+              style={{ height: height*0.56, width: width, marginTop: 50, backgroundColor: 'black', zIndex: 1 }}
             />
           </View>
         </Content>
