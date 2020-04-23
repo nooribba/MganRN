@@ -83,7 +83,7 @@ class main extends Component {
   get caption () {
       const { images, index } = this.state;
       return (
-          <View style={{ bottom: 0, height: 45, backgroundColor: 'rgba(0, 0, 0, 0.4)', width: '100%', position: 'absolute', justifyContent: 'flex-end', marginBottom: 0 }}>
+          <View style={{ bottom: 0, height: 43, backgroundColor: 'rgba(0, 0, 0, 0.4)', width: '100%', position: 'absolute', justifyContent: 'flex-end', marginBottom: 0 }}>
               <Text style={{ textAlign: 'center', color: 'white', fontSize: 15, fontStyle: 'italic' }}>{ (images[index] && images[index].caption) || '' } </Text>
           </View>
       );
@@ -111,7 +111,7 @@ class main extends Component {
         
         <Content>
           <View style={{backgroundColor: '#FFF'}}>
-            <H3 style={{alignSelf: "center", marginTop: 8, marginBottom: 7}}>LEE.KIM.RYU FAMILY</H3>
+            <H3 style={{alignSelf: "center", marginTop: 8, marginBottom: 6}}>LEE-KIM-RYU FAMILY</H3>
           </View>
           <View style={{ flex: 1, width: width, height: height-220, backgroundColor: 'black' }} >
             <GallerySwiper
