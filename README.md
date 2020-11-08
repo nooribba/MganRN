@@ -20,3 +20,5 @@ keytool -genkey -v -keystore mgan-release-key.keystore -alias mgan-key-alias -ke
 ## Build apk
 1. npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
 2. cd android > gradlew assembleRelease -x bundleReleaseJsAndAssets
+수정
+
