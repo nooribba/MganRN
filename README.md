@@ -22,6 +22,6 @@ keytool -genkey -v -keystore mgan-release-key.keystore -alias mgan-key-alias -ke
 2. cd android > gradlew assembleRelease -x bundleReleaseJsAndAssets
 
 
-![LKR1](https://user-images.githubusercontent.com/40586079/100401686-87b95180-309d-11eb-896c-e0c4cdbd18b1.jpg)
-![LKR2](https://user-images.githubusercontent.com/40586079/100401683-8720bb00-309d-11eb-9bf5-a34fbcfe112c.jpg)
-![LKR3](https://user-images.githubusercontent.com/40586079/100401679-838d3400-309d-11eb-9014-4aa15deb6e5a.jpg)
+<img src="https://user-images.githubusercontent.com/40586079/100401686-87b95180-309d-11eb-896c-e0c4cdbd18b1.jpg" width="40%">
+<img src="https://user-images.githubusercontent.com/40586079/100401683-8720bb00-309d-11eb-9bf5-a34fbcfe112c.jpg" width="40%">
+<img src="https://user-images.githubusercontent.com/40586079/100401679-838d3400-309d-11eb-9014-4aa15deb6e5a.jpg" width="40%">
